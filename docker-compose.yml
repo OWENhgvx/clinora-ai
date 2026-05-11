@@ -1,0 +1,39 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    volumes:
+      - qdrant_data:/qdrant/storage
+    ports:
+      - "6333:6333"
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/localhost/6333' 2>/dev/null || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  backend:
+    build: ./clinora-backend
+    env_file: ./clinora-backend/.env
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+    volumes:
+      - ./clinora-backend/clinora.db:/app/clinora.db
+      - ./clinora-backend/uploads:/app/uploads
+    ports:
+      - "8000:8000"
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    restart: on-failure
+
+  frontend:
+    build: ./clinora-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  qdrant_data:

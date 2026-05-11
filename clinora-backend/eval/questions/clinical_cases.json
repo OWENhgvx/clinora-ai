@@ -1,0 +1,137 @@
+[
+  {
+    "id": "case_001",
+    "description": "A 58-year-old male presents with sudden onset chest pain radiating to the left arm, diaphoresis, and shortness of breath for 2 hours.",
+    "expected_primary_dx": "Acute myocardial infarction",
+    "expected_differentials": ["Unstable angina", "Aortic dissection", "Pulmonary embolism"],
+    "expected_investigations": ["ECG", "Troponin", "Chest X-ray"],
+    "red_flag": true,
+    "category": "cardiology"
+  },
+  {
+    "id": "case_002",
+    "description": "A 24-year-old female with 3-day history of dysuria, urinary frequency, and suprapubic discomfort. No fever.",
+    "expected_primary_dx": "Uncomplicated urinary tract infection",
+    "expected_differentials": ["Pyelonephritis", "Interstitial cystitis", "STI"],
+    "expected_investigations": ["Urinalysis", "Urine culture"],
+    "red_flag": false,
+    "category": "urology"
+  },
+  {
+    "id": "case_003",
+    "description": "A 45-year-old woman presents with fatigue, weight gain, cold intolerance, constipation, and dry skin over 6 months.",
+    "expected_primary_dx": "Hypothyroidism",
+    "expected_differentials": ["Depression", "Anaemia", "Cushing syndrome"],
+    "expected_investigations": ["TSH", "Free T4", "CBC"],
+    "red_flag": false,
+    "category": "endocrinology"
+  },
+  {
+    "id": "case_004",
+    "description": "A 32-year-old male with sudden severe headache described as 'thunderclap', worst of his life, onset during exercise. No fever.",
+    "expected_primary_dx": "Subarachnoid haemorrhage",
+    "expected_differentials": ["Migraine", "Hypertensive emergency", "Meningitis"],
+    "expected_investigations": ["Non-contrast CT head", "Lumbar puncture if CT negative"],
+    "red_flag": true,
+    "category": "neurology"
+  },
+  {
+    "id": "case_005",
+    "description": "A 67-year-old male smoker with 3-month history of haemoptysis, weight loss, and persistent cough. 40 pack-year history.",
+    "expected_primary_dx": "Lung cancer",
+    "expected_differentials": ["Tuberculosis", "Bronchiectasis", "Pneumonia"],
+    "expected_investigations": ["Chest X-ray", "CT chest", "Sputum cytology", "Bronchoscopy"],
+    "red_flag": true,
+    "category": "oncology"
+  },
+  {
+    "id": "case_006",
+    "description": "A 19-year-old university student presents with fever, severe sore throat, fatigue, and cervical lymphadenopathy for 5 days.",
+    "expected_primary_dx": "Infectious mononucleosis",
+    "expected_differentials": ["Streptococcal pharyngitis", "HIV seroconversion", "Lymphoma"],
+    "expected_investigations": ["Monospot test", "EBV serology", "CBC with differential"],
+    "red_flag": false,
+    "category": "infectious_disease"
+  },
+  {
+    "id": "case_007",
+    "description": "A 72-year-old woman with sudden painless loss of vision in the right eye, described as a 'curtain coming down'.",
+    "expected_primary_dx": "Retinal detachment",
+    "expected_differentials": ["Central retinal artery occlusion", "Vitreous haemorrhage", "Amaurosis fugax"],
+    "expected_investigations": ["Urgent ophthalmology referral", "Fundoscopy", "B-scan ultrasound"],
+    "red_flag": true,
+    "category": "ophthalmology"
+  },
+  {
+    "id": "case_008",
+    "description": "A 38-year-old female with episodic palpitations, heat intolerance, weight loss despite good appetite, and fine tremor.",
+    "expected_primary_dx": "Hyperthyroidism (Graves disease)",
+    "expected_differentials": ["Anxiety disorder", "Phaeochromocytoma", "Cardiac arrhythmia"],
+    "expected_investigations": ["TSH", "Free T4", "Free T3", "TRAb"],
+    "red_flag": false,
+    "category": "endocrinology"
+  },
+  {
+    "id": "case_009",
+    "description": "A 5-year-old child with barking cough, stridor, and low-grade fever worsening at night. Symptoms started after mild URTI.",
+    "expected_primary_dx": "Croup (laryngotracheobronchitis)",
+    "expected_differentials": ["Epiglottitis", "Foreign body aspiration", "Bacterial tracheitis"],
+    "expected_investigations": ["Clinical diagnosis", "X-ray if atypical (steeple sign)"],
+    "red_flag": false,
+    "category": "paediatrics"
+  },
+  {
+    "id": "case_010",
+    "description": "A 55-year-old male with 2-week history of epigastric pain relieved by eating, nausea, and one episode of dark tarry stool.",
+    "expected_primary_dx": "Peptic ulcer disease with upper GI bleed",
+    "expected_differentials": ["Gastric cancer", "Gastritis", "Oesophageal varices"],
+    "expected_investigations": ["FBC", "Group and save", "Endoscopy", "H. pylori test"],
+    "red_flag": true,
+    "category": "gastroenterology"
+  },
+  {
+    "id": "case_011",
+    "description": "A 28-year-old pregnant woman (32 weeks) presents with headache, visual disturbance, and BP 158/102 mmHg.",
+    "expected_primary_dx": "Pre-eclampsia",
+    "expected_differentials": ["Gestational hypertension", "HELLP syndrome", "Migraine"],
+    "expected_investigations": ["Urine protein (dipstick/24h)", "LFTs", "FBC", "CTG"],
+    "red_flag": true,
+    "category": "obstetrics"
+  },
+  {
+    "id": "case_012",
+    "description": "A 42-year-old male with progressive morning stiffness in bilateral small joints of hands lasting >1 hour, joint swelling, and fatigue for 3 months.",
+    "expected_primary_dx": "Rheumatoid arthritis",
+    "expected_differentials": ["Psoriatic arthritis", "SLE", "Reactive arthritis"],
+    "expected_investigations": ["RF", "Anti-CCP", "CRP/ESR", "X-ray hands"],
+    "red_flag": false,
+    "category": "rheumatology"
+  },
+  {
+    "id": "case_013",
+    "description": "A 16-year-old male brought in by parents with 6-month history of social withdrawal, auditory hallucinations, and disorganized thinking.",
+    "expected_primary_dx": "First-episode psychosis / Schizophrenia",
+    "expected_differentials": ["Bipolar disorder with psychosis", "Substance-induced psychosis", "Mood disorder"],
+    "expected_investigations": ["Drug screen", "TFTs", "Brain MRI", "Psychiatric assessment"],
+    "red_flag": true,
+    "category": "psychiatry"
+  },
+  {
+    "id": "case_014",
+    "description": "A 61-year-old diabetic male with 2-day history of right calf pain, swelling, and warmth after a 12-hour flight.",
+    "expected_primary_dx": "Deep vein thrombosis",
+    "expected_differentials": ["Cellulitis", "Ruptured Baker's cyst", "Muscle strain"],
+    "expected_investigations": ["Wells score", "D-dimer", "Doppler ultrasound"],
+    "red_flag": true,
+    "category": "vascular"
+  },
+  {
+    "id": "case_015",
+    "description": "A 50-year-old postmenopausal woman with painless postmenopausal vaginal bleeding, single episode, no other symptoms.",
+    "expected_primary_dx": "Endometrial carcinoma (must be excluded)",
+    "expected_differentials": ["Endometrial polyp", "Atrophic vaginitis", "Cervical cancer"],
+    "expected_investigations": ["Pelvic ultrasound (endometrial thickness)", "Endometrial biopsy"],
+    "red_flag": true,
+    "category": "gynaecology"
+  }
+]

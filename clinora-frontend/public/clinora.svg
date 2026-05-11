@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#B83830"/>
+  <!-- Staff -->
+  <line x1="32" y1="8" x2="32" y2="56" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <!-- Top wings -->
+  <path d="M32 14 Q20 10 18 18 Q16 26 32 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M32 14 Q44 10 46 18 Q48 26 32 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Snake 1 -->
+  <path d="M32 20 Q22 26 28 32 Q34 38 24 44 Q20 48 24 52" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Snake 2 -->
+  <path d="M32 20 Q42 26 36 32 Q30 38 40 44 Q44 48 40 52" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
+</svg>

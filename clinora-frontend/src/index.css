@@ -1,0 +1,417 @@
+@import "tailwindcss";
+@config "../tailwind.config.cjs";
+
+:root {
+  --paper: #f8fafc;
+  --paper2: #ffffff;
+  --paper3: #eef6fb;
+  --paper4: #e2e8f0;
+  --ink: #0f172a;
+  --ink2: #1e293b;
+  --ink3: #334155;
+  --ink4: #475569;
+  --ink5: #64748b;
+  --rose: #2563eb;
+  --roseB: #1d4ed8;
+  --roseC: #3b82f6;
+  --roseDim: rgba(37, 99, 235, 0.08);
+  --rosePale: #dbeafe;
+  --sage: #14b8a6;
+  --sageB: #0d9488;
+  --sageDim: rgba(20, 184, 166, 0.1);
+  --sagePale: #ccfbf1;
+  --amber: #0f3d73;
+  --amberB: #2563eb;
+  --amberDim: rgba(15, 61, 115, 0.08);
+  --amberPale: #e0f2fe;
+  --navy: #0f3d73;
+  --navyB: #2563eb;
+  --navyDim: rgba(15, 61, 115, 0.08);
+  --navyPale: #e0f2fe;
+  --gold: #14b8a6;
+  --goldPale: #ccfbf1;
+  --plum: #2563eb;
+  --plumDim: rgba(37, 99, 235, 0.08);
+  --plumPale: #dbeafe;
+  --shadow-sm: 0 1px 4px rgba(15, 23, 42, 0.06);
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 14px 34px rgba(15, 23, 42, 0.1);
+  --shadow-xl: 0 22px 54px rgba(15, 23, 42, 0.12);
+  --nav-bg: rgba(248, 250, 252, 0.96);
+  --input-border: #e2e8f0;
+  --btn-px-xs: 0.9rem;
+  --btn-px-sm: 1rem;
+  --btn-px-md: 1.25rem;
+  --btn-px-lg: 1.5rem;
+  --btn-px-xl: 1.75rem;
+  --badge-px: 0.65rem;
+  --badge-py: 0.18rem;
+  --chat-phase-badge-px: 0.85rem;
+  --chat-phase-badge-py: 0.24rem;
+  --serif: Georgia, "Times New Roman", serif;
+  --body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  @apply bg-clinora-background text-clinora-textPrimary;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.page-fade {
+  min-height: calc(100vh - 56px);
+}
+
+.card,
+.stat-card {
+  @apply border-clinora-border bg-clinora-card text-clinora-textPrimary;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: var(--ink);
+}
+
+.stat-card {
+  padding: 20px 22px;
+}
+
+.accent-bar {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+}
+
+.shine {
+  display: none;
+}
+
+.ink-label,
+.eyebrow {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink4);
+}
+
+.ink-label {
+  margin-bottom: 7px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+}
+
+.nav-lnk {
+  padding: 5px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink3);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+}
+
+.nav-lnk:hover {
+  background: var(--paper3);
+  color: var(--ink);
+}
+
+.nav-lnk.on {
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.tab-row {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tab-btn {
+  margin-bottom: -1px;
+  padding: 10px 18px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--ink4);
+  cursor: pointer;
+  font: inherit;
+}
+
+.tab-btn.on {
+  border-bottom-color: var(--rose);
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.chat-phase-badge {
+  padding-inline: var(--chat-phase-badge-px) !important;
+  padding-block: var(--chat-phase-badge-py) !important;
+}
+
+.mode-pill {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: var(--paper3);
+}
+
+.mode-opt {
+  flex: 1;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink4);
+  cursor: pointer;
+  font: inherit;
+}
+
+.mode-opt.on {
+  background: var(--rose);
+  color: #fff;
+  font-weight: 600;
+}
+
+.prog-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--paper3);
+}
+
+.prog-fill {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.bubble-ai,
+.bubble-user {
+  max-width: 78%;
+  padding: 13px 18px;
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.bubble-ai {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px 12px 12px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.bubble-user {
+  border-radius: 12px 4px 12px 12px;
+  background: var(--rose);
+  color: #fff;
+}
+
+.data-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-row:last-child {
+  border-bottom: 0;
+}
+
+.grad-heading {
+  display: inline-block;
+  color: var(--amberB);
+}
+
+.gold-rule,
+.brand-stripe {
+  background: var(--amberB);
+}
+
+.gold-rule {
+  height: 1px;
+  opacity: 0.55;
+}
+
+.brand-stripe {
+  height: 3px;
+  flex-shrink: 0;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid rgba(20, 184, 166, 0.35);
+  border-radius: 999px;
+  background: var(--sageDim);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.blob {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.22;
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.flow-node {
+  position: absolute;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: var(--paper2);
+  cursor: pointer;
+}
+
+.flow-node.on {
+  border-color: var(--amber);
+  background: var(--amberDim);
+}
+
+.agent-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.agent-avatar {
+  position: relative;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.agent-connector {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 1px;
+  background: var(--paper4);
+}
+
+.agent-connector.active {
+  background: var(--amber);
+}
+
+.agent-connector.done {
+  background: var(--sage);
+}
+
+.agent-bubble {
+  padding: 10px 14px;
+  border-radius: 4px 10px 10px;
+  color: var(--ink2);
+  font-family: var(--body);
+  font-size: 13.5px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.md-body {
+  color: var(--ink2);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.8;
+  word-break: break-word;
+}
+
+.md-body h2,
+.md-body h3 {
+  margin: 1em 0 0.45em;
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.md-body h2 {
+  font-size: 20px;
+}
+
+.md-body h3 {
+  font-size: 17px;
+}
+
+.md-body p {
+  margin: 0.55em 0;
+}
+
+.md-body ul,
+.md-body ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.md-body code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(15, 61, 115, 0.06);
+  color: var(--rose);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.md-body blockquote {
+  margin: 10px 0;
+  padding: 6px 12px;
+  border-left: 3px solid var(--rose);
+  background: var(--rosePale);
+  color: var(--ink3);
+}
+
+input[type="range"] {
+  width: 100%;
+}
