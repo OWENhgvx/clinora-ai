@@ -47,3 +47,26 @@
 要我现在就开始帮你设计具体的清洗流程、JSON Schema、Prompt模板吗？  
 
 直接说「开始」我就给你。
+
+
+
+
+用户界面（医生端） → Web/App（支持语音输入、影像上传）
+          ↓
+前端 → 后端API（FastAPI / Flask）
+          ↓
+【核心：LangGraph 多Agent Orchestrator】（路由+协调）
+   ├── Agent 1: 查询意图分类 + 安全过滤
+   ├── Agent 2: 本地知识库 RAG（你的历史病例核心）
+   ├── Agent 3: 外部搜索/最新指南 Agent（仅必要时触发）
+   ├── Agent 4: 证据合成 + 置信度评估 + Self-Check
+   └── Agent 5: 输出格式化 + 引用追踪
+          ↓
+知识层：
+   - 向量数据库（你的清洗数据 + 指南PDF）
+   - 结构化数据库（SQL/知识图谱）
+   - 可选多模态（影像）
+          ↓
+LLM 层（可切换）：
+   - 云端：Claude-3.5/4、GPT-4o、Qwen2.5-Max（推理强）
+   - 本地/混合：Llama-3.1-70B微调版 或 医疗专模型（隐私更好）

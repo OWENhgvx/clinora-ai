@@ -1,0 +1,1017 @@
+{"name": "A1C", "aliases": ["Glycohemoglobin", "HbA1C", "Hemoglobin A1C test", "Hemoglobin A1c"], "mesh_terms": ["Glycated Hemoglobin"]}
+{"name": "Abdominal Pain", "aliases": ["Bellyache", "Pain, Abdominal", "Stomach Ache"], "mesh_terms": ["Abdominal Pain"]}
+{"name": "Abortion", "aliases": ["Induced Abortion"], "mesh_terms": ["Abortion, Induced"]}
+{"name": "Abscess", "aliases": [], "mesh_terms": ["Abscess"]}
+{"name": "Acne", "aliases": ["Pimples", "Zits"], "mesh_terms": ["Acne Vulgaris"]}
+{"name": "Acoustic Neuroma", "aliases": ["Acoustic neurilemmoma", "Acoustic neurinoma", "Auditory tumor", "Vestibular schwannoma", "Auditory Tumor", "Neuroma, Acoustic", "Vestibular Schwannoma"], "mesh_terms": ["Neuroma, Acoustic"]}
+{"name": "Acupuncture", "aliases": [], "mesh_terms": ["Acupuncture Therapy"]}
+{"name": "Acute Bronchitis", "aliases": ["Bronchitis"], "mesh_terms": ["Bronchitis"]}
+{"name": "Acute Flaccid Myelitis", "aliases": ["AFM"], "mesh_terms": []}
+{"name": "Acute Lymphocytic Leukemia", "aliases": ["ALL", "Acute lymphoblastic leukemia", "Acute Lymphoblastic Leukemia", "Leukemia, Acute Lymphoblastic", "Leukemia, Acute Lymphocytic"], "mesh_terms": ["Leukemia, Lymphoid"]}
+{"name": "Acute Myeloid Leukemia", "aliases": ["AML", "ANLL", "Acute myelogenous leukemia", "Acute Myeloblastic Leukemia", "Leukemia, Myeloblastic, Acute", "Leukemia, Myelogenous, Acute", "Leukemia, Myeloid, Acute"], "mesh_terms": ["Leukemia, Myeloid, Acute"]}
+{"name": "Addison Disease", "aliases": ["Adrenocortical hypofunction", "Hypocortisolism", "Primary adrenal insufficiency", "Adrenal Insufficiency"], "mesh_terms": ["Addison Disease"]}
+{"name": "Adenoids", "aliases": ["Adenoidectomy"], "mesh_terms": ["Adenoidectomy", "Adenoids"]}
+{"name": "Adhesions", "aliases": ["Abdominal adhesions"], "mesh_terms": ["Tissue Adhesions"]}
+{"name": "Adrenal Gland Cancer", "aliases": [], "mesh_terms": ["Adrenal Gland Neoplasms"]}
+{"name": "Adrenal Gland Disorders", "aliases": ["Adrenal Insufficiency", "CAH", "Congenital Adrenal Hyperplasia"], "mesh_terms": ["Adrenal Gland Diseases"]}
+{"name": "Advance Directives", "aliases": ["Do-Not-Resuscitate Orders", "Living Wills", "Resuscitation Orders"], "mesh_terms": ["Advance Directives"]}
+{"name": "After Surgery", "aliases": ["Postoperative care", "Recovery from surgery", "Postoperative Care"], "mesh_terms": ["Postoperative Complications", "Postoperative Care"]}
+{"name": "Air Pollution", "aliases": ["Pollution"], "mesh_terms": ["Air Pollution"]}
+{"name": "Alcohol", "aliases": ["Drinking", "Alcohol Consumption"], "mesh_terms": ["Alcohol Drinking"]}
+{"name": "Alcohol Use Disorder (AUD)", "aliases": ["Alcohol abuse", "Alcohol dependence", "Alcoholism", "Alcohol Abuse", "Alcohol Dependence", "Alcohol Withdrawal", "Binge Drinking", "Drinking", "Substance Use"], "mesh_terms": ["Alcoholism"]}
+{"name": "Alcohol Use Disorder (AUD) Treatment", "aliases": ["Alcohol Abuse Treatment", "Alcoholism Treatment"], "mesh_terms": ["Alcohol-Related Disorders"]}
+{"name": "Allergy", "aliases": ["Hypersensitivity", "Allergic Rhinitis"], "mesh_terms": ["Hypersensitivity"]}
+{"name": "Alpha-1 Antitrypsin Deficiency", "aliases": ["AATD", "Alpha-1", "Inherited emphysema"], "mesh_terms": ["alpha 1-Antitrypsin Deficiency"]}
+{"name": "Alzheimer's Caregivers", "aliases": ["Caregivers for Alzheimer's Disease"], "mesh_terms": ["Caregivers", "Alzheimer Disease"]}
+{"name": "Alzheimer's Disease", "aliases": ["AD"], "mesh_terms": ["Alzheimer Vaccines", "Alzheimer Disease"]}
+{"name": "Amblyopia", "aliases": ["Lazy eye", "Lazy Eye"], "mesh_terms": ["Amblyopia"]}
+{"name": "Amino Acid Metabolism Disorders", "aliases": [], "mesh_terms": ["Amino Acid Metabolism, Inborn Errors"]}
+{"name": "Amyloidosis", "aliases": [], "mesh_terms": ["Amyloidosis"]}
+{"name": "Amyotrophic Lateral Sclerosis", "aliases": ["ALS", "Lou Gehrig's disease", "Lou Gehrig's Disease"], "mesh_terms": ["Amyotrophic Lateral Sclerosis"]}
+{"name": "Anabolic Steroids", "aliases": ["Anabolic-androgenic steroids", "Doping", "Performance-Enhancing Drugs", "Steroids, Anabolic"], "mesh_terms": ["Anabolic Agents"]}
+{"name": "Anal Cancer", "aliases": [], "mesh_terms": ["Anus Neoplasms"]}
+{"name": "Anal Disorders", "aliases": ["Anorectal diseases", "Pruritus Ani"], "mesh_terms": ["Anus Diseases"]}
+{"name": "Anaphylaxis", "aliases": ["Anaphylactic shock"], "mesh_terms": ["Anaphylaxis"]}
+{"name": "Anatomy", "aliases": [], "mesh_terms": ["Anatomy"]}
+{"name": "Anemia", "aliases": ["Iron poor blood", "Iron Deficiency Anemia"], "mesh_terms": ["Anemia"]}
+{"name": "Anesthesia", "aliases": [], "mesh_terms": ["Anesthesia"]}
+{"name": "Aneurysms", "aliases": [], "mesh_terms": ["Aneurysm"]}
+{"name": "Angina", "aliases": ["Syndrome X (Cardiac)"], "mesh_terms": ["Angina Pectoris"]}
+{"name": "Angioplasty", "aliases": ["Balloon angioplasty", "Coronary angioplasty", "Percutaneous coronary intervention (PCI)"], "mesh_terms": ["Angioplasty"]}
+{"name": "Animal Bites", "aliases": ["Cat bites", "Dog bites", "Cat Bites", "Dog Bites", "Snake Bites"], "mesh_terms": ["Bites and Stings"]}
+{"name": "Animal Diseases and Your Health", "aliases": ["Zoonoses", "Animal Health"], "mesh_terms": ["Zoonoses"]}
+{"name": "Ankle Injuries and Disorders", "aliases": [], "mesh_terms": ["Ankle Injuries", "Ankle Fractures"]}
+{"name": "Ankylosing Spondylitis", "aliases": ["Rheumatoid spondylitis", "Rheumatoid Spondylitis", "Spondylitis, Ankylosing"], "mesh_terms": ["Spondylitis, Ankylosing"]}
+{"name": "Anthrax", "aliases": [], "mesh_terms": ["Anthrax Vaccines", "Anthrax"]}
+{"name": "Antibiotic Resistance", "aliases": ["Antimicrobial Resistance", "VRE", "Vancomycin-Resistant Enterococci", "Vancomycin-Resistant Staphylococcus aureus"], "mesh_terms": ["Drug Resistance, Bacterial", "Drug Resistance, Microbial"]}
+{"name": "Antibiotics", "aliases": [], "mesh_terms": ["Anti-Bacterial Agents"]}
+{"name": "Antidepressants", "aliases": ["SSRIs", "Selective serotonin reuptake inhibitors", "Tricyclic antidepressants", "SNRI"], "mesh_terms": ["Antidepressive Agents"]}
+{"name": "Antioxidants", "aliases": [], "mesh_terms": ["Antioxidants"]}
+{"name": "Anxiety", "aliases": ["Generalized Anxiety Disorder"], "mesh_terms": ["Anxiety Disorders", "Anxiety"]}
+{"name": "Aortic Aneurysm", "aliases": ["AAA", "Abdominal Aortic Aneurysm", "Aortic Dissection", "TAA", "Thoracic Aortic Aneurysm"], "mesh_terms": ["Aortic Aneurysm"]}
+{"name": "Aphasia", "aliases": [], "mesh_terms": ["Aphasia"]}
+{"name": "Aplastic Anemia", "aliases": ["Fanconi Anemia"], "mesh_terms": ["Anemia, Aplastic"]}
+{"name": "Appendicitis", "aliases": [], "mesh_terms": ["Appendicitis"]}
+{"name": "Arm Injuries and Disorders", "aliases": [], "mesh_terms": ["Humeral Fractures", "Arm Injuries", "Ulna Fractures", "Radius Fractures", "Arm"]}
+{"name": "Arrhythmia", "aliases": ["Irregular heartbeat", "Bradycardia", "Irregular Heartbeat", "Multifocal Atrial Tachycardia", "Tachycardia"], "mesh_terms": ["Arrhythmias, Cardiac"]}
+{"name": "Arsenic", "aliases": [], "mesh_terms": ["Arsenic Poisoning", "Arsenic"]}
+{"name": "Arteriovenous Malformations", "aliases": ["AVM"], "mesh_terms": ["Arteriovenous Malformations"]}
+{"name": "Arthritis", "aliases": [], "mesh_terms": ["Arthritis"]}
+{"name": "Artificial Limbs", "aliases": ["Amputation", "Prosthetic Limbs"], "mesh_terms": ["Artificial Limbs"]}
+{"name": "Asbestos", "aliases": ["Asbestosis"], "mesh_terms": ["Asbestos", "Asbestosis"]}
+{"name": "Aspergillosis", "aliases": ["ABPA", "Allergic Bronchopulmonary Aspergillosis"], "mesh_terms": ["Aspergillosis"]}
+{"name": "Assisted Living", "aliases": ["Residential care", "Long-Term Care", "Residential Care"], "mesh_terms": ["Assisted Living Facilities"]}
+{"name": "Assisted Reproductive Technology", "aliases": ["ART", "IVF", "In Vitro Fertilization", "Egg Donation", "Gestational Carrier", "Sperm Donation", "Surrogate"], "mesh_terms": ["Reproductive Techniques, Assisted", "In Vitro Techniques"]}
+{"name": "Assistive Devices", "aliases": ["Assistive technology"], "mesh_terms": ["Self-Help Devices"]}
+{"name": "Asthma", "aliases": ["Bronchial Asthma"], "mesh_terms": ["Asthma"]}
+{"name": "Asthma in Children", "aliases": ["Childhood asthma", "Pediatric asthma", "Childhood Asthma"], "mesh_terms": ["Asthma"]}
+{"name": "Ataxia Telangiectasia", "aliases": [], "mesh_terms": ["Ataxia Telangiectasia"]}
+{"name": "Atherosclerosis", "aliases": ["Arteriosclerosis", "Hardening of the Arteries", "Plaque, Atherosclerotic"], "mesh_terms": ["Atherosclerosis"]}
+{"name": "Athlete's Foot", "aliases": ["Tinea pedis", "Tinea Pedis"], "mesh_terms": ["Tinea Pedis"]}
+{"name": "Atrial Fibrillation", "aliases": ["AF", "AFib"], "mesh_terms": ["Atrial Fibrillation"]}
+{"name": "Attention Deficit Hyperactivity Disorder", "aliases": ["ADHD", "ADD", "Hyperactivity"], "mesh_terms": ["Attention Deficit Disorder with Hyperactivity"]}
+{"name": "Autism Spectrum Disorder", "aliases": ["ASD", "Pervasive developmental disorder (PDD)", "Asperger Syndrome", "Autism", "Pervasive Developmental Disorder"], "mesh_terms": ["Autism Spectrum Disorder"]}
+{"name": "Autoimmune Diseases", "aliases": ["Autoinflammatory Diseases"], "mesh_terms": ["Autoimmune Diseases"]}
+{"name": "Autonomic Nervous System Disorders", "aliases": ["Dysautonomia", "Horner Syndrome", "Multiple System Atrophy", "Orthostatic Hypotension", "Postural Orthostatic Tachycardia Syndrome", "Shy-Drager Syndrome"], "mesh_terms": ["Autonomic Nervous System Diseases"]}
+{"name": "B Vitamins", "aliases": ["Biotin", "Cobalamin", "Niacin", "Pantothenic Acid", "Pyridoxine", "Riboflavin", "Thiamine", "Vitamin B"], "mesh_terms": ["Vitamin B Complex"]}
+{"name": "Baby Health Checkup", "aliases": [], "mesh_terms": ["Physical Examination"]}
+{"name": "Back Injuries", "aliases": [], "mesh_terms": ["Back Injuries"]}
+{"name": "Back Pain", "aliases": ["Backache", "Lumbago", "Low Back Pain", "Pain, Back"], "mesh_terms": ["Back Pain"]}
+{"name": "Bacterial Infections", "aliases": ["Flesh-Eating Bacteria", "Infections, Bacterial", "Necrotizing Fasciitis", "Q Fever"], "mesh_terms": ["Bacterial Infections"]}
+{"name": "Bad Breath", "aliases": ["Halitosis", "Breath Odor"], "mesh_terms": ["Halitosis"]}
+{"name": "Balance Problems", "aliases": [], "mesh_terms": ["Proprioception"]}
+{"name": "Barotrauma", "aliases": [], "mesh_terms": ["Barotrauma"]}
+{"name": "Bed Bugs", "aliases": [], "mesh_terms": ["Bedbugs"]}
+{"name": "Behcet's Syndrome", "aliases": ["Behcet's disease"], "mesh_terms": ["Behcet Syndrome"]}
+{"name": "Bell's Palsy", "aliases": [], "mesh_terms": ["Bell Palsy"]}
+{"name": "Benefits of Exercise", "aliases": ["Exercise Benefits"], "mesh_terms": ["Exercise"]}
+{"name": "Benign Tumors", "aliases": ["Benign neoplasms", "Noncancerous tumors", "Adenoma", "Hemangioma", "Tumors, Benign"], "mesh_terms": ["Papilloma", "Fibroma", "Adenoma", "Myoma", "Lipoma", "Neoplasms"]}
+{"name": "Bereavement", "aliases": ["Grief"], "mesh_terms": ["Bereavement"]}
+{"name": "Bile Duct Cancer", "aliases": ["Cholangiocarcinoma"], "mesh_terms": ["Bile Duct Neoplasms"]}
+{"name": "Bile Duct Diseases", "aliases": ["Biliary Cirrhosis", "Biliary Tract Diseases", "Cholangitis", "Cholestasis"], "mesh_terms": ["Bile Duct Diseases"]}
+{"name": "Biodefense and Bioterrorism", "aliases": ["Biological Weapons", "Bioterrorism", "Germ Warfare", "Man-Made Disasters", "Terrorist Attacks"], "mesh_terms": ["Bioterrorism", "Biological Warfare", "Chemical Warfare Agents", "Chemical Warfare"]}
+{"name": "Biopsy", "aliases": [], "mesh_terms": ["Biopsy"]}
+{"name": "Bipolar Disorder", "aliases": ["Manic depression", "Manic-depressive illness", "Bi-polar Disorder", "Manic-Depressive Illness"], "mesh_terms": ["Bipolar Disorder"]}
+{"name": "Bird Flu", "aliases": ["Avian flu", "Avian influenza", "H5N1", "H7N9", "Avian Influenza"], "mesh_terms": ["Influenza A Virus, H5N1 Subtype", "Influenza in Birds", "Influenza A Virus, H7N9 Subtype"]}
+{"name": "Birth Control", "aliases": ["Contraception", "Family Planning", "IUD"], "mesh_terms": ["Contraception"]}
+{"name": "Birth Defects", "aliases": ["Abnormalities"], "mesh_terms": ["Congenital Abnormalities"]}
+{"name": "Birth Weight", "aliases": ["Large for Gestational Age", "Low Birth Weight", "Small for Gestational Age"], "mesh_terms": ["Birth Weight"]}
+{"name": "Birthmarks", "aliases": ["Cafe au lait spot", "Hemangioma", "Mongolian spot", "Nevus", "Strawberry mark"], "mesh_terms": ["Nevus", "Hemangioma"]}
+{"name": "Bladder Cancer", "aliases": ["Urinary Bladder Cancer"], "mesh_terms": ["Urinary Bladder Neoplasms"]}
+{"name": "Bladder Diseases", "aliases": ["Neurogenic Bladder"], "mesh_terms": ["Urinary Bladder Diseases"]}
+{"name": "Bleeding", "aliases": ["Hematoma", "Hemorrhage"], "mesh_terms": ["Hemorrhage"]}
+{"name": "Bleeding Disorders", "aliases": ["Clotting disorders", "Blood Coagulation Disorders"], "mesh_terms": ["Blood Coagulation Disorders"]}
+{"name": "Blisters", "aliases": ["Bulla", "Vesicle"], "mesh_terms": ["Blister"]}
+{"name": "Blood", "aliases": ["ABO Blood Groups", "Blood Cells"], "mesh_terms": ["Blood"]}
+{"name": "Blood Clots", "aliases": ["Hypercoagulability", "Thrombophlebitis", "Venous Thrombosis"], "mesh_terms": ["Thrombosis"]}
+{"name": "Blood Count Tests", "aliases": ["CBC", "Complete Blood Count", "Hematologic Tests", "Blood Cells", "Blood Tests"], "mesh_terms": ["Blood Cell Count"]}
+{"name": "Blood Disorders", "aliases": ["Hematologic diseases", "Hematologic Disorders"], "mesh_terms": ["Hematologic Diseases"]}
+{"name": "Blood Glucose", "aliases": ["Blood sugar", "Blood Sugar", "Continuous Glucose Monitoring", "Glucose"], "mesh_terms": ["Blood Glucose"]}
+{"name": "Blood Pressure Medicines", "aliases": ["Antihypertensive medicines", "High blood pressure medicines", "Antihypertensive Medicines", "High Blood Pressure Medicines"], "mesh_terms": ["Antihypertensive Agents"]}
+{"name": "Blood Thinners", "aliases": ["Anti-platelet drugs", "Anticoagulants", "Anti-Platelet Drugs"], "mesh_terms": ["Heparin", "Warfarin", "Platelet Aggregation Inhibitors", "Anticoagulants"]}
+{"name": "Blood Transfusion and Donation", "aliases": ["Blood Donation", "Transfusion"], "mesh_terms": ["Blood Transfusion", "Blood Safety", "Blood Donors", "Transfusion Reaction"]}
+{"name": "Body Lice", "aliases": [], "mesh_terms": ["Lice Infestations", "Pediculus"]}
+{"name": "Body Weight", "aliases": ["BMI", "Overweight", "Underweight"], "mesh_terms": ["Body Weight Changes", "Body Weight"]}
+{"name": "Bone Cancer", "aliases": ["Ewing's Sarcoma", "Osteosarcoma", "Sarcoma, Ewing's"], "mesh_terms": ["Bone Neoplasms"]}
+{"name": "Bone Density", "aliases": ["Bone mass", "Bone Loss", "Osteopenia"], "mesh_terms": ["Bone Density"]}
+{"name": "Bone Diseases", "aliases": [], "mesh_terms": ["Bone Diseases"]}
+{"name": "Bone Grafts", "aliases": ["Bone Transplantation"], "mesh_terms": ["Bone Transplantation"]}
+{"name": "Bone Infections", "aliases": ["Osteomyelitis"], "mesh_terms": ["Bone Diseases, Infectious"]}
+{"name": "Bone Marrow Diseases", "aliases": ["Myeloproliferative Disorders"], "mesh_terms": ["Bone Marrow Diseases"]}
+{"name": "Bone Marrow Transplantation", "aliases": [], "mesh_terms": ["Bone Marrow Transplantation"]}
+{"name": "Botox", "aliases": ["Botulinum toxin type A", "Botulinum Toxin"], "mesh_terms": ["Botulinum Toxins, Type A"]}
+{"name": "Botulism", "aliases": ["Botulinum Toxin"], "mesh_terms": ["Botulism"]}
+{"name": "Bowel Incontinence", "aliases": ["Encopresis", "Fecal incontinence", "Stool soiling"], "mesh_terms": ["Encopresis"]}
+{"name": "Bowel Movement", "aliases": ["BM", "Feces", "Poop", "Stool"], "mesh_terms": ["Defecation", "Feces"]}
+{"name": "Brachial Plexus Injuries", "aliases": [], "mesh_terms": ["Brachial Plexus Neuropathies"]}
+{"name": "Brain Aneurysm", "aliases": ["Berry aneurysm", "Cerebral aneurysm", "Intracranial aneurysm", "Berry Aneurysm", "Cerebral Aneurysm", "Intracranial Aneurysm"], "mesh_terms": ["Intracranial Aneurysm"]}
+{"name": "Brain Diseases", "aliases": [], "mesh_terms": ["Brain Diseases"]}
+{"name": "Brain Malformations", "aliases": ["Cephalic disorders", "Cephalic Disorders"], "mesh_terms": ["Nervous System Malformations"]}
+{"name": "Brain Tumors", "aliases": ["Brain Cancer", "Glioma", "Meningioma"], "mesh_terms": ["Brain Neoplasms"]}
+{"name": "Breast Cancer", "aliases": ["Paget's Disease of Breast"], "mesh_terms": ["Carcinoma, Ductal, Breast", "Breast Neoplasms", "Hereditary Breast and Ovarian Cancer Syndrome", "Inflammatory Breast Neoplasms"]}
+{"name": "Breast Diseases", "aliases": ["Fibrocystic Breast Disease", "Gynecomastia"], "mesh_terms": ["Breast Diseases", "Mastitis", "Mastodynia", "Breast Cyst"]}
+{"name": "Breast Reconstruction", "aliases": ["Breast Implants", "Mammaplasty"], "mesh_terms": ["Mammaplasty", "Breast Implants"]}
+{"name": "Breastfeeding", "aliases": ["Lactation", "Nursing"], "mesh_terms": ["Breast Feeding"]}
+{"name": "Breathing Problems", "aliases": ["Dyspnea", "Shortness of Breath", "Tachypnea"], "mesh_terms": ["Tachypnea", "Dyspnea"]}
+{"name": "Bronchial Disorders", "aliases": ["Bronchiectasis", "Bronchiolitis"], "mesh_terms": ["Bronchial Diseases"]}
+{"name": "Bruises", "aliases": ["Contusion", "Ecchymoses", "Contusions"], "mesh_terms": ["Contusions"]}
+{"name": "Bullying and Cyberbullying", "aliases": [], "mesh_terms": ["Bullying", "Cyberbullying"]}
+{"name": "Burns", "aliases": [], "mesh_terms": ["Burns"]}
+{"name": "Bursitis", "aliases": [], "mesh_terms": ["Bursitis"]}
+{"name": "C. diff Infections", "aliases": ["Clostridioides difficile infections", "Clostridium difficile Infections", "Clostridium enterocolitis", "Pseudomembranous colitis", "Clostridium difficile infections"], "mesh_terms": ["Clostridioides difficile", "Enterocolitis, Pseudomembranous"]}
+{"name": "Caffeine", "aliases": ["Energy Drinks"], "mesh_terms": ["Caffeine"]}
+{"name": "Calcium", "aliases": ["Hypercalcemia", "Hypocalcemia"], "mesh_terms": ["Calcium, Dietary"]}
+{"name": "Campylobacter Infections", "aliases": [], "mesh_terms": ["Campylobacter Infections"]}
+{"name": "Cancer", "aliases": ["Carcinoma", "Malignancy", "Neoplasms", "Tumor", "Oncology"], "mesh_terms": ["Neoplasms"]}
+{"name": "Cancer Alternative Therapies", "aliases": ["Alternative Therapy for Cancer"], "mesh_terms": ["Complementary Therapies", "Neoplasms"]}
+{"name": "Cancer Chemotherapy", "aliases": ["Chemotherapy"], "mesh_terms": ["Antineoplastic Agents", "Neoplasms"]}
+{"name": "Cancer Immunotherapy", "aliases": [], "mesh_terms": ["Neoplasms", "Immunotherapy"]}
+{"name": "Cancer in Children", "aliases": ["Childhood Cancer"], "mesh_terms": ["Neoplasms"]}
+{"name": "Cancer--Living with Cancer", "aliases": ["Living with Cancer"], "mesh_terms": ["Cancer Survivors", "Neoplasms"]}
+{"name": "Canker Sores", "aliases": ["Aphthous ulcers", "Aphthous Ulcers"], "mesh_terms": ["Stomatitis, Aphthous"]}
+{"name": "Carbohydrate Metabolism Disorders", "aliases": ["Mucopolysaccharidoses"], "mesh_terms": ["Carbohydrate Metabolism, Inborn Errors"]}
+{"name": "Carbohydrates", "aliases": ["Carbs", "Corn Syrup", "Sugar", "Sugar Substitutes", "Sweeteners, Artificial"], "mesh_terms": ["Dietary Carbohydrates"]}
+{"name": "Carbon Monoxide Poisoning", "aliases": ["CO poisoning", "CO Poisoning"], "mesh_terms": ["Carbon Monoxide Poisoning"]}
+{"name": "Carcinoid Tumors", "aliases": [], "mesh_terms": ["Carcinoid Tumor"]}
+{"name": "Cardiac Rehabilitation", "aliases": ["Heart Diseases--Rehabilitation"], "mesh_terms": ["Cardiac Rehabilitation"]}
+{"name": "Cardiomyopathy", "aliases": ["Arrhythmogenic right ventricular cardiomyopathy", "Dilated cardiomyopathy", "Hypertrophic cardiomyopathy", "Myocardiopathy", "Restrictive cardiomyopathy"], "mesh_terms": ["Cardiomyopathies"]}
+{"name": "Caregiver Health", "aliases": ["Caring for the caregiver"], "mesh_terms": ["Caregivers"]}
+{"name": "Caregivers", "aliases": [], "mesh_terms": ["Caregivers"]}
+{"name": "Carotid Artery Disease", "aliases": ["Carotid Endarterectomy"], "mesh_terms": ["Carotid Artery Diseases"]}
+{"name": "Carpal Tunnel Syndrome", "aliases": ["Median nerve entrapment"], "mesh_terms": ["Carpal Tunnel Syndrome"]}
+{"name": "Cartilage Disorders", "aliases": ["Costochondritis", "Polychondritis"], "mesh_terms": ["Cartilage Diseases"]}
+{"name": "Cat Scratch Disease", "aliases": ["CSD", "Cat scratch fever"], "mesh_terms": ["Cat-Scratch Disease"]}
+{"name": "Cataract", "aliases": ["Artificial Lens", "Intraocular Lens"], "mesh_terms": ["Cataract"]}
+{"name": "Celiac Disease", "aliases": ["Celiac sprue", "Gluten-sensitive enteropathy", "Nontropical sprue", "Gluten Intolerance", "Gluten-Sensitive Enteropathy", "Nontropical Sprue"], "mesh_terms": ["Celiac Disease"]}
+{"name": "Cellulitis", "aliases": [], "mesh_terms": ["Cellulitis"]}
+{"name": "Cerebellar Disorders", "aliases": ["Ataxia", "Dandy-Walker Syndrome"], "mesh_terms": ["Cerebellar Diseases"]}
+{"name": "Cerebral Palsy", "aliases": ["CP"], "mesh_terms": ["Cerebral Palsy"]}
+{"name": "Cervical Cancer", "aliases": [], "mesh_terms": ["Uterine Cervical Neoplasms"]}
+{"name": "Cervical Cancer Screening", "aliases": [], "mesh_terms": ["Papanicolaou Test", "Human Papillomavirus DNA Tests", "Vaginal Smears"]}
+{"name": "Cervix Disorders", "aliases": ["Cervical Dysplasia", "Uterine Cervix Disorders"], "mesh_terms": ["Uterine Cervical Diseases"]}
+{"name": "Cesarean Delivery", "aliases": ["C-section", "Cesarean section", "C-Section"], "mesh_terms": ["Cesarean Section"]}
+{"name": "Chagas Disease", "aliases": ["American trypanosomiasis", "South American trypanosomiasis", "South American Trypanosomiasis"], "mesh_terms": ["Chagas Disease"]}
+{"name": "Charcot-Marie-Tooth Disease", "aliases": ["Hereditary motor and sensory neuropathy", "Peroneal muscular atrophy"], "mesh_terms": ["Charcot-Marie-Tooth Disease"]}
+{"name": "Chemical Emergencies", "aliases": ["Chemical Warfare", "Chemical Weapons", "Man-Made Disasters"], "mesh_terms": ["Chemical Terrorism", "Chemical Warfare Agents", "Chemical Warfare"]}
+{"name": "Chest Injuries and Disorders", "aliases": ["Mediastinal Disorders", "Rib Injuries", "Thoracic Injuries"], "mesh_terms": ["Rib Fractures", "Thoracic Injuries", "Thoracic Diseases"]}
+{"name": "Chest Pain", "aliases": ["Pain, Chest"], "mesh_terms": ["Chest Pain"]}
+{"name": "Chiari Malformation", "aliases": ["Arnold-Chiari Malformation"], "mesh_terms": ["Arnold-Chiari Malformation"]}
+{"name": "Chickenpox", "aliases": ["Varicella", "Varicella-Zoster Virus"], "mesh_terms": ["Chickenpox"]}
+{"name": "Chikungunya", "aliases": [], "mesh_terms": ["Chikungunya Fever", "Chikungunya virus"]}
+{"name": "Child Abuse", "aliases": ["Abuse", "Shaken Baby Syndrome", "Violence"], "mesh_terms": ["Child Abuse"]}
+{"name": "Child Behavior Disorders", "aliases": ["Conduct disorders", "Conduct Disorder"], "mesh_terms": ["Adolescent Behavior", "Child Behavior Disorders"]}
+{"name": "Child Dental Health", "aliases": ["Dental Health, Child", "Dental Sealants", "Oral Health, Child"], "mesh_terms": ["Dental Care for Children"]}
+{"name": "Child Development", "aliases": [], "mesh_terms": ["Child Development"]}
+{"name": "Child Mental Health", "aliases": ["Mental Health, Child"], "mesh_terms": ["Mental Disorders", "Mental Health", "Psychology, Child", "Child Psychiatry"]}
+{"name": "Child Nutrition", "aliases": ["Nutrition, Child", "Teen Nutrition"], "mesh_terms": ["Child Nutrition Disorders", "Adolescent Nutritional Physiological Phenomena", "Child Nutritional Physiological Phenomena"]}
+{"name": "Child Safety", "aliases": ["Safety, Child"], "mesh_terms": ["Safety"]}
+{"name": "Child Sexual Abuse", "aliases": ["Child Molestation", "Sexual Abuse of Children"], "mesh_terms": ["Child Abuse, Sexual"]}
+{"name": "Childbirth", "aliases": ["Delivery", "Labor"], "mesh_terms": ["Labor, Obstetric", "Delivery, Obstetric"]}
+{"name": "Childbirth Problems", "aliases": ["Birth Injuries", "Premature Labor"], "mesh_terms": ["Obstetric Labor Complications"]}
+{"name": "Childhood Brain Tumors", "aliases": [], "mesh_terms": ["Brain Neoplasms"]}
+{"name": "Childhood Leukemia", "aliases": ["Leukemia, Childhood"], "mesh_terms": ["Leukemia"]}
+{"name": "Childhood Vaccines", "aliases": ["Shots", "Immunization, Childhood", "Vaccination"], "mesh_terms": ["Immunization"]}
+{"name": "Children's Health", "aliases": ["Pediatrics"], "mesh_terms": ["Pediatrics", "Child Health", "Child Health Services", "Child, Hospitalized", "Child Welfare"]}
+{"name": "Chiropractic", "aliases": [], "mesh_terms": ["Chiropractic", "Manipulation, Chiropractic"]}
+{"name": "Chlamydia Infections", "aliases": [], "mesh_terms": ["Chlamydia Infections"]}
+{"name": "Choking", "aliases": ["Heimlich Maneuver"], "mesh_terms": ["Airway Obstruction"]}
+{"name": "Cholera", "aliases": [], "mesh_terms": ["Cholera"]}
+{"name": "Cholesterol", "aliases": ["Hypercholesterolemia", "Hyperlipidemia", "Hyperlipoproteinemia", "Familial Combined Hyperlipidemia", "Familial Dysbetalipoproteinemia", "Familial Hypercholesterolemia"], "mesh_terms": ["Cholesterol", "Hypercholesterolemia"]}
+{"name": "Cholesterol Levels: What You Need to Know", "aliases": ["Familial Combined Hyperlipidemia", "Familial Dysbetalipoproteinemia", "Familial Hypercholesterolemia", "Hypercholesterolemia", "Hyperlipidemia"], "mesh_terms": ["Cholesterol", "Hypercholesterolemia"]}
+{"name": "Cholesterol Medicines", "aliases": [], "mesh_terms": ["Nicotinic Acids", "Hydroxymethylglutaryl-CoA Reductase Inhibitors", "Fibric Acids", "Hypolipidemic Agents", "Hypercholesterolemia", "Ezetimibe"]}
+{"name": "Choosing a Doctor or Health Care Service", "aliases": [], "mesh_terms": ["Delivery of Health Care", "Physician-Patient Relations"]}
+{"name": "Chronic Bronchitis", "aliases": ["Bronchitis"], "mesh_terms": ["Bronchitis, Chronic"]}
+{"name": "Chronic Kidney Disease", "aliases": ["CKD"], "mesh_terms": ["Renal Insufficiency, Chronic"]}
+{"name": "Chronic Lymphocytic Leukemia", "aliases": ["CLL", "Leukemia, Chronic Lymphocytic"], "mesh_terms": ["Leukemia, Lymphoid"]}
+{"name": "Chronic Myeloid Leukemia", "aliases": ["CML", "Chronic granulocytic leukemia", "Chronic myelogenous leukemia", "Chronic Granulocytic Leukemia", "Chronic Myelogenous Leukemia", "Leukemia, Myeloid, Chronic"], "mesh_terms": ["Leukemia, Myelogenous, Chronic, BCR-ABL Positive", "Leukemia, Myeloid, Chronic, Atypical, BCR-ABL Negative"]}
+{"name": "Chronic Pain", "aliases": ["Pain, Chronic"], "mesh_terms": ["Chronic Pain"]}
+{"name": "Circumcision", "aliases": [], "mesh_terms": ["Circumcision, Male"]}
+{"name": "Cirrhosis", "aliases": ["Hepatic fibrosis", "Liver Cirrhosis"], "mesh_terms": ["Liver Cirrhosis"]}
+{"name": "Cleaning, Disinfecting, and Sanitizing", "aliases": [], "mesh_terms": ["Disinfection"]}
+{"name": "Cleft Lip and Palate", "aliases": ["Cleft Palate"], "mesh_terms": ["Cleft Lip", "Cleft Palate"]}
+{"name": "Climate Change", "aliases": ["Global Warming"], "mesh_terms": ["Climate Change"]}
+{"name": "Clinical Trials", "aliases": [], "mesh_terms": ["Clinical Trials as Topic"]}
+{"name": "Cloning", "aliases": [], "mesh_terms": ["Cloning, Organism"]}
+{"name": "Club Drugs", "aliases": ["Party drugs", "Amphetamines", "Ecstasy", "GHB", "Hallucinogens", "Ketamine", "LSD", "MDMA", "Party Drugs", "Rohypnol"], "mesh_terms": ["Flunitrazepam", "Ketamine", "N-Methyl-3,4-methylenedioxyamphetamine", "Sodium Oxybate"]}
+{"name": "Cocaine", "aliases": ["Blow", "Coca", "Coke", "Crack", "Flake", "Snow", "Soda Cot"], "mesh_terms": ["Cocaine-Related Disorders", "Cocaine Smoking"]}
+{"name": "Cochlear Implants", "aliases": [], "mesh_terms": ["Cochlear Implants"]}
+{"name": "Cold and Cough Medicines", "aliases": ["Cough Medicines"], "mesh_terms": ["Expectorants", "Multi-Ingredient Cold, Flu, and Allergy Medications", "Nasal Decongestants", "Antitussive Agents", "Histamine Antagonists"]}
+{"name": "Cold Sores", "aliases": ["Fever blister", "Oral herpes", "Fever Blister", "Herpes, Oral", "Oral Herpes"], "mesh_terms": ["Herpes Labialis"]}
+{"name": "Collapsed Lung", "aliases": ["Atelectasis", "Pneumothorax"], "mesh_terms": ["Pulmonary Atelectasis", "Pneumothorax"]}
+{"name": "College Health", "aliases": [], "mesh_terms": ["Universities", "Students"]}
+{"name": "Colonic Diseases", "aliases": ["Large intestine diseases", "Intestinal Diseases"], "mesh_terms": ["Colonic Diseases"]}
+{"name": "Colonic Polyps", "aliases": ["Colon polyps"], "mesh_terms": ["Colonic Polyps"]}
+{"name": "Colonoscopy", "aliases": ["Sigmoidoscopy"], "mesh_terms": ["Colonoscopy"]}
+{"name": "Color Blindness", "aliases": [], "mesh_terms": ["Color Vision Defects"]}
+{"name": "Colorectal Cancer", "aliases": ["Colon cancer", "Rectal cancer", "Colon Cancer", "Rectal Cancer"], "mesh_terms": ["Colorectal Neoplasms"]}
+{"name": "Coma", "aliases": ["Persistent Vegetative State"], "mesh_terms": ["Coma", "Persistent Vegetative State"]}
+{"name": "Common Cold", "aliases": ["Cold, Common"], "mesh_terms": ["Common Cold"]}
+{"name": "Common Infant and Newborn Problems", "aliases": ["Colic", "Diaper Rash"], "mesh_terms": ["Infant, Newborn, Diseases"]}
+{"name": "Complementary and Integrative Medicine", "aliases": ["CAM", "Alternative Medicine", "Homeopathy", "Integrative Medicine"], "mesh_terms": ["Complementary Therapies"]}
+{"name": "Complex Regional Pain Syndrome", "aliases": ["CRPS", "Causalgia", "Reflex sympathetic dystrophy", "Reflex Sympathetic Dystrophy"], "mesh_terms": ["Complex Regional Pain Syndromes"]}
+{"name": "Compulsive Gambling", "aliases": ["Gambling addiction", "Gambling", "Pathological Gambling"], "mesh_terms": ["Gambling"]}
+{"name": "Concussion", "aliases": ["Brain concussion", "Brain Concussion", "Brain Injury"], "mesh_terms": ["Brain Concussion"]}
+{"name": "Congenital Heart Defects", "aliases": ["Heart Defects", "Heart Diseases, Congenital", "Heart Murmur"], "mesh_terms": ["Heart Defects, Congenital"]}
+{"name": "Connective Tissue Disorders", "aliases": ["Mixed Connective Tissue Disease", "PXE"], "mesh_terms": ["Connective Tissue Diseases"]}
+{"name": "Constipation", "aliases": [], "mesh_terms": ["Constipation"]}
+{"name": "COPD", "aliases": ["Chronic Obstructive Pulmonary Disease"], "mesh_terms": ["Pulmonary Disease, Chronic Obstructive"]}
+{"name": "Coping with Chronic Illness", "aliases": ["Chronic Illness, Coping"], "mesh_terms": ["Chronic Disease"]}
+{"name": "Coping with Disasters", "aliases": [], "mesh_terms": ["Disasters", "Adaptation, Psychological"]}
+{"name": "Corneal Disorders", "aliases": [], "mesh_terms": ["Corneal Injuries", "Corneal Diseases"]}
+{"name": "Corns and Calluses", "aliases": ["Calluses"], "mesh_terms": ["Callosities"]}
+{"name": "Coronary Artery Bypass Surgery", "aliases": ["Bypass surgery", "CABG", "Coronary artery bypass graft", "Bypass Surgery", "Coronary Artery Bypass Graft"], "mesh_terms": ["Coronary Artery Bypass"]}
+{"name": "Coronary Artery Disease", "aliases": ["CAD", "Coronary arteriosclerosis", "Coronary atherosclerosis", "Coronary heart disease", "Arteriosclerosis, Coronary", "Atherosclerosis, Coronary", "Coronary Arteriosclerosis"], "mesh_terms": ["Coronary Artery Disease"]}
+{"name": "Cosmetics", "aliases": ["Makeup"], "mesh_terms": ["Cosmetics"]}
+{"name": "Cough", "aliases": [], "mesh_terms": ["Cough"]}
+{"name": "COVID-19 (Coronavirus Disease 2019)", "aliases": ["COVID-19", "Coronavirus"], "mesh_terms": ["COVID-19"]}
+{"name": "COVID-19 Testing", "aliases": ["COVID-19 Antibody Test", "COVID-19 Viral Test", "SARS-CoV-2 Testing"], "mesh_terms": ["COVID-19 Testing"]}
+{"name": "COVID-19 Vaccines", "aliases": [], "mesh_terms": ["COVID-19 Vaccines"]}
+{"name": "CPR", "aliases": ["Cardiopulmonary resuscitation", "Cardiopulmonary Resuscitation"], "mesh_terms": ["Cardiopulmonary Resuscitation"]}
+{"name": "Craniofacial Abnormalities", "aliases": ["Craniosynostosis", "Positional Plagiocephaly", "Treacher-Collins Syndrome"], "mesh_terms": ["Craniofacial Abnormalities"]}
+{"name": "Creutzfeldt-Jakob Disease", "aliases": ["CJD", "BSE", "Bovine Spongiform Encephalopathy", "Jakob-Creutzfeldt Disease", "Mad Cow Disease", "Prion Diseases", "vCJD"], "mesh_terms": ["Creutzfeldt-Jakob Syndrome"]}
+{"name": "Critical Care", "aliases": ["ICU", "Intensive care", "Assisted Breathing", "Life Support", "Tracheostomy", "Ventilators"], "mesh_terms": ["Critical Care"]}
+{"name": "Crohn's Disease", "aliases": ["Regional enteritis", "Regional ileitis", "Ileocolitis", "Inflammatory Bowel Disease", "Regional Enteritis", "Regional Ileitis"], "mesh_terms": ["Crohn Disease"]}
+{"name": "Croup", "aliases": ["Spasmodic croup", "Viral croup"], "mesh_terms": ["Croup"]}
+{"name": "Cryptosporidiosis", "aliases": ["Crypto"], "mesh_terms": ["Cryptosporidiosis"]}
+{"name": "CT Scans", "aliases": ["CAT scan", "CAT Scans"], "mesh_terms": ["Tomography, X-Ray Computed"]}
+{"name": "Cushing's Syndrome", "aliases": ["Hypercortisolism"], "mesh_terms": ["Cushing Syndrome"]}
+{"name": "Cystic Fibrosis", "aliases": ["CF"], "mesh_terms": ["Cystic Fibrosis"]}
+{"name": "Cytomegalovirus Infections", "aliases": ["CMV", "CMV Infections"], "mesh_terms": ["Cytomegalovirus Infections"]}
+{"name": "Dandruff, Cradle Cap, and Other Scalp Conditions", "aliases": ["Seborrhea", "Seborrheic Dermatitis"], "mesh_terms": ["Scalp Dermatoses", "Dermatitis, Seborrheic", "Dandruff"]}
+{"name": "DASH Eating Plan", "aliases": ["DASH Diet", "Dietary Approaches to Stop Hypertension"], "mesh_terms": ["Dietary Approaches To Stop Hypertension"]}
+{"name": "Deep Vein Thrombosis", "aliases": ["DVT", "Venous Thrombosis"], "mesh_terms": ["Venous Thrombosis"]}
+{"name": "Degenerative Nerve Diseases", "aliases": ["Neurodegenerative diseases", "Ataxia", "Neurodegenerative Diseases", "Prion Diseases"], "mesh_terms": ["Neurodegenerative Diseases"]}
+{"name": "Dehydration", "aliases": ["Thirst"], "mesh_terms": ["Dehydration"]}
+{"name": "Delirium", "aliases": [], "mesh_terms": ["Delirium"]}
+{"name": "Dementia", "aliases": ["Senility"], "mesh_terms": ["Dementia"]}
+{"name": "Dengue", "aliases": ["Break-bone fever", "Dengue fever", "Break-bone Fever"], "mesh_terms": ["Dengue"]}
+{"name": "Dental Health", "aliases": ["Oral health", "Oral Health"], "mesh_terms": ["Oral Hygiene", "Dental Care", "Oral Health"]}
+{"name": "Dentures", "aliases": ["False teeth", "Dental Implants", "False Teeth"], "mesh_terms": ["Dentures"]}
+{"name": "Depression", "aliases": ["Clinical depression", "Dysthymic disorder", "Major depressive disorder", "Unipolar depression", "Dysthymic Disorder"], "mesh_terms": ["Depression"]}
+{"name": "Developmental Disabilities", "aliases": ["Mental Retardation"], "mesh_terms": ["Developmental Disabilities"]}
+{"name": "Diabetes", "aliases": ["DM", "Diabetes mellitus", "Diabetes Mellitus", "Sugar Diabetes"], "mesh_terms": ["Diabetes Mellitus"]}
+{"name": "Diabetes and Pregnancy", "aliases": ["Gestational diabetes", "Gestational Diabetes", "Pregnancy and Diabetes"], "mesh_terms": ["Pregnancy in Diabetics"]}
+{"name": "Diabetes Complications", "aliases": ["Diabetic complications"], "mesh_terms": ["Diabetes Complications"]}
+{"name": "Diabetes in Children and Teens", "aliases": ["Children and Diabetes", "Teens and Diabetes"], "mesh_terms": ["Diabetes Mellitus"]}
+{"name": "Diabetes Insipidus", "aliases": ["DI"], "mesh_terms": ["Diabetes Insipidus"]}
+{"name": "Diabetes Medicines", "aliases": ["Hypoglycemic Medicines", "Insulin"], "mesh_terms": ["Insulins", "Hypoglycemic Agents", "Insulin"]}
+{"name": "Diabetes Type 1", "aliases": ["Insulin-dependent diabetes", "Juvenile diabetes", "Type I diabetes", "Insulin-Dependent Diabetes Mellitus", "Juvenile Diabetes", "Type 1 Diabetes"], "mesh_terms": ["Diabetes Mellitus, Type 1"]}
+{"name": "Diabetes Type 2", "aliases": ["Type 2 Diabetes", "Non-Insulin Dependent Diabetes Mellitus", "Sugar Diabetes", "Type II Diabetes"], "mesh_terms": ["Diabetes Mellitus, Type 2"]}
+{"name": "Diabetic Diet", "aliases": ["Diabetic meal plan"], "mesh_terms": ["Diet, Diabetic"]}
+{"name": "Diabetic Eye Problems", "aliases": ["Diabetic retinopathy", "Diabetic Retinopathy"], "mesh_terms": ["Diabetic Retinopathy"]}
+{"name": "Diabetic Foot", "aliases": [], "mesh_terms": ["Diabetic Foot"]}
+{"name": "Diabetic Heart Disease", "aliases": [], "mesh_terms": ["Diabetes Mellitus", "Heart Diseases", "Diabetic Cardiomyopathies"]}
+{"name": "Diabetic Kidney Problems", "aliases": ["Diabetic nephropathy", "Diabetic Nephropathy"], "mesh_terms": ["Diabetic Nephropathies"]}
+{"name": "Diabetic Nerve Problems", "aliases": ["Diabetic neuropathy", "Neuropathy"], "mesh_terms": ["Diabetic Neuropathies"]}
+{"name": "Diagnostic Imaging", "aliases": ["Imaging"], "mesh_terms": ["Diagnostic Imaging"]}
+{"name": "Dialysis", "aliases": ["Renal dialysis", "Hemodialysis", "Peritoneal Dialysis", "Renal Dialysis"], "mesh_terms": ["Renal Dialysis"]}
+{"name": "Diarrhea", "aliases": ["Dysentery", "The runs", "The trots"], "mesh_terms": ["Diarrhea"]}
+{"name": "Dietary Fats", "aliases": ["Lipids", "Monounsaturated fat", "Polyunsaturated fat", "Saturated fat", "Fats, Dietary", "Omega-3 Fatty Acids", "Trans Fats"], "mesh_terms": ["Dietary Fats"]}
+{"name": "Dietary Fiber", "aliases": ["Bulk", "Roughage", "Fiber"], "mesh_terms": ["Dietary Fiber"]}
+{"name": "Dietary Proteins", "aliases": ["Proteins"], "mesh_terms": ["Dietary Proteins"]}
+{"name": "Dietary Supplements", "aliases": ["Trace Elements"], "mesh_terms": ["Dietary Supplements"]}
+{"name": "Diets", "aliases": ["Dieting", "Weight-Loss Diet"], "mesh_terms": ["Diet, Reducing"]}
+{"name": "Digestive Diseases", "aliases": ["Gastrointestinal diseases", "Gastrointestinal Diseases"], "mesh_terms": ["Digestive System Diseases"]}
+{"name": "Diphtheria", "aliases": [], "mesh_terms": ["Diphtheria"]}
+{"name": "Disabilities", "aliases": [], "mesh_terms": ["Health Services for Persons with Disabilities", "Persons with Disabilities"]}
+{"name": "Disaster Preparation and Recovery", "aliases": ["Emergency Preparedness"], "mesh_terms": ["Rescue Work", "Disasters", "Disaster Planning", "Disaster Victims", "Relief Work"]}
+{"name": "Dislocated Shoulder", "aliases": ["Shoulder Dislocation"], "mesh_terms": ["Shoulder Dislocation"]}
+{"name": "Dislocations", "aliases": [], "mesh_terms": ["Joint Dislocations"]}
+{"name": "Diverticulosis and Diverticulitis", "aliases": ["Diverticular disease", "Diverticulitis"], "mesh_terms": ["Diverticulum, Colon", "Diverticulitis, Colonic", "Diverticular Diseases", "Diverticulosis, Colonic"]}
+{"name": "Dizziness and Vertigo", "aliases": ["Vertigo", "Vestibular Diseases"], "mesh_terms": ["Vertigo", "Dizziness", "Benign Paroxysmal Positional Vertigo"]}
+{"name": "Down Syndrome", "aliases": ["Trisomy 21"], "mesh_terms": ["Down Syndrome"]}
+{"name": "Drinking Water", "aliases": ["Water"], "mesh_terms": ["Drinking Water"]}
+{"name": "Drowning", "aliases": [], "mesh_terms": ["Drowning"]}
+{"name": "Drug Reactions", "aliases": ["Side effects", "Drug Allergies", "Drug Interactions"], "mesh_terms": ["Drug-Related Side Effects and Adverse Reactions", "Drug Hypersensitivity", "Metabolic Side Effects of Drugs and Substances", "Chemical and Drug Induced Liver Injury", "Drug Interactions"]}
+{"name": "Drug Safety", "aliases": [], "mesh_terms": ["Drug and Narcotic Control", "Counterfeit Drugs"]}
+{"name": "Drug Use and Addiction", "aliases": ["Drug abuse", "Substance Use", "Drug Abuse", "Hallucinogens", "Illegal Drugs"], "mesh_terms": ["Drug Misuse", "Substance-Related Disorders"]}
+{"name": "Drugs and Young People", "aliases": ["Adolescent drug use", "Adolescent Drug Use", "Substance Use", "Teen Drug Abuse"], "mesh_terms": ["Substance-Related Disorders"]}
+{"name": "Dry Mouth", "aliases": ["Xerostomia"], "mesh_terms": ["Xerostomia"]}
+{"name": "Dual Diagnosis", "aliases": [], "mesh_terms": ["Diagnosis, Dual (Psychiatry)"]}
+{"name": "Dwarfism", "aliases": ["Little person", "Achondroplasia"], "mesh_terms": ["Dwarfism"]}
+{"name": "Dystonia", "aliases": ["Spasmodic Torticollis", "Torticollis"], "mesh_terms": ["Dystonia"]}
+{"name": "E-Cigarettes", "aliases": ["E-Cigs", "Electronic Cigarettes", "Personal Vaporizer", "Vaping"], "mesh_terms": ["Electronic Nicotine Delivery Systems"]}
+{"name": "E. coli Infections", "aliases": ["Escherichia coli"], "mesh_terms": ["Escherichia coli Infections"]}
+{"name": "Ear Disorders", "aliases": [], "mesh_terms": ["Ear Diseases"]}
+{"name": "Ear Infections", "aliases": ["Otitis media", "Otitis Media", "Swimmer's Ear"], "mesh_terms": ["Otitis Media"]}
+{"name": "Earthquakes", "aliases": ["Natural Disasters"], "mesh_terms": ["Earthquakes"]}
+{"name": "Eating Disorders", "aliases": ["Anorexia nervosa", "Binge eating", "Bulimia", "Anorexia Nervosa", "Binge Eating", "Pica"], "mesh_terms": ["Feeding and Eating Disorders"]}
+{"name": "Ebola", "aliases": ["Ebola disease", "Ebola hemorrhagic fever", "Ebola virus disease"], "mesh_terms": ["Ebolavirus", "Ebola Vaccines", "Hemorrhagic Fever, Ebola"]}
+{"name": "Ectopic Pregnancy", "aliases": ["Abdominal pregnancy", "Tubal pregnancy", "Abdominal Pregnancy", "Cervical Pregnancy", "Tubal Pregnancy"], "mesh_terms": ["Pregnancy, Ectopic"]}
+{"name": "Eczema", "aliases": ["Dermatitis", "Atopic Dermatitis"], "mesh_terms": ["Eczema"]}
+{"name": "Edema", "aliases": ["Dropsy", "Swelling"], "mesh_terms": ["Edema"]}
+{"name": "Ehlers-Danlos Syndrome", "aliases": ["Cutis elastica", "EDS", "Hypermobility Syndrome"], "mesh_terms": ["Ehlers-Danlos Syndrome"]}
+{"name": "Elbow Injuries and Disorders", "aliases": ["Cubital Tunnel Syndrome", "Tennis Elbow"], "mesh_terms": ["Elbow Injuries", "Tennis Elbow"]}
+{"name": "Elder Abuse", "aliases": ["Abuse", "Violence"], "mesh_terms": ["Elder Abuse"]}
+{"name": "Electrical Injuries", "aliases": ["Electric shock", "Electrical burn", "Lightning Strikes"], "mesh_terms": ["Burns, Electric", "Electric Injuries"]}
+{"name": "Electromagnetic Fields", "aliases": ["EMFs", "Cell Phones", "EMF"], "mesh_terms": ["Electromagnetic Fields"]}
+{"name": "Emergency Medical Services", "aliases": [], "mesh_terms": ["Emergency Medical Services"]}
+{"name": "Emphysema", "aliases": ["Pulmonary emphysema", "Pulmonary Emphysema"], "mesh_terms": ["Pulmonary Emphysema", "Emphysema"]}
+{"name": "Encephalitis", "aliases": [], "mesh_terms": ["Encephalitis"]}
+{"name": "End of Life Issues", "aliases": ["Death and dying", "Terminal care", "Death and Dying", "Terminal Care"], "mesh_terms": ["Death"]}
+{"name": "Endocarditis", "aliases": [], "mesh_terms": ["Endocarditis"]}
+{"name": "Endocrine Diseases", "aliases": ["Multiple Endocrine Neoplasia"], "mesh_terms": ["Endocrine System Diseases"]}
+{"name": "Endometriosis", "aliases": ["Endo", "Adenomyosis"], "mesh_terms": ["Endometriosis"]}
+{"name": "Endoscopy", "aliases": [], "mesh_terms": ["Endoscopy"]}
+{"name": "Enlarged Prostate (BPH)", "aliases": ["benign prostatic hyperplasia", "BPH", "Benign Prostatic Hypertrophy"], "mesh_terms": ["Prostatic Hyperplasia"]}
+{"name": "Environmental Health", "aliases": [], "mesh_terms": ["Environmental Health"]}
+{"name": "Eosinophilic Disorders", "aliases": ["Eosinophilia", "Churg-Strauss Syndrome", "Hypereosinophilic Syndrome"], "mesh_terms": ["Eosinophilia"]}
+{"name": "Eosinophilic Esophagitis", "aliases": ["EoE"], "mesh_terms": ["Eosinophilic Esophagitis"]}
+{"name": "Epilepsy", "aliases": [], "mesh_terms": ["Epilepsy"]}
+{"name": "Erectile Dysfunction", "aliases": ["ED", "Impotence"], "mesh_terms": ["Erectile Dysfunction"]}
+{"name": "Ergonomics", "aliases": ["Repetitive Motion Injuries"], "mesh_terms": ["Ergonomics"]}
+{"name": "Esophageal Cancer", "aliases": [], "mesh_terms": ["Esophageal Neoplasms"]}
+{"name": "Esophagus Disorders", "aliases": ["Achalasia", "Barrett's Esophagus", "Cardiospasm"], "mesh_terms": ["Esophageal Diseases"]}
+{"name": "Evaluating Health Information", "aliases": ["Finding Health Sources I Can Trust", "Finding Trustworthy Information", "Identifying Health Misinformation"], "mesh_terms": ["Internet"]}
+{"name": "Exercise and Physical Fitness", "aliases": ["Fitness", "Physical Fitness", "Weight Training"], "mesh_terms": ["Exercise", "Physical Fitness"]}
+{"name": "Exercise for Children", "aliases": ["Fitness"], "mesh_terms": ["Youth Sports", "Exercise"]}
+{"name": "Exercise for Older Adults", "aliases": ["Seniors' fitness", "Fitness", "Seniors' Fitness"], "mesh_terms": ["Exercise"]}
+{"name": "Eye Cancer", "aliases": ["Intraocular Melanoma", "Retinoblastoma"], "mesh_terms": ["Eye Neoplasms"]}
+{"name": "Eye Care", "aliases": ["Eye health", "Eye safety"], "mesh_terms": ["Eye Diseases", "Eye Injuries"]}
+{"name": "Eye Diseases", "aliases": ["Ophthalmology", "Pinguecula"], "mesh_terms": ["Eye Diseases"]}
+{"name": "Eye Infections", "aliases": [], "mesh_terms": ["Eye Infections"]}
+{"name": "Eye Injuries", "aliases": ["Protective Eye Wear"], "mesh_terms": ["Eye Injuries"]}
+{"name": "Eye Movement Disorders", "aliases": ["Crossed Eyes", "Nystagmus", "Squint", "Strabismus", "Walleye"], "mesh_terms": ["Ocular Motility Disorders"]}
+{"name": "Eyelid Disorders", "aliases": ["Blepharospasm", "Chalazion", "Ptosis", "Stye"], "mesh_terms": ["Eyelid Diseases"]}
+{"name": "Eyewear", "aliases": ["Contact lenses", "Eyeglasses", "Contact Lenses", "Eye Wear", "Glasses", "Protective Eye Wear"], "mesh_terms": ["Contact Lenses", "Eyeglasses"]}
+{"name": "Facial Injuries and Disorders", "aliases": ["Craniofacial Injuries"], "mesh_terms": ["Craniofacial Abnormalities", "Facial Injuries"]}
+{"name": "Fainting", "aliases": ["Syncope", "Vasovagal Syncope"], "mesh_terms": ["Syncope"]}
+{"name": "Falls", "aliases": ["Accidents"], "mesh_terms": ["Accidental Falls"]}
+{"name": "Family History", "aliases": [], "mesh_terms": ["Medical History Taking"]}
+{"name": "Family Issues", "aliases": ["Stepfamilies"], "mesh_terms": ["Family", "Interpersonal Relations"]}
+{"name": "Fatigue", "aliases": ["Tiredness", "Weariness"], "mesh_terms": ["Fatigue"]}
+{"name": "Fatty Liver Disease", "aliases": ["ALD", "Alcohol-associated liver disease", "Alcoholic fatty liver disease", "MASLD", "Metabolic dysfunction-associated steatotic liver disease", "NAFLD", "Nonalcoholic fatty liver disease", "SLD", "Steatotic liver disease", "Alcohol-Associated Liver Disease", "Alcoholic Fatty Liver Disease", "Metabolic Dysfunction-Associated Steatotic Liver Disease", "Nonalcoholic Fatty Liver Disease", "Steatotic Liver Disease"], "mesh_terms": ["Fatty Liver", "Non-alcoholic Fatty Liver Disease", "Fatty Liver, Alcoholic"]}
+{"name": "Female Infertility", "aliases": ["Infertility, Female"], "mesh_terms": ["Infertility, Female"]}
+{"name": "Fetal Alcohol Spectrum Disorders", "aliases": ["FASD", "FAS", "Fetal Alcohol Syndrome"], "mesh_terms": ["Fetal Alcohol Spectrum Disorders"]}
+{"name": "Fetal Health and Development", "aliases": [], "mesh_terms": ["Fetal Diseases", "Fetal Development"]}
+{"name": "Fever", "aliases": ["Pyrexia", "Hot (Temperature)"], "mesh_terms": ["Fever"]}
+{"name": "Fibromyalgia", "aliases": ["FMS", "Fibro"], "mesh_terms": ["Fibromyalgia"]}
+{"name": "Fifth Disease", "aliases": ["Erythema infectiosum", "Parvovirus B19 infection", "Erythema Infectiosum", "Parvovirus B19"], "mesh_terms": ["Erythema Infectiosum"]}
+{"name": "Financial Assistance", "aliases": [], "mesh_terms": ["Medical Assistance"]}
+{"name": "Finger Injuries and Disorders", "aliases": ["Dupuytren Contracture", "Thumb Injuries"], "mesh_terms": ["Finger Injuries"]}
+{"name": "Fire Safety", "aliases": ["Fire prevention"], "mesh_terms": ["Fires", "Safety"]}
+{"name": "First Aid", "aliases": ["Accidents"], "mesh_terms": ["First Aid"]}
+{"name": "Fistulas", "aliases": [], "mesh_terms": ["Fistula"]}
+{"name": "Floods", "aliases": ["Natural Disasters"], "mesh_terms": ["Floods"]}
+{"name": "Flu", "aliases": ["Grippe", "Influenza", "Seasonal flu"], "mesh_terms": ["Influenza, Human"]}
+{"name": "Flu Shot", "aliases": ["Flu vaccine", "Influenza Vaccine"], "mesh_terms": ["Influenza Vaccines"]}
+{"name": "Fluid and Electrolyte Balance", "aliases": ["Electrolytes"], "mesh_terms": ["Water-Electrolyte Balance", "Water-Electrolyte Imbalance"]}
+{"name": "Folic Acid", "aliases": ["Folacin", "Folate", "Pteroylglutamic acid", "Vitamin B9"], "mesh_terms": ["Folic Acid Deficiency", "Folic Acid"]}
+{"name": "Food Allergy", "aliases": ["Allergy, Food", "Egg Allergy", "Milk Allergy", "Nut Allergy", "Peanut Allergy", "Shellfish Allergy", "Wheat Allergy"], "mesh_terms": ["Food Hypersensitivity"]}
+{"name": "Food Labeling", "aliases": ["Nutrition labeling", "Nutrition Labeling"], "mesh_terms": ["Food Labeling"]}
+{"name": "Food Safety", "aliases": [], "mesh_terms": ["Food Safety"]}
+{"name": "Foodborne Illness", "aliases": ["Food Poisoning", "Yersinia Enterocolitica"], "mesh_terms": ["Food Contamination", "Foodborne Diseases"]}
+{"name": "Foot Health", "aliases": ["Shoes"], "mesh_terms": ["Foot"]}
+{"name": "Foot Injuries and Disorders", "aliases": ["Morton's Neuroma"], "mesh_terms": ["Foot Diseases", "Foot Injuries"]}
+{"name": "Foreign Bodies", "aliases": ["Splinters"], "mesh_terms": ["Foreign Bodies"]}
+{"name": "Fractures", "aliases": ["Broken bone", "Broken Bones"], "mesh_terms": ["Fractures, Bone", "Fractures, Cartilage"]}
+{"name": "Fragile X Syndrome", "aliases": ["FRAXA", "FXS"], "mesh_terms": ["Fragile X Syndrome"]}
+{"name": "Friedreich Ataxia", "aliases": ["Ataxia"], "mesh_terms": ["Friedreich Ataxia"]}
+{"name": "Frostbite", "aliases": ["Chilblains", "Cold (Temperature)", "Frostnip"], "mesh_terms": ["Frostbite"]}
+{"name": "Fungal Infections", "aliases": ["Mycoses", "Cryptococcosis", "Infections, Fungal"], "mesh_terms": ["Mycoses"]}
+{"name": "G6PD Deficiency", "aliases": ["Glucose-6-phosphate dehydrogenase deficiency", "Glucose-6-phosphate Dehydrogenase Deficiency"], "mesh_terms": ["Glucosephosphate Dehydrogenase Deficiency"]}
+{"name": "Gallbladder Cancer", "aliases": [], "mesh_terms": ["Gallbladder Neoplasms"]}
+{"name": "Gallbladder Diseases", "aliases": ["Biliary Tract Diseases", "Cholecystectomy"], "mesh_terms": ["Gallbladder Diseases"]}
+{"name": "Gallstones", "aliases": ["Cholelithiasis", "Choledocholithiasis"], "mesh_terms": ["Cholelithiasis"]}
+{"name": "Gangrene", "aliases": ["Gas Gangrene"], "mesh_terms": ["Gangrene"]}
+{"name": "Gas", "aliases": ["Belch", "Burp", "Eructation", "Flatulence", "Flatus", "Belching", "Burping"], "mesh_terms": ["Eructation", "Flatulence"]}
+{"name": "Gastroenteritis", "aliases": ["Stomach flu", "Stomach Flu"], "mesh_terms": ["Gastroenteritis"]}
+{"name": "Gastrointestinal Bleeding", "aliases": ["GI bleeding", "Bleeding, Gastrointestinal", "GI Bleeding", "Rectal Bleeding"], "mesh_terms": ["Gastrointestinal Hemorrhage"]}
+{"name": "Gaucher Disease", "aliases": [], "mesh_terms": ["Gaucher Disease"]}
+{"name": "Genes and Gene Therapy", "aliases": ["Human Genome Project"], "mesh_terms": ["Genetic Therapy", "Genes"]}
+{"name": "Genetic Brain Disorders", "aliases": ["Inborn genetic brain disorders", "Brain Disorders, Inborn Genetic", "Maple Syrup Urine Disease", "Niemann-Pick Disease"], "mesh_terms": ["Brain Diseases, Metabolic, Inborn"]}
+{"name": "Genetic Counseling", "aliases": [], "mesh_terms": ["Genetic Counseling"]}
+{"name": "Genetic Disorders", "aliases": ["Progeria"], "mesh_terms": ["Genetic Diseases, Inborn"]}
+{"name": "Genetic Testing", "aliases": ["Paternity Testing"], "mesh_terms": ["Genetic Testing"]}
+{"name": "Genital Herpes", "aliases": ["Herpes genitalis", "Herpes Genitalis"], "mesh_terms": ["Herpes Genitalis"]}
+{"name": "Genital Warts", "aliases": ["Condylomata acuminata", "Venereal warts", "Condylomata Acuminata", "Venereal Warts"], "mesh_terms": ["Condylomata Acuminata"]}
+{"name": "GERD", "aliases": ["Gastroesophageal reflux disease", "Acid Reflux", "Gastroesophageal Reflux"], "mesh_terms": ["Gastroesophageal Reflux"]}
+{"name": "Germs and Hygiene", "aliases": ["Body Odor", "Handwashing"], "mesh_terms": ["Hand Sanitizers", "Disinfection", "Hand Hygiene"]}
+{"name": "Giant Cell Arteritis", "aliases": ["Temporal Arteritis"], "mesh_terms": ["Giant Cell Arteritis"]}
+{"name": "Giardia Infections", "aliases": [], "mesh_terms": ["Giardiasis"]}
+{"name": "Glaucoma", "aliases": [], "mesh_terms": ["Glaucoma"]}
+{"name": "Global Health", "aliases": ["International health"], "mesh_terms": ["Global Health"]}
+{"name": "Gluten Sensitivity", "aliases": ["Gluten Intolerance"], "mesh_terms": []}
+{"name": "Gonorrhea", "aliases": ["The clap", "Clap"], "mesh_terms": ["Gonorrhea"]}
+{"name": "Gout", "aliases": ["Gouty arthritis", "Chondrocalcinosis", "Hyperuricemia", "Pseudogout"], "mesh_terms": ["Gout"]}
+{"name": "Granulomatosis with Polyangiitis", "aliases": ["GPA", "Wegener's Granulomatosis"], "mesh_terms": ["Granulomatosis with Polyangiitis"]}
+{"name": "Growth Disorders", "aliases": ["Acromegaly", "Failure to Thrive"], "mesh_terms": ["Growth Disorders"]}
+{"name": "Guide to Good Posture", "aliases": ["Posture"], "mesh_terms": ["Posture"]}
+{"name": "Guillain-Barre Syndrome", "aliases": ["Acute idiopathic polyneuritis", "Acute inflammatory polyneuropathy", "Infectious polyneuritis", "Landry-Guillain-Barre syndrome"], "mesh_terms": ["Guillain-Barre Syndrome"]}
+{"name": "Gum Disease", "aliases": ["Periodontal disease", "Periodontal Disease", "Plaque, Dental"], "mesh_terms": ["Gingival Diseases"]}
+{"name": "H1N1 Flu (Swine Flu)", "aliases": ["Swine flu", "Swine Flu"], "mesh_terms": ["Influenza A Virus, H1N1 Subtype", "Influenza, Human"]}
+{"name": "Haemophilus Infections", "aliases": ["Hib"], "mesh_terms": ["Haemophilus Infections"]}
+{"name": "Hair Loss", "aliases": ["Alopecia"], "mesh_terms": ["Hypotrichosis"]}
+{"name": "Hair Problems", "aliases": ["Folliculitis"], "mesh_terms": ["Hair Diseases", "Dandruff"]}
+{"name": "Hand Injuries and Disorders", "aliases": [], "mesh_terms": ["Hand Injuries"]}
+{"name": "Hantavirus Infections", "aliases": ["HPS", "Hanta virus"], "mesh_terms": ["Hantavirus Infections"]}
+{"name": "Hay Fever", "aliases": ["Pollen allergy", "Allergic Rhinitis", "Pollen Allergy", "Seasonal Allergies"], "mesh_terms": ["Rhinitis, Allergic, Seasonal"]}
+{"name": "HDL: The \"Good\" Cholesterol", "aliases": ["High-density lipoprotein"], "mesh_terms": ["Cholesterol, HDL"]}
+{"name": "Head and Neck Cancer", "aliases": [], "mesh_terms": ["Head and Neck Neoplasms"]}
+{"name": "Head Injuries", "aliases": ["Cranial injuries", "Skull fractures", "Skull injuries", "Cranial Injuries", "Skull Fractures", "Skull Injuries"], "mesh_terms": ["Craniocerebral Trauma", "Skull Fractures"]}
+{"name": "Head Lice", "aliases": ["Pediculosis"], "mesh_terms": ["Pediculus"]}
+{"name": "Headache", "aliases": ["Cluster Headache", "Tension Headache", "Vascular Headache"], "mesh_terms": ["Headache", "Headache Disorders"]}
+{"name": "Health Checkup", "aliases": ["Annual checkup", "Annual physical examination", "Routine physical examination", "Annual Physical Examination"], "mesh_terms": ["Physical Examination"]}
+{"name": "Health Disparities", "aliases": ["Health Equity"], "mesh_terms": ["Healthcare Disparities", "Health Status Disparities"]}
+{"name": "Health Facilities", "aliases": ["Health care facilities", "Hospitals"], "mesh_terms": ["Health Facilities", "Hospitals"]}
+{"name": "Health Fraud", "aliases": ["Health scams", "Quackery"], "mesh_terms": ["Fraud"]}
+{"name": "Health Insurance", "aliases": ["Affordable Care Act", "HIPAA", "Insurance"], "mesh_terms": ["Insurance, Health"]}
+{"name": "Health Literacy", "aliases": [], "mesh_terms": ["Health Literacy"]}
+{"name": "Health Occupations", "aliases": ["Health careers", "Health professions", "Medical occupations", "Medical professions", "Careers", "Medical Professions"], "mesh_terms": ["Health Occupations"]}
+{"name": "Health Problems in Pregnancy", "aliases": ["High Risk Pregnancy", "Pregnancy Complications", "Pregnancy and Health Problems", "Pregnancy, High-Risk"], "mesh_terms": ["Pregnancy, High-Risk", "Pregnancy Complications"]}
+{"name": "Health Risks of an Inactive Lifestyle", "aliases": ["Sedentary lifestyle", "Sitting disease", "Sedentary Lifestyle"], "mesh_terms": ["Sedentary Behavior"]}
+{"name": "Health Screening", "aliases": ["Screening tests", "Screening Tests"], "mesh_terms": ["Diagnostic Tests, Routine"]}
+{"name": "Health Statistics", "aliases": ["Statistics"], "mesh_terms": ["Statistics as Topic"]}
+{"name": "Healthy Aging", "aliases": [], "mesh_terms": ["Healthy Aging"]}
+{"name": "Healthy Living", "aliases": ["Prevention", "Staying Healthy"], "mesh_terms": ["Healthy Lifestyle"]}
+{"name": "Healthy Sleep", "aliases": ["Sleep Hygiene"], "mesh_terms": ["Sleep Hygiene"]}
+{"name": "Hearing Aids", "aliases": [], "mesh_terms": ["Hearing Aids"]}
+{"name": "Hearing Disorders and Deafness", "aliases": ["Hearing loss", "Presbycusis", "Deafness"], "mesh_terms": ["Hearing Disorders", "Deafness"]}
+{"name": "Hearing Problems in Children", "aliases": ["Deafness"], "mesh_terms": ["Hearing Disorders"]}
+{"name": "Heart Attack", "aliases": ["MI", "Myocardial infarction", "Myocardial Infarction"], "mesh_terms": ["Myocardial Infarction"]}
+{"name": "Heart Disease in Women", "aliases": [], "mesh_terms": ["Heart Diseases"]}
+{"name": "Heart Diseases", "aliases": ["Cardiac diseases", "Cardiac Diseases", "Cardiovascular Diseases"], "mesh_terms": ["Heart Diseases"]}
+{"name": "Heart Failure", "aliases": ["CHF", "Cardiac failure", "Congestive heart failure", "Left-sided heart failure", "Right-sided heart failure", "Cardiac Failure", "Congestive Heart Failure", "Low Cardiac Output"], "mesh_terms": ["Heart Failure"]}
+{"name": "Heart Health Tests", "aliases": ["Cardiac Diagnostic Tests", "Cardiac Test", "Heart Test"], "mesh_terms": ["Diagnostic Techniques, Cardiovascular", "Heart Function Tests"]}
+{"name": "Heart Surgery", "aliases": ["Cardiac surgery", "Cardiac Surgery", "Open Heart Surgery"], "mesh_terms": ["Cardiac Surgical Procedures"]}
+{"name": "Heart Transplantation", "aliases": [], "mesh_terms": ["Heart Transplantation"]}
+{"name": "Heart Valve Diseases", "aliases": ["Valvular heart disease", "Aortic Stenosis", "Heart Murmur", "Valvular Heart Diseases"], "mesh_terms": ["Heart Valve Diseases"]}
+{"name": "Heartburn", "aliases": ["Acid indigestion", "Pyrosis", "Acid Reflux"], "mesh_terms": ["Heartburn"]}
+{"name": "Heat Illness", "aliases": ["Heat exhaustion", "Heat stroke", "Sunstroke", "Heat Exhaustion", "Hot (Temperature)"], "mesh_terms": ["Heat Stress Disorders"]}
+{"name": "Heel Injuries and Disorders", "aliases": ["Achilles Tendon Injuries", "Plantar Fasciitis"], "mesh_terms": ["Heel"]}
+{"name": "Helicobacter pylori Infections", "aliases": ["H. pylori infections", "H. pylori Infections"], "mesh_terms": ["Helicobacter Infections"]}
+{"name": "Hemochromatosis", "aliases": ["Iron overload disease", "Iron Overload Disease"], "mesh_terms": ["Hemochromatosis"]}
+{"name": "Hemophilia", "aliases": ["Christmas disease", "Factor IX deficiency", "Factor VIII deficiency", "Blood Coagulation Disorders"], "mesh_terms": ["Hemophilia A"]}
+{"name": "Hemorrhagic Fevers", "aliases": ["VHFs", "Lassa Fever", "Yellow Fever"], "mesh_terms": ["Hemorrhagic Fevers, Viral"]}
+{"name": "Hemorrhagic Stroke", "aliases": ["Intracerebral Hemorrhage", "Subarachnoid Hemorrhage", "Brain Hemorrhage", "Cerebral Hemorrhage"], "mesh_terms": ["Hemorrhagic Stroke"]}
+{"name": "Hemorrhoids", "aliases": ["Piles", "Hemorrhoidectomy"], "mesh_terms": ["Hemorrhoids"]}
+{"name": "Hepatitis", "aliases": ["Viral Hepatitis"], "mesh_terms": ["Hepatitis"]}
+{"name": "Hepatitis A", "aliases": ["HAV"], "mesh_terms": ["Hepatitis A"]}
+{"name": "Hepatitis B", "aliases": ["HBV"], "mesh_terms": ["Hepatitis B"]}
+{"name": "Hepatitis C", "aliases": ["HCV"], "mesh_terms": ["Hepatitis C"]}
+{"name": "Herbal Medicine", "aliases": ["Botanicals", "Phytotherapy", "Medicinal Herbs", "Teas, Herbal", "Teas, Medicinal"], "mesh_terms": ["Phytotherapy"]}
+{"name": "Hernia", "aliases": ["Enterocele", "Congenital Diaphragmatic Hernia", "Diaphragmatic Hernia", "Inguinal Hernia", "Umbilical Hernia"], "mesh_terms": ["Hernia"]}
+{"name": "Herniated Disk", "aliases": ["Bulging disk", "Compressed disk", "Herniated intervertebral disk", "Herniated nucleus pulposus", "Prolapsed disk", "Ruptured disk", "Slipped disk", "Ruptured Disk", "Slipped Disk"], "mesh_terms": ["Intervertebral Disc Displacement"]}
+{"name": "Heroin", "aliases": ["Big H", "Black tar", "Chiva", "H", "Hell Dust", "Horse", "Junk", "Smack", "Thunder", "Opiates"], "mesh_terms": ["Heroin Dependence"]}
+{"name": "Herpes Simplex", "aliases": ["HSV"], "mesh_terms": ["Herpes Simplex"]}
+{"name": "Hiatal Hernia", "aliases": [], "mesh_terms": ["Hernia, Hiatal"]}
+{"name": "Hiccups", "aliases": ["Hiccough", "Singultus"], "mesh_terms": ["Hiccup"]}
+{"name": "Hidradenitis Suppurativa", "aliases": ["Acne inversa", "Suppurative hidradenitis"], "mesh_terms": ["Hidradenitis Suppurativa"]}
+{"name": "High Blood Pressure", "aliases": ["Benign essential hypertension", "Essential hypertension", "HBP", "HTN", "Hypertension", "Blood Pressure"], "mesh_terms": ["Prehypertension", "Hypertension"]}
+{"name": "High Blood Pressure in Pregnancy", "aliases": ["Eclampsia", "Gestational Hypertension", "HELLP Syndrome", "Preeclampsia", "Toxemia of Pregnancy"], "mesh_terms": ["Hypertension, Pregnancy-Induced"]}
+{"name": "High Cholesterol in Children and Teens", "aliases": [], "mesh_terms": ["Hypercholesterolemia"]}
+{"name": "Hip Injuries and Disorders", "aliases": ["Pelvis"], "mesh_terms": ["Pelvic Bones", "Hip Dislocation", "Hip Fractures", "Hip Injuries", "Femoral Neck Fractures"]}
+{"name": "Hip Replacement", "aliases": ["Hip arthroplasty", "Hip prosthesis", "Arthroplasty"], "mesh_terms": ["Arthroplasty, Replacement, Hip"]}
+{"name": "Histoplasmosis", "aliases": [], "mesh_terms": ["Histoplasmosis"]}
+{"name": "HIV", "aliases": ["AIDS", "Acquired immunodeficiency syndrome", "Human immunodeficiency virus", "Acquired Immunodeficiency Syndrome", "Human Immunodeficiency Virus"], "mesh_terms": ["HIV Infections", "Acquired Immunodeficiency Syndrome"]}
+{"name": "HIV and Infections", "aliases": ["AIDS-related opportunistic infections", "OIs", "AIDS and Infections", "Opportunistic Infections in AIDS"], "mesh_terms": ["AIDS-Related Opportunistic Infections"]}
+{"name": "HIV and Pregnancy", "aliases": ["AIDS and Pregnancy", "Pregnancy and AIDS", "Pregnancy and HIV"], "mesh_terms": ["HIV Infections", "Pregnancy"]}
+{"name": "HIV in Women", "aliases": ["AIDS in Women"], "mesh_terms": ["HIV Infections"]}
+{"name": "HIV Medicines", "aliases": ["ART", "Antiretroviral therapy", "AIDS Medicines", "Antiretroviral Therapy"], "mesh_terms": ["HIV Infections", "Antiretroviral Therapy, Highly Active", "Anti-HIV Agents"]}
+{"name": "HIV: PrEP and PEP", "aliases": ["Post-Exposure Prophylaxis", "Pre-Exposure Prophylaxis", "PEP", "PrEP"], "mesh_terms": ["Post-Exposure Prophylaxis", "Pre-Exposure Prophylaxis"]}
+{"name": "Hives", "aliases": ["Urticaria"], "mesh_terms": ["Urticaria"]}
+{"name": "Hodgkin Lymphoma", "aliases": ["Hodgkin Disease"], "mesh_terms": ["Hodgkin Disease"]}
+{"name": "Home Care Services", "aliases": ["In-home care", "Day Care", "In-home Care"], "mesh_terms": ["Home Care Services"]}
+{"name": "Homelessness and Health", "aliases": ["Runaways"], "mesh_terms": ["Ill-Housed Persons"]}
+{"name": "Hormone Replacement Therapy", "aliases": ["ERT", "Estrogen replacement therapy", "HRT", "Menopausal hormone therapy", "Estrogen Replacement Therapy", "Menopausal Hormone Therapy"], "mesh_terms": ["Menopause", "Hormone Replacement Therapy"]}
+{"name": "Hormones", "aliases": [], "mesh_terms": ["Hormones"]}
+{"name": "Hospice Care", "aliases": ["End-of-life care", "End of Life Care"], "mesh_terms": ["Hospices"]}
+{"name": "Household Products", "aliases": ["Cleaning Products", "Poisons in the Home"], "mesh_terms": ["Household Products"]}
+{"name": "How Much Exercise Do I Need?", "aliases": ["Exercise: How Much?"], "mesh_terms": ["Physical Fitness"]}
+{"name": "How to Improve Mental Health", "aliases": ["Boost Emotional Wellness", "Improve Emotional Health", "Stay Positive", "Relaxation Techniques"], "mesh_terms": ["Mental Health"]}
+{"name": "How to Lower Cholesterol", "aliases": [], "mesh_terms": ["Hypercholesterolemia"]}
+{"name": "How to Lower Cholesterol with Diet", "aliases": ["Low Cholesterol Diet", "TLC Diet", "Therapeutic Lifestyle Changes Diet"], "mesh_terms": ["Hypercholesterolemia"]}
+{"name": "How to Prevent Diabetes", "aliases": ["Diabetes Prevention"], "mesh_terms": ["Diabetes Mellitus, Type 2"]}
+{"name": "How to Prevent Heart Disease", "aliases": ["Heart Disease Prevention"], "mesh_terms": ["Heart Diseases"]}
+{"name": "How to Prevent High Blood Pressure", "aliases": ["Lowering high blood pressure", "High Blood Pressure Prevention"], "mesh_terms": ["Hypertension"]}
+{"name": "HPV", "aliases": ["Human papillomavirus", "HPV Vaccine", "Human Papillomavirus"], "mesh_terms": ["Alphapapillomavirus", "Human Papillomavirus Viruses", "Papillomavirus Infections"]}
+{"name": "Huntington's Disease", "aliases": ["HD", "Huntington's chorea"], "mesh_terms": ["Huntington Disease"]}
+{"name": "Hurricanes", "aliases": ["Cyclones", "Typhoons", "Natural Disasters"], "mesh_terms": ["Cyclonic Storms"]}
+{"name": "Hydrocephalus", "aliases": ["Water on the brain"], "mesh_terms": ["Hydrocephalus"]}
+{"name": "Hyperglycemia", "aliases": ["High blood glucose", "High blood sugar", "High Blood Glucose", "High Blood Sugar"], "mesh_terms": ["Hyperglycemia"]}
+{"name": "Hyperthyroidism", "aliases": ["Overactive thyroid", "Basedow's Disease", "Graves' Disease", "Overactive Thyroid", "Thyrotoxicosis"], "mesh_terms": ["Hyperthyroidism"]}
+{"name": "Hypoglycemia", "aliases": ["Low blood sugar", "Low Blood Sugar"], "mesh_terms": ["Hypoglycemia"]}
+{"name": "Hypothermia", "aliases": ["Cold-related illness", "Cold (Temperature)"], "mesh_terms": ["Hypothermia"]}
+{"name": "Hypothyroidism", "aliases": ["Underactive thyroid", "Autoimmune Thyroiditis", "Hashimoto's Disease", "Underactive Thyroid"], "mesh_terms": ["Hypothyroidism"]}
+{"name": "Hysterectomy", "aliases": [], "mesh_terms": ["Hysterectomy"]}
+{"name": "Immune System and Disorders", "aliases": ["Chronic Granulomatous Disease", "Primary Immunodeficiency Diseases", "SCID", "Severe Combined Immunodeficiency"], "mesh_terms": ["Immune System Diseases", "Immune System"]}
+{"name": "Impaired Driving", "aliases": ["Distracted driving", "Drugged driving", "Drunk driving", "Driving", "Drugged Driving", "Drunk Driving"], "mesh_terms": ["Driving Under the Influence", "Distracted Driving"]}
+{"name": "Impetigo", "aliases": [], "mesh_terms": ["Impetigo"]}
+{"name": "Indigestion", "aliases": ["Dyspepsia", "Upset stomach", "Upset Stomach"], "mesh_terms": ["Dyspepsia"]}
+{"name": "Indoor Air Pollution", "aliases": ["Pollution"], "mesh_terms": ["Air Pollution, Indoor"]}
+{"name": "Infant and Newborn Care", "aliases": ["Baby care", "Baby Care"], "mesh_terms": ["Infant Care"]}
+{"name": "Infant and Newborn Development", "aliases": [], "mesh_terms": ["Infant Behavior", "Child Development"]}
+{"name": "Infant and Newborn Nutrition", "aliases": [], "mesh_terms": ["Infant Nutrition Disorders", "Infant Food", "Infant Nutritional Physiological Phenomena", "Infant Formula"]}
+{"name": "Infection Control", "aliases": ["Blood-Borne Pathogens", "Cross Infection", "Healthcare-Associated Infections", "Universal Precautions"], "mesh_terms": ["Infection Control"]}
+{"name": "Infections and Pregnancy", "aliases": ["Pregnancy, Infections in"], "mesh_terms": ["Pregnancy Complications, Infectious"]}
+{"name": "Infectious Arthritis", "aliases": ["Septic arthritis", "Reactive Arthritis", "Reiter's Syndrome", "Septic Arthritis"], "mesh_terms": ["Arthritis, Infectious"]}
+{"name": "Infectious Diseases", "aliases": ["Communicable diseases", "Communicable Diseases"], "mesh_terms": ["Communicable Diseases"]}
+{"name": "Infectious Mononucleosis", "aliases": ["Glandular fever", "Kissing disease", "Mono", "Mononucleosis", "EBV Infections", "Epstein-Barr Virus Infections", "Glandular Fever"], "mesh_terms": ["Infectious Mononucleosis"]}
+{"name": "Infertility", "aliases": ["Sterility", "Artificial Insemination", "Fertility", "Gamete Intrafallopian Transfer"], "mesh_terms": ["Infertility"]}
+{"name": "Inhalants", "aliases": ["Huffing"], "mesh_terms": ["Inhalant Abuse"]}
+{"name": "Inhalation Injuries", "aliases": ["Smoke Inhalation"], "mesh_terms": ["Burns, Inhalation"]}
+{"name": "Insect Bites and Stings", "aliases": ["Bug bites", "Bee Stings", "Flea Bites", "Insect Repellents"], "mesh_terms": ["Insect Bites and Stings"]}
+{"name": "Insomnia", "aliases": [], "mesh_terms": ["Sleep Initiation and Maintenance Disorders"]}
+{"name": "Interstitial Cystitis", "aliases": ["Bladder pain syndrome", "IC", "PBS", "Painful bladder syndrome", "Bladder Pain Syndrome", "Cystitis", "Painful Bladder Syndrome"], "mesh_terms": ["Cystitis, Interstitial"]}
+{"name": "Interstitial Lung Diseases", "aliases": ["Coal Miner's Lung", "Farmer's Lung", "Interstitial Pneumonitis", "Pneumoconiosis"], "mesh_terms": ["Lung Diseases, Interstitial"]}
+{"name": "Intestinal Cancer", "aliases": ["Duodenal cancer", "Ileal cancer", "Jejunal cancer", "Small intestine cancer", "Gastrointestinal Stromal Tumors", "Small Intestine Cancer"], "mesh_terms": ["Ileal Neoplasms", "Jejunal Neoplasms", "Duodenal Neoplasms"]}
+{"name": "Intestinal Obstruction", "aliases": ["Bowel obstruction", "Intestinal volvulus", "Paralytic ileus", "Bowel Obstruction", "Fecal Impaction", "Intestinal Volvulus", "Intussusception", "Paralytic Ileus"], "mesh_terms": ["Intestinal Obstruction"]}
+{"name": "Intimate Partner Violence", "aliases": ["Battery", "Domestic violence", "Partner abuse", "Spousal abuse", "Abuse", "Domestic Violence", "Partner Abuse", "Spouse Abuse", "Violence"], "mesh_terms": ["Intimate Partner Violence"]}
+{"name": "Iron", "aliases": ["Ferritin"], "mesh_terms": ["Iron"]}
+{"name": "Irritable Bowel Syndrome", "aliases": ["IBS", "Irritable colon"], "mesh_terms": ["Colonic Diseases, Functional"]}
+{"name": "Ischemic Stroke", "aliases": ["Embolic Stroke", "Thrombotic stroke", "Carotid Endarterectomy"], "mesh_terms": ["Ischemic Stroke"]}
+{"name": "Islet Cell Transplantation", "aliases": [], "mesh_terms": ["Islets of Langerhans Transplantation"]}
+{"name": "Itching", "aliases": ["Pruritus"], "mesh_terms": ["Pruritus"]}
+{"name": "Jaundice", "aliases": ["Icterus", "Kernicterus"], "mesh_terms": ["Hyperbilirubinemia"]}
+{"name": "Jaw Injuries and Disorders", "aliases": ["Mandibular Disorders", "Maxillary Disorders"], "mesh_terms": ["Jaw", "Jaw Fractures", "Jaw Diseases"]}
+{"name": "Joint Disorders", "aliases": ["Arthrography", "Arthroplasty", "Arthroscopy"], "mesh_terms": ["Joint Diseases"]}
+{"name": "Juvenile Arthritis", "aliases": ["Childhood arthritis", "JRA", "Juvenile idiopathic arthritis", "Still's disease", "Juvenile Rheumatoid Arthritis", "Still's Disease"], "mesh_terms": ["Arthritis, Juvenile"]}
+{"name": "Kaposi Sarcoma", "aliases": ["KS"], "mesh_terms": ["Sarcoma, Kaposi"]}
+{"name": "Kawasaki Disease", "aliases": ["Mucocutaneous lymph node syndrome", "Mucocutaneous Lymph Node Syndrome"], "mesh_terms": ["Mucocutaneous Lymph Node Syndrome"]}
+{"name": "Kidney Cancer", "aliases": ["Hypernephroma", "Renal cancer", "Renal Cancer"], "mesh_terms": ["Kidney Neoplasms"]}
+{"name": "Kidney Cysts", "aliases": ["Cystic Kidney Diseases", "Polycystic Kidney Disease"], "mesh_terms": ["Kidney Diseases, Cystic"]}
+{"name": "Kidney Diseases", "aliases": ["Renal diseases", "Nephritis", "Renal Diseases"], "mesh_terms": ["Kidney Diseases"]}
+{"name": "Kidney Failure", "aliases": ["ESRD", "End-stage renal disease", "Renal failure", "End-Stage Renal Disease", "Renal Failure"], "mesh_terms": ["Kidney Failure, Chronic"]}
+{"name": "Kidney Stones", "aliases": ["Nephrolithiasis"], "mesh_terms": ["Nephrolithiasis"]}
+{"name": "Kidney Tests", "aliases": ["Kidney Function Panel", "Kidney Function Tests", "Kidney Panel", "Renal Function Panel", "Kidney Biopsy"], "mesh_terms": ["Kidney Function Tests"]}
+{"name": "Kidney Transplantation", "aliases": ["Renal transplantation", "Renal Transplantation"], "mesh_terms": ["Kidney Transplantation"]}
+{"name": "Klinefelter Syndrome", "aliases": ["XXY male"], "mesh_terms": ["Klinefelter Syndrome"]}
+{"name": "Knee Injuries and Disorders", "aliases": ["ACL Injuries", "Anterior Cruciate Ligament Injury", "Baker's Cyst", "Chondromalacia Patellae", "Meniscus", "Patella"], "mesh_terms": ["Anterior Cruciate Ligament Reconstruction", "Knee Injuries"]}
+{"name": "Knee Replacement", "aliases": ["Knee arthroplasty", "Arthroplasty"], "mesh_terms": ["Arthroplasty, Replacement, Knee"]}
+{"name": "Laboratory Tests", "aliases": ["Blood Tests"], "mesh_terms": ["Clinical Laboratory Techniques"]}
+{"name": "Lactose Intolerance", "aliases": ["Dairy product intolerance", "Lactase deficiency", "Milk intolerance", "Milk Intolerance"], "mesh_terms": ["Lactose Intolerance"]}
+{"name": "Laser Eye Surgery", "aliases": ["Keratectomy", "LASIK", "LTK", "PRK"], "mesh_terms": ["Corneal Surgery, Laser"]}
+{"name": "Latex Allergy", "aliases": ["Allergy, Latex"], "mesh_terms": ["Latex Hypersensitivity"]}
+{"name": "LDL: The \"Bad\" Cholesterol", "aliases": ["Low-density lipoprotein"], "mesh_terms": ["Cholesterol, LDL"]}
+{"name": "Lead Poisoning", "aliases": ["Plumbism", "lead exposure"], "mesh_terms": ["Lead Poisoning"]}
+{"name": "Learning Disabilities", "aliases": ["Learning differences", "Learning disorders", "Dyscalculia", "Dyslexia", "Reading Problems", "Specific Learning Disorder"], "mesh_terms": ["Learning Disabilities"]}
+{"name": "Leg Injuries and Disorders", "aliases": ["Claudication", "Intermittent Claudication", "Leg Cramps", "Ulcer, Leg"], "mesh_terms": ["Leg Injuries", "Femoral Fractures", "Leg Length Inequality", "Tibial Fractures", "Leg Ulcer"]}
+{"name": "Legionnaires' Disease", "aliases": ["Legionellosis"], "mesh_terms": ["Legionnaires' Disease"]}
+{"name": "Leishmaniasis", "aliases": ["Kala-azar"], "mesh_terms": ["Leishmaniasis"]}
+{"name": "Leukemia", "aliases": ["Hairy Cell Leukemia"], "mesh_terms": ["Leukemia"]}
+{"name": "Leukodystrophies", "aliases": ["Adrenoleukodystrophy", "Canavan Disease"], "mesh_terms": ["Leukodystrophy, Metachromatic", "Canavan Disease", "Leukodystrophy, Globoid Cell"]}
+{"name": "Lewy Body Dementia", "aliases": ["Dementia with Lewy bodies", "LBD", "Lewy body disease", "Parkinson's disease dementia", "Dementia with Lewy Bodies"], "mesh_terms": ["Lewy Body Disease"]}
+{"name": "Limb Loss", "aliases": ["Amputation", "Phantom Limb"], "mesh_terms": ["Amputees"]}
+{"name": "Lipid Metabolism Disorders", "aliases": [], "mesh_terms": ["Lipid Metabolism, Inborn Errors", "Lipid Metabolism Disorders"]}
+{"name": "Listeria Infections", "aliases": ["Listeriosis"], "mesh_terms": ["Listeriosis"]}
+{"name": "Liver Cancer", "aliases": ["Hepatocellular carcinoma", "Hepatoblastoma", "Hepatocellular Carcinoma"], "mesh_terms": ["Liver Neoplasms"]}
+{"name": "Liver Diseases", "aliases": ["Hepatic diseases", "Alagille Syndrome", "Gilbert Disease", "Hepatic Diseases"], "mesh_terms": ["Liver Diseases"]}
+{"name": "Liver Transplantation", "aliases": ["Hepatic transplantation", "Hepatic Transplantation"], "mesh_terms": ["Liver Transplantation"]}
+{"name": "Living with HIV", "aliases": ["AIDS--Living With AIDS", "HIV--Living With"], "mesh_terms": ["HIV Infections"]}
+{"name": "Low Blood Pressure", "aliases": ["Hypotension", "LBP", "Blood Pressure", "Orthostatic Hypotension", "Shy-Drager Syndrome"], "mesh_terms": ["Hypotension"]}
+{"name": "Lung Cancer", "aliases": ["Bronchogenic carcinoma", "Bronchogenic Carcinoma", "Non-Small Cell Lung Cancer", "Small Cell Lung Cancer"], "mesh_terms": ["Lung Neoplasms"]}
+{"name": "Lung Diseases", "aliases": ["Respiratory Diseases"], "mesh_terms": ["Lung Diseases"]}
+{"name": "Lung Transplantation", "aliases": [], "mesh_terms": ["Lung Transplantation"]}
+{"name": "Lupus", "aliases": ["Discoid lupus", "SLE", "Subacute cutaneous lupus", "Systemic lupus erythematosus", "Cutaneous Lupus", "Subacute Cutaneous Lupus", "Systemic Lupus Erythematosus"], "mesh_terms": ["Lupus Erythematosus, Systemic", "Lupus Erythematosus, Discoid"]}
+{"name": "Lyme Disease", "aliases": ["Borreliosis", "Erythema Migrans", "Post-Treatment Lyme Disease Syndrome"], "mesh_terms": ["Lyme Disease"]}
+{"name": "Lymphatic Diseases", "aliases": ["Lymph Nodes", "Swollen Glands"], "mesh_terms": ["Lymphatic Diseases"]}
+{"name": "Lymphedema", "aliases": ["Lymphatic obstruction", "Lymphatic Obstruction"], "mesh_terms": ["Lymphedema"]}
+{"name": "Lymphoma", "aliases": ["Non-Hodgkin lymphoma", "Non-Hodgkin Lymphoma", "Waldenstrom's Macroglobulinemia"], "mesh_terms": ["Lymphoma"]}
+{"name": "Macular Degeneration", "aliases": ["AMD", "Age-related macular degeneration", "Age-Related Macular Degeneration"], "mesh_terms": ["Macular Degeneration"]}
+{"name": "Malabsorption Syndromes", "aliases": [], "mesh_terms": ["Malabsorption Syndromes"]}
+{"name": "Malaria", "aliases": [], "mesh_terms": ["Malaria"]}
+{"name": "Male Breast Cancer", "aliases": ["Breast Cancer, Male"], "mesh_terms": ["Breast Neoplasms, Male"]}
+{"name": "Male Infertility", "aliases": ["Infertility, Male", "Low Sperm Count"], "mesh_terms": ["Infertility, Male"]}
+{"name": "Malnutrition", "aliases": [], "mesh_terms": ["Malnutrition"]}
+{"name": "Mammography", "aliases": [], "mesh_terms": ["Mammography"]}
+{"name": "Managed Care", "aliases": ["HMO", "Health Maintenance Organizations", "Insurance"], "mesh_terms": ["Managed Care Programs"]}
+{"name": "Marfan Syndrome", "aliases": [], "mesh_terms": ["Marfan Syndrome"]}
+{"name": "Marijuana", "aliases": ["Blunt", "Cannabis", "Dope", "Ganja", "Grass", "Hash", "Joint", "Mary Jane", "Pot", "Reefer", "Weed", "Cannabinoids", "Medical Marijuana"], "mesh_terms": ["Marijuana Use", "Medical Marijuana", "Marijuana Smoking", "Marijuana Abuse"]}
+{"name": "Mastectomy", "aliases": ["Lumpectomy"], "mesh_terms": ["Mastectomy"]}
+{"name": "Measles", "aliases": ["Rubeola"], "mesh_terms": ["Measles"]}
+{"name": "Medicaid", "aliases": ["Insurance"], "mesh_terms": ["Medicaid"]}
+{"name": "Medical Device Safety", "aliases": ["Equipment Safety"], "mesh_terms": ["Equipment Safety"]}
+{"name": "Medical Ethics", "aliases": ["Bioethics"], "mesh_terms": ["Ethics, Medical"]}
+{"name": "Medicare", "aliases": ["Insurance"], "mesh_terms": ["Medicare Part D", "Medicare"]}
+{"name": "Medication Errors", "aliases": ["Drug Errors"], "mesh_terms": ["Prescription Drug Misuse", "Medication Errors"]}
+{"name": "Medicines", "aliases": ["Drugs", "Medications", "About Your Medicines", "Drug Information", "Prescription Drugs"], "mesh_terms": ["Pharmaceutical Preparations"]}
+{"name": "Medicines and Children", "aliases": ["Children and Medicines"], "mesh_terms": ["Drug Therapy"]}
+{"name": "Melanoma", "aliases": ["Intraocular Melanoma"], "mesh_terms": ["Melanoma"]}
+{"name": "Memory", "aliases": ["Amnesia"], "mesh_terms": ["Memory", "Memory Disorders"]}
+{"name": "Men's Health", "aliases": [], "mesh_terms": ["Men's Health"]}
+{"name": "Meniere's Disease", "aliases": ["Vestibular Diseases"], "mesh_terms": ["Meniere Disease"]}
+{"name": "Meningitis", "aliases": ["Spinal meningitis", "Arachnoiditis", "Aseptic Meningitis"], "mesh_terms": ["Meningitis"]}
+{"name": "Meningococcal Disease", "aliases": ["Meningococcal Infections", "Meningococcemia"], "mesh_terms": ["Meningococcal Infections"]}
+{"name": "Menopause", "aliases": ["Change of life", "Change of Life", "Hot Flashes", "Perimenopause", "Premature Menopause"], "mesh_terms": ["Menopause"]}
+{"name": "Menstruation", "aliases": ["Menses", "Menstrual period", "Period", "Amenorrhea", "Heavy Menstrual Bleeding", "Menorrhagia"], "mesh_terms": ["Menstruation", "Menstruation Disturbances"]}
+{"name": "Mental Disorders", "aliases": ["Mental illness", "Psychiatric Disorders"], "mesh_terms": ["Mental Disorders", "Psychiatric Rehabilitation"]}
+{"name": "Mental Health", "aliases": ["Emotional Health"], "mesh_terms": ["Mental Health"]}
+{"name": "Mercury", "aliases": [], "mesh_terms": ["Mercury Poisoning", "Mercury"]}
+{"name": "Mesothelioma", "aliases": ["Malignant mesothelioma"], "mesh_terms": ["Mesothelioma"]}
+{"name": "Metabolic Disorders", "aliases": ["Mucolipidoses"], "mesh_terms": ["Metabolic Diseases"]}
+{"name": "Metabolic Syndrome", "aliases": ["Insulin resistance syndrome", "Metabolic syndrome X", "Insulin Resistance", "Syndrome X (Metabolic)"], "mesh_terms": ["Metabolic Syndrome"]}
+{"name": "Methamphetamine", "aliases": ["Chalk", "Crystal", "Glass", "Ice", "Meth", "Speed", "Tina", "Amphetamines"], "mesh_terms": ["Methamphetamine"]}
+{"name": "Migraine", "aliases": ["Vascular Headache"], "mesh_terms": ["Migraine Disorders"]}
+{"name": "Mild Cognitive Impairment", "aliases": ["MCI"], "mesh_terms": ["Cognitive Dysfunction"]}
+{"name": "Minerals", "aliases": ["Chromium", "Copper", "Magnesium", "Phosphorus", "Selenium", "Zinc"], "mesh_terms": ["Minerals"]}
+{"name": "Miscarriage", "aliases": ["Spontaneous abortion", "Pregnancy Loss", "Spontaneous Abortion"], "mesh_terms": ["Abortion, Spontaneous"]}
+{"name": "Mitochondrial Diseases", "aliases": [], "mesh_terms": ["Mitochondrial Diseases"]}
+{"name": "Mitral Valve Prolapse", "aliases": ["Barlow's syndrome", "Floppy valve syndrome", "MVP"], "mesh_terms": ["Mitral Valve Prolapse"]}
+{"name": "Mobility Aids", "aliases": ["Ambulation devices", "Canes", "Crutches", "Walkers", "Wheelchairs"], "mesh_terms": ["Self-Help Devices"]}
+{"name": "Molds", "aliases": ["Fungi"], "mesh_terms": ["Fungi"]}
+{"name": "Moles", "aliases": ["Nevus"], "mesh_terms": ["Nevus"]}
+{"name": "Mood Disorders", "aliases": ["Cyclothymic Disorder"], "mesh_terms": ["Mood Disorders"]}
+{"name": "Mosquito Bites", "aliases": [], "mesh_terms": ["Culicidae"]}
+{"name": "Motion Sickness", "aliases": ["Airsickness", "Carsickness", "Seasickness"], "mesh_terms": ["Motion Sickness"]}
+{"name": "Motor Vehicle Safety", "aliases": ["Automobile safety", "Car safety", "Vehicle safety", "Automobile Safety", "Car Safety", "Car Seats", "Driving", "Traffic Accidents", "Vehicle Safety"], "mesh_terms": ["Automobile Driving", "Safety", "Accidents, Traffic"]}
+{"name": "Mouth Disorders", "aliases": [], "mesh_terms": ["Mouth Diseases"]}
+{"name": "Movement Disorders", "aliases": ["Ataxia", "Chorea", "Dyskinesia", "Tardive Dyskinesia"], "mesh_terms": ["Movement Disorders"]}
+{"name": "Mpox", "aliases": ["Monkeypox"], "mesh_terms": ["Mpox, Monkeypox"]}
+{"name": "MRI Scans", "aliases": ["Magnetic resonance imaging", "NMR", "Nuclear magnetic resonance", "Magnetic Resonance Imaging"], "mesh_terms": ["Magnetic Resonance Imaging"]}
+{"name": "MRSA", "aliases": ["Methicillin-resistant Staphylococcus aureus", "Methicillin Resistant Staphylococcus Aureus"], "mesh_terms": ["Methicillin-Resistant Staphylococcus aureus"]}
+{"name": "Multiple Myeloma", "aliases": ["Plasma-cell myeloma", "Plasma-cell Myeloma", "Plasmacytoma"], "mesh_terms": ["Multiple Myeloma"]}
+{"name": "Multiple Sclerosis", "aliases": ["MS"], "mesh_terms": ["Multiple Sclerosis"]}
+{"name": "Mumps", "aliases": [], "mesh_terms": ["Mumps"]}
+{"name": "Muscle Cramps", "aliases": ["Charley horse", "Charley Horse", "Cramps", "Leg Cramps"], "mesh_terms": ["Muscle Cramp"]}
+{"name": "Muscle Disorders", "aliases": ["Myopathy", "Myopathies", "Rhabdomyolysis"], "mesh_terms": ["Muscular Diseases"]}
+{"name": "Muscular Dystrophy", "aliases": ["MD", "Duchenne Muscular Dystrophy"], "mesh_terms": ["Muscular Dystrophies"]}
+{"name": "Myalgic Encephalomyelitis/Chronic Fatigue Syndrome", "aliases": ["CFS", "Chronic fatigue syndrome", "ME/CFS", "Myalgic encephalomyelitis", "SEID", "Systemic exertion intolerance disease", "Chronic Fatigue Syndrome"], "mesh_terms": ["Fatigue Syndrome, Chronic"]}
+{"name": "Myasthenia Gravis", "aliases": [], "mesh_terms": ["Myasthenia Gravis"]}
+{"name": "Mycobacterial Infections", "aliases": ["Hansen's Disease", "Leprosy"], "mesh_terms": ["Mycobacterium Infections, Nontuberculous", "Mycobacterium Infections", "Leprosy"]}
+{"name": "Myelodysplastic Syndromes", "aliases": ["MDS"], "mesh_terms": ["Myelodysplastic Syndromes"]}
+{"name": "Myositis", "aliases": ["Dermatomyositis", "Polymyositis"], "mesh_terms": ["Myositis"]}
+{"name": "Nail Diseases", "aliases": ["Fingernails", "Ingrown Nail", "Onychomycosis", "Paronychia", "Toenails"], "mesh_terms": ["Nail Diseases"]}
+{"name": "Nasal Cancer", "aliases": ["Cancer of the nasal cavity", "Cancer of the paranasal sinus", "Paranasal Sinus Cancer", "Sinus Cancer"], "mesh_terms": ["Nose Neoplasms"]}
+{"name": "Nausea and Vomiting", "aliases": ["Emesis", "Vomiting"], "mesh_terms": ["Vomiting", "Nausea"]}
+{"name": "Neck Injuries and Disorders", "aliases": ["Cervical Spine", "Whiplash"], "mesh_terms": ["Neck Pain", "Neck Injuries", "Cervical Vertebrae"]}
+{"name": "Neural Tube Defects", "aliases": ["Anencephaly"], "mesh_terms": ["Neural Tube Defects"]}
+{"name": "Neuroblastoma", "aliases": [], "mesh_terms": ["Neuroblastoma"]}
+{"name": "Neurofibromatosis", "aliases": ["Recklinghausen's disease", "von Recklinghausen's disease", "von Recklinghausen's Disease"], "mesh_terms": ["Neurofibromatoses"]}
+{"name": "Neurologic Diseases", "aliases": ["Nervous system diseases", "Nerve Diseases", "Nervous System Diseases"], "mesh_terms": ["Nervous System Diseases"]}
+{"name": "Neuromuscular Disorders", "aliases": ["Spasticity"], "mesh_terms": ["Neuromuscular Diseases"]}
+{"name": "Newborn Screening", "aliases": ["Screening, Newborn"], "mesh_terms": ["Neonatal Screening"]}
+{"name": "Noise", "aliases": [], "mesh_terms": ["Noise"]}
+{"name": "Non-Drug Pain Management", "aliases": [], "mesh_terms": ["Pain Management"]}
+{"name": "Norovirus Infections", "aliases": ["Norwalk virus infections", "Norwalk Virus Infections"], "mesh_terms": ["Norovirus"]}
+{"name": "Nose Injuries and Disorders", "aliases": ["Nasal disorders", "Nasal Disorders", "Nosebleed"], "mesh_terms": ["Nose Diseases"]}
+{"name": "Nuclear Scans", "aliases": ["Radioisotope scans", "Radionuclide scans", "PET Scans", "Radionuclide Scans"], "mesh_terms": ["Radionuclide Imaging"]}
+{"name": "Nursing Homes", "aliases": ["Long-Term Care"], "mesh_terms": ["Nursing Homes"]}
+{"name": "Nutrition", "aliases": ["Food Additives", "Healthy Eating"], "mesh_terms": ["Nutritional Physiological Phenomena", "Nutrition Disorders"]}
+{"name": "Nutrition for Older Adults", "aliases": ["Seniors' Nutrition"], "mesh_terms": ["Nutritional Physiological Phenomena", "Nutrition Disorders"]}
+{"name": "Nutritional Support", "aliases": ["Artificial feeding", "Artificial hydration and nutrition", "Hyperalimentation", "Parenteral nutrition", "TPN", "Tube feeding", "Artificial Feeding", "Parenteral Nutrition"], "mesh_terms": ["Nutritional Support"]}
+{"name": "Obesity", "aliases": ["Overweight"], "mesh_terms": ["Obesity"]}
+{"name": "Obesity in Children", "aliases": ["Childhood Obesity"], "mesh_terms": ["Pediatric Obesity", "Obesity"]}
+{"name": "Obsessive-Compulsive Disorder", "aliases": ["OCD", "Hoarding"], "mesh_terms": ["Obsessive-Compulsive Disorder"]}
+{"name": "Occupational Health", "aliases": ["Employee Health", "Occupational Injuries"], "mesh_terms": ["Accidents, Occupational", "Occupational Stress", "Occupational Injuries", "Occupational Diseases", "Occupational Exposure"]}
+{"name": "Occupational Health for Health Care Providers", "aliases": ["Blood-Borne Pathogens", "Cross Infection", "Hospital-Acquired Infections"], "mesh_terms": ["Health Occupations", "Occupational Health", "Occupational Exposure"]}
+{"name": "Oil Spills", "aliases": ["Gulf Oil Spill"], "mesh_terms": ["Petroleum Pollution"]}
+{"name": "Older Adult Health", "aliases": ["Aging"], "mesh_terms": ["Aging"]}
+{"name": "Older Adult Mental Health", "aliases": ["Senior mental health", "Emotional Health", "Mental Health, Older Adults", "Seniors' Mental Health"], "mesh_terms": ["Mental Health"]}
+{"name": "Opioid Overdose", "aliases": [], "mesh_terms": ["Opioid-Related Disorders", "Drug Overdose", "Opiate Overdose"]}
+{"name": "Opioid Use Disorder (OUD) Treatment", "aliases": ["Medications for opioid use disorder (MOUD)", "Opioid abuse and addiction treatment", "Opioid Abuse and Addiction Treatment"], "mesh_terms": ["Opioid-Related Disorders"]}
+{"name": "Opioids and Opioid Use Disorder (OUD)", "aliases": ["Opioid abuse", "Opioid addiction", "Opioid misuse", "Opiates", "Opioid Abuse and Addiction"], "mesh_terms": ["Opioid-Related Disorders", "Prescription Drug Misuse"]}
+{"name": "Optic Nerve Disorders", "aliases": [], "mesh_terms": ["Optic Nerve Diseases", "Optic Nerve Injuries"]}
+{"name": "Oral Cancer", "aliases": ["Mouth Cancer", "Tongue Cancer"], "mesh_terms": ["Mouth Neoplasms"]}
+{"name": "Organ Donation", "aliases": ["Donors", "Tissue Donation"], "mesh_terms": ["Unrelated Donors", "Living Donors", "Tissue Donors"]}
+{"name": "Organ Transplantation", "aliases": ["Transplantation"], "mesh_terms": ["Organ Transplantation"]}
+{"name": "Orthodontia", "aliases": ["Braces", "Braces, Oral"], "mesh_terms": ["Orthodontics"]}
+{"name": "Osteoarthritis", "aliases": ["Degenerative joint disease", "OA", "Osteoarthrosis", "Degenerative Joint Disease"], "mesh_terms": ["Osteoarthritis"]}
+{"name": "Osteogenesis Imperfecta", "aliases": ["Brittle bone disease", "OI"], "mesh_terms": ["Osteogenesis Imperfecta"]}
+{"name": "Osteonecrosis", "aliases": ["Aseptic necrosis", "Avascular necrosis", "Ischemic necrosis", "Aseptic Necrosis", "Avascular Necrosis", "Legg-Calve-Perthes Disease"], "mesh_terms": ["Osteonecrosis"]}
+{"name": "Osteoporosis", "aliases": ["Bone Loss"], "mesh_terms": ["Osteoporosis", "Osteoporotic Fractures"]}
+{"name": "Ostomy", "aliases": ["Colostomy", "Ileostomy", "Stoma", "Urostomy"], "mesh_terms": ["Ostomy"]}
+{"name": "Ovarian Cancer", "aliases": ["Fallopian Tube Cancer", "Primary Peritoneal Cancer"], "mesh_terms": ["Peritoneal Neoplasms", "Fallopian Tube Neoplasms", "Ovarian Neoplasms"]}
+{"name": "Ovarian Cysts", "aliases": [], "mesh_terms": ["Ovarian Cysts"]}
+{"name": "Ovarian Disorders", "aliases": ["Ovarian Insufficiency"], "mesh_terms": ["Ovarian Diseases"]}
+{"name": "Over-the-Counter Medicines", "aliases": ["Non-prescription drugs", "OTC medicines", "About Your Medicines", "Drug Information", "Medicines, Over-the-Counter", "Non-Prescription Drugs", "OTC Medicines"], "mesh_terms": ["Nonprescription Drugs"]}
+{"name": "Overactive Bladder", "aliases": [], "mesh_terms": ["Urinary Bladder, Overactive"]}
+{"name": "Oxygen Therapy", "aliases": ["Hyperbaric Oxygen"], "mesh_terms": ["Oxygen Inhalation Therapy"]}
+{"name": "Ozone", "aliases": [], "mesh_terms": ["Ozone", "Stratospheric Ozone"]}
+{"name": "Pacemakers and Implantable Defibrillators", "aliases": ["Defibrillators, Implantable", "Implantable Defibrillators"], "mesh_terms": ["Defibrillators, Implantable", "Pacemaker, Artificial"]}
+{"name": "Paget's Disease of Bone", "aliases": ["Osteitis deformans", "Osteitis Deformans"], "mesh_terms": ["Osteitis Deformans"]}
+{"name": "Pain", "aliases": [], "mesh_terms": ["Pain", "Pain Perception", "Pain Management"]}
+{"name": "Pain Relievers", "aliases": ["Analgesics", "Pain killers", "Pain medicines", "Methadone", "Narcotics", "Painkillers"], "mesh_terms": ["Analgesics, Non-Narcotic"]}
+{"name": "Palliative Care", "aliases": [], "mesh_terms": ["Palliative Care"]}
+{"name": "Pancreas Transplantation", "aliases": [], "mesh_terms": ["Pancreas Transplantation"]}
+{"name": "Pancreatic Cancer", "aliases": ["Islet Cell Carcinoma"], "mesh_terms": ["Pancreatic Neoplasms"]}
+{"name": "Pancreatic Diseases", "aliases": [], "mesh_terms": ["Pancreatic Diseases"]}
+{"name": "Pancreatitis", "aliases": ["Acute Pancreatitis", "Chronic Pancreatitis"], "mesh_terms": ["Pancreatitis"]}
+{"name": "Panic Disorder", "aliases": [], "mesh_terms": ["Panic Disorder"]}
+{"name": "Paralysis", "aliases": ["Hemiplegia", "Palsy", "Paraplegia", "Quadriplegia"], "mesh_terms": ["Paralysis"]}
+{"name": "Parasitic Diseases", "aliases": [], "mesh_terms": ["Parasitic Diseases"]}
+{"name": "Parathyroid Disorders", "aliases": ["Hyperparathyroidism", "Hypoparathyroidism", "Multiple Endocrine Neoplasia"], "mesh_terms": ["Parathyroid Diseases"]}
+{"name": "Parenting", "aliases": [], "mesh_terms": ["Parenting"]}
+{"name": "Parkinson's Disease", "aliases": ["Paralysis agitans", "Shaking palsy", "Paralysis Agitans", "Shaking Palsy"], "mesh_terms": ["Parkinson Disease"]}
+{"name": "Patient Rights", "aliases": ["Informed Consent", "Ombudsman Programs", "Privacy", "Second Opinion"], "mesh_terms": ["Patient Rights"]}
+{"name": "Patient Safety", "aliases": [], "mesh_terms": ["Patient Safety", "Patient Harm"]}
+{"name": "Pelvic Floor Disorders", "aliases": ["Cystocele", "Enterocele", "Pelvic prolapse", "Rectocele", "Uterine Prolapse"], "mesh_terms": ["Pelvic Floor Disorders", "Pelvic Organ Prolapse", "Rectal Prolapse", "Rectocele", "Urinary Incontinence, Stress", "Uterine Prolapse"]}
+{"name": "Pelvic Inflammatory Disease", "aliases": ["PID"], "mesh_terms": ["Pelvic Inflammatory Disease"]}
+{"name": "Pelvic Pain", "aliases": [], "mesh_terms": ["Pudendal Neuralgia", "Pelvic Pain"]}
+{"name": "Pemphigus", "aliases": ["Bullous Pemphigoid", "Pemphigoid"], "mesh_terms": ["Pemphigoid Gestationis", "Pemphigoid, Benign Mucous Membrane", "Pemphigus", "Pemphigoid, Bullous", "Pemphigus, Benign Familial"]}
+{"name": "Penis Disorders", "aliases": ["Penile disorders", "Balanitis", "Male Genital Disorders", "Penile Disorders", "Peyronie's Disease"], "mesh_terms": ["Penile Diseases"]}
+{"name": "Peptic Ulcer", "aliases": ["Duodenal ulcer", "Gastric ulcer", "Stomach ulcer", "Ulcer", "Duodenal Ulcer", "Stomach Ulcer", "Ulcers"], "mesh_terms": ["Peptic Ulcer"]}
+{"name": "Pericardial Disorders", "aliases": ["Pericardial Effusion", "Pericarditis"], "mesh_terms": ["Pericarditis", "Pericardial Effusion", "Cardiac Tamponade"]}
+{"name": "Period Pain", "aliases": ["Dysmenorrhea", "Menstrual cramps", "Menstrual pain"], "mesh_terms": ["Dysmenorrhea"]}
+{"name": "Peripheral Arterial Disease", "aliases": ["PAD", "Arteriosclerosis of Extremities", "Claudication", "Intermittent Claudication"], "mesh_terms": ["Peripheral Arterial Disease"]}
+{"name": "Peripheral Nerve Disorders", "aliases": ["Neuritis", "Peripheral neuritis", "Peripheral neuropathy", "Neuropathy"], "mesh_terms": ["Peripheral Nerve Injuries", "Peripheral Nervous System Diseases"]}
+{"name": "Peritoneal Disorders", "aliases": ["Peritonitis"], "mesh_terms": ["Peritoneal Diseases"]}
+{"name": "Personal Health Records", "aliases": ["Electronic health records", "Patient health record", "Confidentiality", "Electronic Health Records", "HIPAA", "Patient Portals", "Patient Records", "Privacy"], "mesh_terms": ["Health Records, Personal", "Meaningful Use"]}
+{"name": "Personality Disorders", "aliases": ["Antisocial Personality Disorder", "Borderline Personality Disorder", "Narcissism"], "mesh_terms": ["Personality Disorders"]}
+{"name": "Pesticides", "aliases": ["Fungicides", "Herbicides", "Rodenticides", "Insecticides"], "mesh_terms": ["Pesticides"]}
+{"name": "Pet Health", "aliases": ["Animal Health", "Pets", "Veterinary Medicine"], "mesh_terms": ["Animals, Domestic"]}
+{"name": "Phenylketonuria", "aliases": ["PKU"], "mesh_terms": ["Phenylketonurias"]}
+{"name": "Pheochromocytoma", "aliases": [], "mesh_terms": ["Pheochromocytoma"]}
+{"name": "Phobias", "aliases": ["Agoraphobia", "Social Anxiety Disorder", "Social Phobia"], "mesh_terms": ["Phobic Disorders"]}
+{"name": "Piercing and Tattoos", "aliases": ["Body art", "Body piercing", "Body Art", "Tattoos"], "mesh_terms": ["Cosmetic Techniques"]}
+{"name": "Pink Eye", "aliases": ["Conjunctivitis"], "mesh_terms": ["Conjunctivitis"]}
+{"name": "Pinworms", "aliases": ["Enterobiasis", "Oxyuriasis", "Seatworm infection", "Threadworm infection"], "mesh_terms": ["Enterobiasis"]}
+{"name": "Pituitary Disorders", "aliases": ["Acromegaly"], "mesh_terms": ["Pituitary Diseases"]}
+{"name": "Pituitary Tumors", "aliases": ["Prolactinoma"], "mesh_terms": ["Pituitary Neoplasms"]}
+{"name": "Plague", "aliases": ["Bubonic plague", "Pneumonic plague", "Bubonic Plague", "Pneumonic Plague"], "mesh_terms": ["Plague"]}
+{"name": "Plastic and Cosmetic Surgery", "aliases": ["Cosmetic surgery", "Body Contouring", "Breast Implants", "Breast Reduction", "Cosmetic Surgery", "Surgery, Plastic"], "mesh_terms": ["Plastic Surgery Procedures"]}
+{"name": "Platelet Disorders", "aliases": ["Thrombocyte disorders", "Blood Platelet Disorders", "Thrombocytopenia", "von Willebrand's Disease"], "mesh_terms": ["Blood Platelet Disorders"]}
+{"name": "Pleural Disorders", "aliases": ["Pleural Effusion", "Pleurisy", "Pneumothorax", "Thoracentesis"], "mesh_terms": ["Pleural Diseases"]}
+{"name": "Pneumococcal Infections", "aliases": ["Streptococcus pneumoniae infections", "Streptococcus Pneumoniae Infections"], "mesh_terms": ["Pneumococcal Infections"]}
+{"name": "Pneumocystis Infections", "aliases": [], "mesh_terms": ["Pneumocystis Infections"]}
+{"name": "Pneumonia", "aliases": ["Bronchopneumonia", "Walking Pneumonia"], "mesh_terms": ["Pneumonia"]}
+{"name": "Poison Ivy, Oak, and Sumac", "aliases": ["Ivy poison", "Rhus dermatitis", "Toxicodendron dermatitis", "Poison Oak", "Poison Sumac"], "mesh_terms": ["Dermatitis, Toxicodendron"]}
+{"name": "Poisoning", "aliases": [], "mesh_terms": ["Poisoning"]}
+{"name": "Polio and Post-Polio Syndrome", "aliases": ["Infantile paralysis", "PPS", "Poliomyelitis", "Infantile Paralysis", "Paralysis, Infantile", "Post-polio Syndrome"], "mesh_terms": ["Poliomyelitis", "Postpoliomyelitis Syndrome"]}
+{"name": "Polycystic Ovary Syndrome", "aliases": ["PCOS", "Stein-Leventhal Syndrome"], "mesh_terms": ["Polycystic Ovary Syndrome"]}
+{"name": "Polymyalgia Rheumatica", "aliases": [], "mesh_terms": ["Polymyalgia Rheumatica"]}
+{"name": "Porphyria", "aliases": [], "mesh_terms": ["Porphyrias"]}
+{"name": "Post-COVID Conditions (Long COVID)", "aliases": ["Chronic COVID", "Long-haul COVID", "Long-term effects of COVID", "Long COVID"], "mesh_terms": ["Post-Acute COVID-19 Syndrome", "COVID-19"]}
+{"name": "Post-Traumatic Stress Disorder", "aliases": ["PTSD"], "mesh_terms": ["Stress Disorders, Post-Traumatic"]}
+{"name": "Postpartum Care", "aliases": ["Post-pregnancy health", "Maternal Health"], "mesh_terms": ["Puerperal Disorders", "Postnatal Care", "Postpartum Period"]}
+{"name": "Postpartum Depression", "aliases": ["Post-pregnancy depression", "Baby Blues"], "mesh_terms": ["Depression, Postpartum"]}
+{"name": "Potassium", "aliases": ["Hyperkalemia", "Hypokalemia"], "mesh_terms": ["Potassium, Dietary", "Potassium"]}
+{"name": "Prader-Willi Syndrome", "aliases": ["PWS"], "mesh_terms": ["Prader-Willi Syndrome"]}
+{"name": "Preconception Care", "aliases": ["Fertility"], "mesh_terms": ["Preconception Care"]}
+{"name": "Prediabetes", "aliases": ["Insulin Resistance"], "mesh_terms": ["Prediabetic State"]}
+{"name": "Pregnancy", "aliases": [], "mesh_terms": ["Pregnancy"]}
+{"name": "Pregnancy and Medicines", "aliases": ["Medicines and Pregnancy"], "mesh_terms": ["Abnormalities, Drug-Induced"]}
+{"name": "Pregnancy and Nutrition", "aliases": ["Nutrition and Pregnancy"], "mesh_terms": ["Maternal Nutritional Physiological Phenomena"]}
+{"name": "Pregnancy and Opioids", "aliases": [], "mesh_terms": ["Opioid-Related Disorders", "Pregnancy"]}
+{"name": "Pregnancy and Substance Use", "aliases": ["Alcohol Abuse in Pregnancy", "Drug Abuse in Pregnancy", "Pregnancy and Substance Abuse", "Smoking in Pregnancy", "Substance Abuse in Pregnancy"], "mesh_terms": ["Substance-Related Disorders", "Pregnancy"]}
+{"name": "Premature Babies", "aliases": ["Preemies"], "mesh_terms": ["Infant, Premature, Diseases", "Infant, Premature"]}
+{"name": "Premenstrual Syndrome", "aliases": ["PMS"], "mesh_terms": ["Premenstrual Dysphoric Disorder", "Premenstrual Syndrome"]}
+{"name": "Prenatal Care", "aliases": [], "mesh_terms": ["Prenatal Care"]}
+{"name": "Prenatal Testing", "aliases": ["Amniocentesis", "Chorionic Villi Sampling", "Fetal Ultrasound"], "mesh_terms": ["Prenatal Diagnosis"]}
+{"name": "Prescription Drug Misuse", "aliases": ["Prescription Drug Abuse", "Drug Abuse, Prescription"], "mesh_terms": ["Drug Prescriptions", "Substance-Related Disorders", "Prescription Drug Overuse"]}
+{"name": "Pressure Sores", "aliases": ["Bed sores", "Decubitus ulcers", "Pressure ulcers", "Bedsores", "Decubitus Ulcers"], "mesh_terms": ["Pressure Ulcer"]}
+{"name": "Preterm Labor", "aliases": ["Early Labor", "Premature Birth", "Premature Labor", "Preterm Birth"], "mesh_terms": ["Obstetric Labor, Premature"]}
+{"name": "Primary Ovarian Insufficiency", "aliases": ["Ovarian insufficiency", "POF", "POI", "Premature ovarian failure", "Ovarian Insufficiency", "Premature Ovarian Failure"], "mesh_terms": ["Primary Ovarian Insufficiency"]}
+{"name": "Progressive Supranuclear Palsy", "aliases": ["PSP", "Richardson-Steele-Olszewski syndrome", "Steele-Richardson-Olszewski syndrome", "Steele-Richardson-Olszewski Syndrome"], "mesh_terms": ["Supranuclear Palsy, Progressive"]}
+{"name": "Prostate Cancer", "aliases": [], "mesh_terms": ["Prostatic Neoplasms"]}
+{"name": "Prostate Cancer Screening", "aliases": [], "mesh_terms": ["Prostate-Specific Antigen", "Digital Rectal Examination"]}
+{"name": "Prostate Diseases", "aliases": [], "mesh_terms": ["Prostatic Diseases"]}
+{"name": "Psoriasis", "aliases": [], "mesh_terms": ["Psoriasis"]}
+{"name": "Psoriatic Arthritis", "aliases": [], "mesh_terms": ["Arthritis, Psoriatic"]}
+{"name": "Psychotic Disorders", "aliases": ["Psychoses"], "mesh_terms": ["Psychotic Disorders"]}
+{"name": "Puberty", "aliases": [], "mesh_terms": ["Puberty"]}
+{"name": "Pubic Lice", "aliases": ["Crabs"], "mesh_terms": ["Phthirus", "Lice Infestations"]}
+{"name": "Pulmonary Embolism", "aliases": ["Blood clots in the lung", "Blood Clots in the Lung"], "mesh_terms": ["Pulmonary Embolism"]}
+{"name": "Pulmonary Fibrosis", "aliases": ["IPF", "Idiopathic pulmonary fibrosis"], "mesh_terms": ["Pulmonary Fibrosis"]}
+{"name": "Pulmonary Hypertension", "aliases": ["Pulmonary arterial hypertension", "Cor Pulmonale", "Hypertension, Pulmonary", "Primary Pulmonary Hypertension", "Pulmonary Arterial Hypertension"], "mesh_terms": ["Hypertension, Pulmonary"]}
+{"name": "Pulmonary Rehabilitation", "aliases": ["Chest Physical Therapy", "Lung Rehabilitation"], "mesh_terms": ["Lung Diseases"]}
+{"name": "Quitting Smoking", "aliases": ["Smoking cessation", "Smoking Cessation"], "mesh_terms": ["Smoking Cessation", "Smoking Cessation Agents", "Tobacco Use Cessation Devices"]}
+{"name": "Rabies", "aliases": ["Hydrophobia"], "mesh_terms": ["Rabies"]}
+{"name": "Radiation Emergencies", "aliases": ["Man-Made Disasters"], "mesh_terms": ["Radioactive Hazard Release"]}
+{"name": "Radiation Exposure", "aliases": [], "mesh_terms": ["Environmental Exposure", "Radiation", "Radiation Exposure"]}
+{"name": "Radiation Therapy", "aliases": ["Brachytherapy", "Radiotherapy", "Radiosurgery"], "mesh_terms": ["Radiotherapy"]}
+{"name": "Radon", "aliases": [], "mesh_terms": ["Radon"]}
+{"name": "Rare Diseases", "aliases": [], "mesh_terms": ["Rare Diseases"]}
+{"name": "Rashes", "aliases": ["Dermatitis", "Skin rash", "Contact Dermatitis", "Diaper Rash", "Skin Rash"], "mesh_terms": ["Exanthema"]}
+{"name": "Raynaud Phenomenon", "aliases": ["Raynaud's disease", "Raynaud's syndrome", "Raynaud's Disease", "Raynaud's Syndrome"], "mesh_terms": ["Raynaud Disease"]}
+{"name": "Rectal Disorders", "aliases": ["Proctitis", "Rectocele"], "mesh_terms": ["Rectal Diseases"]}
+{"name": "Reflux in Children", "aliases": ["GER in Children", "GERD in Children", "Gastroesophageal Reflux in Children"], "mesh_terms": ["Gastroesophageal Reflux"]}
+{"name": "Reflux in Infants", "aliases": ["GER in Infants", "GERD in infants", "Pediatric Gastroesophageal Reflux", "GERD in Infants", "Gastroesophageal Reflux in Infants"], "mesh_terms": ["Gastroesophageal Reflux"]}
+{"name": "Refractive Errors", "aliases": ["Farsightedness", "Hyperopia", "Myopia", "Nearsightedness", "Artificial Lens", "Astigmatism", "Intraocular Lens", "Presbyopia"], "mesh_terms": ["Refractive Errors"]}
+{"name": "Rehabilitation", "aliases": ["Rehab", "Occupational Therapy", "Physical Therapy"], "mesh_terms": ["Rehabilitation"]}
+{"name": "Reproductive Hazards", "aliases": ["Pregnancy Hazards"], "mesh_terms": ["Maternal Exposure", "Paternal Exposure"]}
+{"name": "Respiratory Failure", "aliases": ["ARDS", "Acute Respiratory Distress Syndrome"], "mesh_terms": ["Respiratory Insufficiency"]}
+{"name": "Respiratory Syncytial Virus Infections", "aliases": ["RSV", "Bronchiolitis", "RSV Infections"], "mesh_terms": ["Respiratory Syncytial Virus Infections"]}
+{"name": "Restless Legs", "aliases": ["RLS", "Willis-Ekbom Disease"], "mesh_terms": ["Restless Legs Syndrome"]}
+{"name": "Retinal Detachment", "aliases": [], "mesh_terms": ["Retinal Detachment"]}
+{"name": "Retinal Disorders", "aliases": ["Floater"], "mesh_terms": ["Retinal Diseases"]}
+{"name": "Rett Syndrome", "aliases": [], "mesh_terms": ["Rett Syndrome"]}
+{"name": "Reye Syndrome", "aliases": [], "mesh_terms": ["Reye Syndrome"]}
+{"name": "Rh Incompatibility", "aliases": ["Erythroblastosis Fetalis", "Hemolytic Disease of Newborn"], "mesh_terms": ["Rh Isoimmunization", "Erythroblastosis, Fetal"]}
+{"name": "Rheumatoid Arthritis", "aliases": ["RA"], "mesh_terms": ["Arthritis, Rheumatoid"]}
+{"name": "Rickets", "aliases": ["Rachitis"], "mesh_terms": ["Rickets", "Rickets, Hypophosphatemic"]}
+{"name": "Rosacea", "aliases": ["Acne rosacea", "Acne Rosacea"], "mesh_terms": ["Rosacea"]}
+{"name": "Rotator Cuff Injuries", "aliases": ["Shoulder Impingement"], "mesh_terms": ["Rotator Cuff Injuries"]}
+{"name": "Rotavirus Infections", "aliases": [], "mesh_terms": ["Rotavirus Infections"]}
+{"name": "Rubella", "aliases": ["German measles", "Three day measles", "German Measles", "Three Day Measles"], "mesh_terms": ["Rubella"]}
+{"name": "Rural Health Concerns", "aliases": [], "mesh_terms": ["Rural Health Services", "Rural Population", "Rural Health"]}
+{"name": "Safe Opioid Use", "aliases": [], "mesh_terms": ["Prescription Drug Misuse", "Drug Overdose"]}
+{"name": "Safety", "aliases": ["Accident prevention", "Accident Prevention"], "mesh_terms": ["Safety"]}
+{"name": "Salivary Gland Cancer", "aliases": ["Parotid Gland Cancer"], "mesh_terms": ["Salivary Gland Neoplasms"]}
+{"name": "Salivary Gland Disorders", "aliases": ["Parotid Gland Disorders"], "mesh_terms": ["Salivary Gland Diseases"]}
+{"name": "Salmonella Infections", "aliases": ["Typhoid Fever"], "mesh_terms": ["Salmonella Infections"]}
+{"name": "Sarcoidosis", "aliases": [], "mesh_terms": ["Sarcoidosis"]}
+{"name": "Scabies", "aliases": [], "mesh_terms": ["Scabies"]}
+{"name": "Scars", "aliases": ["Cicatrix", "Keloid scar", "Hypertrophic Scar", "Keloids"], "mesh_terms": ["Cicatrix"]}
+{"name": "Schizophrenia", "aliases": [], "mesh_terms": ["Schizophrenia"]}
+{"name": "School Health", "aliases": [], "mesh_terms": ["School Health Services"]}
+{"name": "Sciatica", "aliases": [], "mesh_terms": ["Sciatica"]}
+{"name": "Scleroderma", "aliases": ["Circumscribed scleroderma", "Dermatosclerosis", "Morphea", "Systemic sclerosis", "Systemic Sclerosis"], "mesh_terms": ["Scleroderma, Systemic", "Scleroderma, Localized"]}
+{"name": "Scoliosis", "aliases": [], "mesh_terms": ["Scoliosis"]}
+{"name": "Seasonal Affective Disorder", "aliases": ["SAD", "Seasonal depression", "Seasonal mood disorder"], "mesh_terms": ["Seasonal Affective Disorder"]}
+{"name": "Secondhand Smoke", "aliases": ["Environmental tobacco smoke", "Passive smoking", "Tobacco smoke pollution", "Environmental Tobacco Smoke", "Passive Smoking", "Smoking, Passive"], "mesh_terms": ["Tobacco Smoke Pollution"]}
+{"name": "Seizures", "aliases": [], "mesh_terms": ["Seizures"]}
+{"name": "Self-Harm", "aliases": ["Self-injury", "Cutting", "Hair Pulling"], "mesh_terms": ["Self-Injurious Behavior"]}
+{"name": "Sepsis", "aliases": ["Bacteremia", "Blood Poisoning", "Septic Shock", "Septicemia", "Toxic Shock Syndrome"], "mesh_terms": ["Sepsis"]}
+{"name": "Sexual Assault", "aliases": ["Rape"], "mesh_terms": ["Sex Offenses"]}
+{"name": "Sexual Health", "aliases": ["Sex"], "mesh_terms": ["Sexual Health"]}
+{"name": "Sexual Problems in Men", "aliases": ["Premature Ejaculation"], "mesh_terms": ["Sexual Dysfunction, Physiological"]}
+{"name": "Sexual Problems in Women", "aliases": ["Dyspareunia", "Female Circumcision", "Female Sexual Dysfunction", "Vaginismus"], "mesh_terms": ["Vaginismus", "Dyspareunia", "Sexual Dysfunctions, Psychological"]}
+{"name": "Sexually Transmitted Infections", "aliases": ["STDs", "STIs", "Sexually transmitted diseases", "Venereal disease", "Crab Lice", "Sexually Transmitted Diseases", "Venereal Disease"], "mesh_terms": ["Sexually Transmitted Diseases"]}
+{"name": "Shingles", "aliases": ["Herpes zoster", "Postherpetic neuralgia", "Herpes Zoster", "Post-herpetic Neuralgia"], "mesh_terms": ["Neuralgia, Postherpetic", "Herpes Zoster"]}
+{"name": "Shock", "aliases": ["Septic Shock"], "mesh_terms": ["Shock"]}
+{"name": "Shoulder Injuries and Disorders", "aliases": ["Clavicle Injuries", "Collarbone Injuries", "Frozen Shoulder", "Scapula Injuries"], "mesh_terms": ["Shoulder Injuries", "Acromioclavicular Joint", "Shoulder Fractures"]}
+{"name": "Sickle Cell Disease", "aliases": ["Hemoglobin SS disease", "Sickle cell anemia", "Hemoglobin SS Disease", "Sickle Cell Anemia"], "mesh_terms": ["Anemia, Sickle Cell"]}
+{"name": "Sinusitis", "aliases": ["Sinus Infection"], "mesh_terms": ["Sinusitis"]}
+{"name": "Sjogren's Syndrome", "aliases": ["Sjogren's Disease"], "mesh_terms": ["Sjogren's Syndrome"]}
+{"name": "Skin Aging", "aliases": ["Aging Skin", "Liver Spots", "Wrinkles"], "mesh_terms": ["Skin Aging"]}
+{"name": "Skin Cancer", "aliases": ["Actinic Keratosis", "Basal Cell Carcinoma", "Merkel Cell Cancer"], "mesh_terms": ["Skin Neoplasms"]}
+{"name": "Skin Conditions", "aliases": ["Cutaneous disorders", "Dermatologic disorders", "Cutaneous Disorders", "Dermatologic Conditions"], "mesh_terms": ["Skin Diseases"]}
+{"name": "Skin Infections", "aliases": ["Molluscum Contagiosum"], "mesh_terms": ["Skin Diseases, Infectious"]}
+{"name": "Skin Pigmentation Disorders", "aliases": ["Hyperpigmentation", "Hypopigmentation"], "mesh_terms": ["Pigmentation Disorders"]}
+{"name": "Sleep Apnea", "aliases": ["Sleep-disordered breathing", "Apnea, Sleep", "Sleep-disordered Breathing"], "mesh_terms": ["Sleep Apnea Syndromes"]}
+{"name": "Sleep Disorders", "aliases": ["Narcolepsy", "Night Terrors", "Sleeping Pills"], "mesh_terms": ["Sleep Wake Disorders"]}
+{"name": "Small Intestine Disorders", "aliases": ["Intestinal Diseases"], "mesh_terms": ["Jejunal Diseases", "Duodenal Diseases", "Ileal Diseases"]}
+{"name": "Smallpox", "aliases": [], "mesh_terms": ["Smallpox", "Smallpox Vaccine"]}
+{"name": "Smokeless Tobacco", "aliases": ["Chewing tobacco", "Dip", "Oral tobacco", "Snuff", "Spit tobacco", "Chewing Tobacco", "Oral Tobacco", "Spit Tobacco", "Tobacco, Smokeless"], "mesh_terms": ["Tobacco, Smokeless"]}
+{"name": "Smoking", "aliases": ["Cigar smoking", "Cigarette smoking", "Pipe smoking", "Tobacco smoking", "Nicotine", "Tobacco Smoking"], "mesh_terms": ["Cigarette Smoking", "Pipe Smoking", "Tobacco Smoking", "Water Pipe Smoking", "Cigar Smoking"]}
+{"name": "Smoking and Youth", "aliases": ["Teen smoking", "Teen Smoking"], "mesh_terms": ["Smoking"]}
+{"name": "Snoring", "aliases": [], "mesh_terms": ["Snoring"]}
+{"name": "Sodium", "aliases": ["Salt", "Dietary Sodium", "Hyponatremia"], "mesh_terms": ["Sodium Chloride, Dietary", "Sodium, Dietary"]}
+{"name": "Soft Tissue Sarcoma", "aliases": ["Rhabdomyosarcoma", "Sarcoma, Soft Tissue"], "mesh_terms": ["Sarcoma"]}
+{"name": "Sore Throat", "aliases": ["Pharyngitis"], "mesh_terms": ["Pharyngitis"]}
+{"name": "Speech and Communication Disorders", "aliases": ["Communication disorders", "Communication Disorders", "Language Problems"], "mesh_terms": ["Communication Disorders", "Speech Disorders"]}
+{"name": "Speech and Language Problems in Children", "aliases": ["Language Problems"], "mesh_terms": ["Language Disorders"]}
+{"name": "Spider Bites", "aliases": ["Black Widow Spider Bites", "Brown Recluse Spider Bites"], "mesh_terms": ["Spider Bites"]}
+{"name": "Spina Bifida", "aliases": ["Cleft spine", "Open spine", "Cleft Spine", "Myelomeningocele", "Open Spine"], "mesh_terms": ["Spinal Dysraphism"]}
+{"name": "Spinal Cord Diseases", "aliases": [], "mesh_terms": ["Spinal Cord Diseases"]}
+{"name": "Spinal Cord Injuries", "aliases": [], "mesh_terms": ["Spinal Cord Injuries"]}
+{"name": "Spinal Muscular Atrophy", "aliases": ["SMA"], "mesh_terms": ["Muscular Atrophy, Spinal"]}
+{"name": "Spinal Stenosis", "aliases": [], "mesh_terms": ["Spinal Stenosis"]}
+{"name": "Spine Injuries and Disorders", "aliases": ["Compression Fracture", "Kyphosis", "Spondylolisthesis"], "mesh_terms": ["Spinal Fractures", "Spinal Injuries", "Spinal Diseases"]}
+{"name": "Spleen Diseases", "aliases": ["Splenic diseases", "Splenic Diseases", "Splenomegaly"], "mesh_terms": ["Splenic Diseases"]}
+{"name": "Sports Fitness", "aliases": ["Fitness", "Performance-Enhancing Drugs", "Weight Training"], "mesh_terms": ["Sports Medicine"]}
+{"name": "Sports Injuries", "aliases": [], "mesh_terms": ["Athletic Injuries"]}
+{"name": "Sports Safety", "aliases": ["Bicycle Safety", "Recreational Safety"], "mesh_terms": ["Sports", "Safety"]}
+{"name": "Sprains and Strains", "aliases": ["Ligament Injuries", "Muscle Strain"], "mesh_terms": ["Sprains and Strains"]}
+{"name": "Staphylococcal Infections", "aliases": ["Staph", "Vancomycin-Resistant Staphylococcus aureus"], "mesh_terms": ["Staphylococcal Infections"]}
+{"name": "Statins", "aliases": ["HMG-CoA reductase inhibitors"], "mesh_terms": ["Hydroxymethylglutaryl-CoA Reductase Inhibitors"]}
+{"name": "Stem Cells", "aliases": ["Cord Blood", "Stem Cell Transplantation"], "mesh_terms": ["Stem Cells", "Hematopoietic Stem Cells"]}
+{"name": "Steroids", "aliases": ["Corticosteroids", "Glucocorticoids", "Prednisone"], "mesh_terms": ["Glucocorticoids", "Adrenal Cortex Hormones", "Prednisone"]}
+{"name": "Stillbirth", "aliases": ["Pregnancy Loss"], "mesh_terms": ["Stillbirth"]}
+{"name": "Stomach Cancer", "aliases": ["Gastric cancer", "Gastric Cancer"], "mesh_terms": ["Stomach Neoplasms"]}
+{"name": "Stomach Disorders", "aliases": ["Gastric disorders", "Gastric Disorders", "Gastritis", "Gastroparesis", "Stomach Ache"], "mesh_terms": ["Stomach Diseases"]}
+{"name": "Streptococcal Infections", "aliases": ["Strep", "Rheumatic Fever", "Scarlet Fever", "Strep Throat"], "mesh_terms": ["Streptococcal Infections"]}
+{"name": "Stress", "aliases": ["Psychological stress", "Psychological Stress"], "mesh_terms": ["Stress, Psychological"]}
+{"name": "Stroke", "aliases": ["Brain attack", "CVA", "Brain Attack", "Cerebrovascular Disease"], "mesh_terms": ["Stroke"]}
+{"name": "Stroke Rehabilitation", "aliases": [], "mesh_terms": ["Stroke Rehabilitation"]}
+{"name": "Stuttering", "aliases": ["Stammering"], "mesh_terms": ["Stuttering"]}
+{"name": "Sudden Cardiac Arrest", "aliases": ["SCA", "Sudden cardiac death", "Automated External Defibrillators", "Cardiac Arrest", "Sudden Cardiac Death"], "mesh_terms": ["Heart Arrest"]}
+{"name": "Sudden Infant Death Syndrome", "aliases": ["Crib death", "SIDS", "Crib Death"], "mesh_terms": ["Sudden Infant Death"]}
+{"name": "Suicide", "aliases": [], "mesh_terms": ["Suicide", "Suicidal Ideation"]}
+{"name": "Sun Exposure", "aliases": ["Sunburn", "Actinic Keratosis", "Sunscreen", "Ultraviolet Rays"], "mesh_terms": ["Sunscreening Agents", "Sunbathing", "Sunburn"]}
+{"name": "Surgery", "aliases": ["Operation", "Second Opinion"], "mesh_terms": ["Surgical Procedures, Operative"]}
+{"name": "Swallowing Disorders", "aliases": ["Dysphagia"], "mesh_terms": ["Deglutition Disorders"]}
+{"name": "Sweat", "aliases": ["Perspiration", "Body Odor", "Hyperhidrosis"], "mesh_terms": ["Sweat"]}
+{"name": "Syphilis", "aliases": [], "mesh_terms": ["Syphilis"]}
+{"name": "Syringomyelia", "aliases": [], "mesh_terms": ["Syringomyelia"]}
+{"name": "Tailbone Disorders", "aliases": ["Coccyx disorders", "Coccyx", "Pilonidal Cyst"], "mesh_terms": ["Coccyx", "Spinal Diseases"]}
+{"name": "Talking With Your Doctor", "aliases": ["Communicating With Your Healthcare Provider", "Second Opinion", "Talk to Your Doctor"], "mesh_terms": ["Physician-Patient Relations", "Dentist-Patient Relations", "Nurse-Patient Relations"]}
+{"name": "Tanning", "aliases": [], "mesh_terms": ["Suntan", "Tanning"]}
+{"name": "Taste and Smell Disorders", "aliases": ["Ageusia", "Anosmia", "Dysgeusia", "Dysosmia", "Smelling Disorders"], "mesh_terms": ["Taste Disorders", "Taste Perception", "Olfaction Disorders"]}
+{"name": "Tay-Sachs Disease", "aliases": [], "mesh_terms": ["Tay-Sachs Disease"]}
+{"name": "Tears", "aliases": ["Lacrimation", "Dry Eye"], "mesh_terms": ["Tears", "Lacrimal Apparatus Diseases"]}
+{"name": "Teen Depression", "aliases": ["Depression, Teen"], "mesh_terms": ["Depression"]}
+{"name": "Teen Development", "aliases": ["Adolescent development", "Adolescent Development"], "mesh_terms": ["Psychology, Adolescent", "Adolescent Development"]}
+{"name": "Teen Health", "aliases": ["Adolescent health", "Adolescent Health"], "mesh_terms": ["Adolescent, Hospitalized", "Adolescent Health Services", "Adolescent Health"]}
+{"name": "Teen Mental Health", "aliases": ["Mental Health, Teen"], "mesh_terms": ["Psychology, Adolescent", "Adolescent Psychiatry"]}
+{"name": "Teen Sexual Health", "aliases": ["Sexual Health, Teen"], "mesh_terms": ["Adolescent", "Sexual Behavior"]}
+{"name": "Teen Violence", "aliases": ["Youth violence", "Violence", "Youth Violence"], "mesh_terms": ["Adolescent Behavior", "Violence"]}
+{"name": "Teenage Pregnancy", "aliases": ["Adolescent pregnancy", "Adolescent Pregnancy", "Pregnancy, Teen"], "mesh_terms": ["Pregnancy in Adolescence"]}
+{"name": "Telehealth", "aliases": ["Telemedicine"], "mesh_terms": ["Telemedicine"]}
+{"name": "Temporomandibular Disorders", "aliases": ["TMD", "TMJ disorders", "Temporomandibular joint dysfunction", "TMJ", "Temporomandibular Joint Dysfunction"], "mesh_terms": ["Temporomandibular Joint Disorders"]}
+{"name": "Tendinitis", "aliases": ["Tendonitis"], "mesh_terms": ["Tendinopathy"]}
+{"name": "Testicular Cancer", "aliases": ["Seminoma"], "mesh_terms": ["Testicular Neoplasms"]}
+{"name": "Testicular Disorders", "aliases": ["Male Genital Disorders", "Semen", "Undescended Testicle"], "mesh_terms": ["Testicular Diseases"]}
+{"name": "Tetanus", "aliases": ["Lockjaw"], "mesh_terms": ["Tetanus"]}
+{"name": "Tetanus, Diphtheria, and Pertussis Vaccines", "aliases": ["DTaP", "DTaP/Tdap/Td", "Td", "Td vaccination booster", "Tdap", "Tetanus booster"], "mesh_terms": ["Diphtheria-Tetanus-acellular Pertussis Vaccines", "Diphtheria-Tetanus Vaccine", "Diphtheria-Tetanus-Pertussis Vaccine"]}
+{"name": "Thalassemia", "aliases": ["Cooley's anemia", "Mediterranean anemia", "Cooley's Anemia", "Mediterranean Anemia"], "mesh_terms": ["Thalassemia"]}
+{"name": "Thoracic Outlet Syndrome", "aliases": ["TOS"], "mesh_terms": ["Thoracic Outlet Syndrome"]}
+{"name": "Throat Cancer", "aliases": ["Hypopharyngeal cancer", "Laryngeal cancer", "Laryngopharyngeal cancer", "Nasopharyngeal cancer", "Oropharyngeal cancer", "Pharyngeal cancer", "Hypopharyngeal Cancer", "Laryngeal Cancer", "Laryngopharyngeal Cancer", "Nasopharyngeal Cancer", "Oropharyngeal Cancer", "Pharyngeal Cancer"], "mesh_terms": ["Pharyngeal Neoplasms"]}
+{"name": "Throat Disorders", "aliases": ["Pharyngeal disorders", "Laryngitis", "Pharynx Disorders", "Voicebox Disorders"], "mesh_terms": ["Pharyngeal Diseases"]}
+{"name": "Thymus Cancer", "aliases": ["Thymoma"], "mesh_terms": ["Thymus Neoplasms"]}
+{"name": "Thyroid Cancer", "aliases": [], "mesh_terms": ["Thyroid Neoplasms"]}
+{"name": "Thyroid Diseases", "aliases": ["Goiter"], "mesh_terms": ["Thyroid Diseases"]}
+{"name": "Thyroid Tests", "aliases": ["Thyroid Panel"], "mesh_terms": ["Thyroid Function Tests"]}
+{"name": "Tick Bites", "aliases": ["Anaplasmosis", "Babesiosis", "Colorado Tick Fever", "Ehrlichiosis", "Rocky Mountain Spotted Fever", "Tickborne Diseases", "Tularemia"], "mesh_terms": ["Tick Bites", "Tick-Borne Diseases"]}
+{"name": "Tinea Infections", "aliases": ["Ringworm", "Jock Itch"], "mesh_terms": ["Tinea"]}
+{"name": "Tinnitus", "aliases": [], "mesh_terms": ["Tinnitus"]}
+{"name": "Toddler Development", "aliases": [], "mesh_terms": ["Child Development"]}
+{"name": "Toddler Health", "aliases": [], "mesh_terms": ["Child, Preschool"]}
+{"name": "Toddler Nutrition", "aliases": [], "mesh_terms": ["Child Nutritional Physiological Phenomena"]}
+{"name": "Toe Injuries and Disorders", "aliases": ["Bunions", "Hammer Toe"], "mesh_terms": ["Toes", "Toe Joint"]}
+{"name": "Tongue Disorders", "aliases": ["Geographic Tongue", "Glossitis"], "mesh_terms": ["Tongue Diseases"]}
+{"name": "Tonsillitis", "aliases": ["Tonsil Inflammation", "Tonsillectomy", "Tonsils"], "mesh_terms": ["Tonsillectomy", "Tonsillitis"]}
+{"name": "Tooth Decay", "aliases": ["Cavities", "Dental caries", "Dental Caries", "Dental Sealants", "Plaque, Dental"], "mesh_terms": ["Dental Caries"]}
+{"name": "Tooth Disorders", "aliases": ["Bruxism", "Impacted Tooth", "Root Canal", "Teeth"], "mesh_terms": ["Tooth Diseases"]}
+{"name": "Tornadoes", "aliases": ["Natural Disasters"], "mesh_terms": ["Tornadoes"]}
+{"name": "Tourette Syndrome", "aliases": [], "mesh_terms": ["Tourette Syndrome"]}
+{"name": "Toxoplasmosis", "aliases": [], "mesh_terms": ["Toxoplasmosis"]}
+{"name": "Tracheal Disorders", "aliases": ["Windpipe disorders", "Tracheostomy", "Windpipe Disorders"], "mesh_terms": ["Tracheal Diseases"]}
+{"name": "Transient Ischemic Attack", "aliases": ["Mini-stroke", "TIA", "Mini-Stroke"], "mesh_terms": ["Ischemic Attack, Transient"]}
+{"name": "Traumatic Brain Injury", "aliases": ["Acquired brain injury", "TBI"], "mesh_terms": ["Brain Injuries, Traumatic"]}
+{"name": "Traveler's Health", "aliases": ["Jet Lag", "Tropical Medicine"], "mesh_terms": ["Air Travel", "Travel"]}
+{"name": "Tremor", "aliases": ["Essential Tremor"], "mesh_terms": ["Tremor"]}
+{"name": "Trichomoniasis", "aliases": ["Trich"], "mesh_terms": ["Trichomonas Vaginitis"]}
+{"name": "Trigeminal Neuralgia", "aliases": ["TN", "Tic douloureux", "Tic Douleureux"], "mesh_terms": ["Trigeminal Neuralgia"]}
+{"name": "Triglycerides", "aliases": ["Familial Combined Hyperlipidemia", "Familial Hypertriglyceridemia", "Hyperlipidemia", "Hypertriglyceridemia"], "mesh_terms": ["Hypertriglyceridemia"]}
+{"name": "Tsunamis", "aliases": ["Natural Disasters"], "mesh_terms": ["Tsunamis"]}
+{"name": "Tubal Ligation", "aliases": ["Female Sterilization", "Sterilization"], "mesh_terms": ["Sterilization, Tubal"]}
+{"name": "Tuberculosis", "aliases": ["TB"], "mesh_terms": ["Tuberculosis"]}
+{"name": "Tuberous Sclerosis", "aliases": ["TSC", "Tuberous sclerosis complex"], "mesh_terms": ["Tuberous Sclerosis"]}
+{"name": "Tumors and Pregnancy", "aliases": ["Cancer and Pregnancy", "Gestational Trophoblastic Disease", "Molar Pregnancy"], "mesh_terms": ["Pregnancy Complications, Neoplastic", "Pregnancy Complications", "Neoplasms", "Pregnancy"]}
+{"name": "Turner Syndrome", "aliases": [], "mesh_terms": ["Turner Syndrome"]}
+{"name": "Twins, Triplets, Multiple Births", "aliases": ["Multiple Births", "Triplets"], "mesh_terms": ["Pregnancy, Triplet", "Pregnancy, Twin", "Pregnancy, Quadruplet", "Pregnancy, Quintuplet"]}
+{"name": "Ulcerative Colitis", "aliases": ["Colitis", "Distal colitis", "Pancolitis", "Ulcerative proctitis", "Inflammatory Bowel Disease"], "mesh_terms": ["Colitis, Ulcerative"]}
+{"name": "Uncommon Infant and Newborn Problems", "aliases": [], "mesh_terms": ["Infant, Newborn, Diseases"]}
+{"name": "Underage Drinking", "aliases": ["Teenage drinking", "Alcohol and Youth", "Teenage Drinking"], "mesh_terms": ["Underage Drinking", "Adolescent", "Alcohol Drinking"]}
+{"name": "Understanding Medical Research", "aliases": ["Medical Research"], "mesh_terms": ["Biomedical Research", "Health Knowledge, Attitudes, Practice"]}
+{"name": "Ureteral Disorders", "aliases": ["Ureteral Cancer"], "mesh_terms": ["Ureteral Diseases"]}
+{"name": "Urethral Disorders", "aliases": ["Urethral Cancer"], "mesh_terms": ["Urethral Diseases"]}
+{"name": "Urinalysis", "aliases": ["UA", "Urine Analysis", "Urine Test", "Hematuria", "Proteinuria", "Urine Tests"], "mesh_terms": ["Urinalysis"]}
+{"name": "Urinary Incontinence", "aliases": ["Bladder control problems", "Bladder Control", "Incontinence", "Stress Incontinence"], "mesh_terms": ["Urinary Incontinence", "Enuresis"]}
+{"name": "Urinary Tract Infections", "aliases": ["UTI", "Bladder Infections", "Infections, Bladder", "Kidney Infections", "Pyelonephritis"], "mesh_terms": ["Urinary Tract Infections"]}
+{"name": "Urine and Urination", "aliases": ["Dysuria", "Micturition", "Pee", "Urination"], "mesh_terms": ["Lower Urinary Tract Symptoms", "Urination", "Urination Disorders", "Urine"]}
+{"name": "Usher Syndrome", "aliases": [], "mesh_terms": ["Usher Syndromes"]}
+{"name": "Uterine Cancer", "aliases": ["Endometrial cancer", "Endometrial Cancer"], "mesh_terms": ["Uterine Neoplasms"]}
+{"name": "Uterine Diseases", "aliases": [], "mesh_terms": ["Uterine Diseases"]}
+{"name": "Uterine Fibroids", "aliases": ["Fibroids", "Uterine leiomyomata", "Uterine Leiomyomata"], "mesh_terms": ["Uterine Neoplasms", "Leiomyoma", "Uterine Myomectomy"]}
+{"name": "Vaccine Safety", "aliases": [], "mesh_terms": ["Vaccines"]}
+{"name": "Vaccines", "aliases": ["Immunization", "Vaccination", "Adult Immunization", "Immunization, Adult"], "mesh_terms": ["Vaccination", "Immunization", "Vaccines"]}
+{"name": "Vaginal Bleeding", "aliases": ["Dysfunctional Uterine Bleeding", "Uterine Bleeding", "Dysfunctional uterine bleeding", "Uterine bleeding"], "mesh_terms": ["Uterine Hemorrhage"]}
+{"name": "Vaginal Cancer", "aliases": [], "mesh_terms": ["Vaginal Neoplasms"]}
+{"name": "Vaginal Diseases", "aliases": ["Vaginal Infections"], "mesh_terms": ["Vaginal Diseases"]}
+{"name": "Vaginitis", "aliases": ["Bacterial Vaginosis", "Vaginal Yeast Infection"], "mesh_terms": ["Vaginitis", "Vulvovaginitis"]}
+{"name": "Valley Fever", "aliases": ["Coccidioidomycosis"], "mesh_terms": ["Coccidioidomycosis"]}
+{"name": "Varicose Veins", "aliases": ["Spider Veins", "Veins"], "mesh_terms": ["Varicose Veins"]}
+{"name": "Vascular Diseases", "aliases": ["Cardiovascular Diseases", "Circulatory Disorders", "Hemangioma", "Veins"], "mesh_terms": ["Vascular Diseases"]}
+{"name": "Vasculitis", "aliases": ["Angiitis"], "mesh_terms": ["Vasculitis"]}
+{"name": "Vasectomy", "aliases": ["Male Sterilization", "Sterilization"], "mesh_terms": ["Vasectomy"]}
+{"name": "Vegetarian Diet", "aliases": ["Vegan Diet", "Vegans"], "mesh_terms": ["Vegetarians", "Diet, Vegetarian"]}
+{"name": "Veterans and Military Family Health", "aliases": [], "mesh_terms": ["Military Family", "Veterans", "Family Health", "Military Personnel"]}
+{"name": "Veterans and Military Health", "aliases": ["Agent Orange", "Gulf War Syndrome", "Military Health", "Persian Gulf War", "Veterans Health"], "mesh_terms": ["Prisoners of War", "War Exposure", "Veterans Health", "War-Related Injuries", "Military Personnel"]}
+{"name": "Viral Infections", "aliases": ["Adenovirus Infections", "Coxsackievirus Infections", "Enterovirus", "Hand, Foot, and Mouth Disease", "Infections, Viral", "Roseola"], "mesh_terms": ["Virus Diseases"]}
+{"name": "Vision Impairment and Blindness", "aliases": ["Low vision", "Blindness", "Low Vision"], "mesh_terms": ["Vision Disorders"]}
+{"name": "Vital Signs", "aliases": ["Blood Pressure", "Breathing Rate", "Heart Rate", "Pulse", "Temperature"], "mesh_terms": ["Vital Signs"]}
+{"name": "Vitamin A", "aliases": ["Retinol"], "mesh_terms": ["Vitamin A"]}
+{"name": "Vitamin C", "aliases": ["Ascorbic acid", "Ascorbic Acid"], "mesh_terms": ["Ascorbic Acid"]}
+{"name": "Vitamin D", "aliases": ["Cholecalciferol", "Ergocalciferol"], "mesh_terms": ["Vitamin D"]}
+{"name": "Vitamin D Deficiency", "aliases": ["Hypovitaminosis D", "Low Vitamin D", "Osteomalacia"], "mesh_terms": ["Vitamin D Deficiency"]}
+{"name": "Vitamin E", "aliases": ["Alpha-tocopherol"], "mesh_terms": ["Vitamin E"]}
+{"name": "Vitamin K", "aliases": [], "mesh_terms": ["Vitamin K"]}
+{"name": "Vitamins", "aliases": [], "mesh_terms": ["Vitamins", "Micronutrients"]}
+{"name": "Vitiligo", "aliases": [], "mesh_terms": ["Vitiligo"]}
+{"name": "VLDL Cholesterol", "aliases": [], "mesh_terms": ["Cholesterol, VLDL"]}
+{"name": "Voice Disorders", "aliases": ["Vocal disorders", "Laryngitis", "Vocal Cord Problems", "Voicebox Disorders"], "mesh_terms": ["Voice Disorders"]}
+{"name": "Volcanoes", "aliases": ["Natural Disasters"], "mesh_terms": ["Volcanic Eruptions"]}
+{"name": "Von Hippel-Lindau Disease", "aliases": ["VHL"], "mesh_terms": ["von Hippel-Lindau Disease"]}
+{"name": "Vulvar Cancer", "aliases": [], "mesh_terms": ["Vulvar Neoplasms"]}
+{"name": "Vulvar Disorders", "aliases": ["Vulvodynia"], "mesh_terms": ["Vulvar Diseases"]}
+{"name": "Walking Problems", "aliases": ["Gait Abnormalities"], "mesh_terms": ["Gait Disorders, Neurologic", "Gait Ataxia", "Gait Apraxia"]}
+{"name": "Warts", "aliases": ["Verruca", "Plantar Warts"], "mesh_terms": ["Warts"]}
+{"name": "Water Pollution", "aliases": ["Pfiesteria Infections", "Pollution", "Septic Systems", "Sewage", "Waterborne Diseases"], "mesh_terms": ["Water Pollution"]}
+{"name": "Water Safety (Recreational)", "aliases": ["Recreational Safety"], "mesh_terms": ["Recreation", "Water Sports", "Safety"]}
+{"name": "Weight Control", "aliases": ["BMI"], "mesh_terms": ["Weight Loss", "Weight Reduction Programs", "Body Weight Maintenance"]}
+{"name": "Weight Loss Surgery", "aliases": ["Bariatric surgery", "Bypass surgery", "Gastric banding", "Obesity surgery", "Bariatric Surgery", "Gastric Bypass", "Gastroplasty", "Obesity Surgery", "Stomach Stapling"], "mesh_terms": ["Bariatric Surgery", "Obesity", "Obesity, Morbid"]}
+{"name": "West Nile Virus", "aliases": ["WNV"], "mesh_terms": ["West Nile Fever"]}
+{"name": "Whooping Cough", "aliases": ["Pertussis"], "mesh_terms": ["Whooping Cough"]}
+{"name": "Wildfires", "aliases": ["Forest Fire", "Wildland Fire"], "mesh_terms": ["Wildfires"]}
+{"name": "Wilms Tumor", "aliases": ["Nephroblastoma"], "mesh_terms": ["Wilms Tumor"]}
+{"name": "Wilson Disease", "aliases": ["Copper storage disease", "Hepatolenticular degeneration", "Copper Storage Disease", "Hepatolenticular Degeneration"], "mesh_terms": ["Hepatolenticular Degeneration"]}
+{"name": "Winter Weather Emergencies", "aliases": ["Cold (Temperature)", "Natural Disasters"], "mesh_terms": ["Emergencies", "Cold Climate"]}
+{"name": "Women's Health", "aliases": [], "mesh_terms": ["Women's Health"]}
+{"name": "Women's Health Checkup", "aliases": ["Pelvic Exam"], "mesh_terms": ["Women's Health", "Physical Examination"]}
+{"name": "Wounds and Injuries", "aliases": ["Traumatic injuries", "Accidents", "Injuries", "Lacerations"], "mesh_terms": ["Wounds and Injuries"]}
+{"name": "Wrist Injuries and Disorders", "aliases": ["Ganglion Cyst"], "mesh_terms": ["Wrist Injuries"]}
+{"name": "X-Rays", "aliases": ["Radiography", "Roentgen Rays"], "mesh_terms": ["X-Rays"]}
+{"name": "Yeast Infections", "aliases": ["Candidiasis", "Moniliasis", "Thrush", "Vaginal Yeast Infection"], "mesh_terms": ["Candidiasis"]}
+{"name": "Zika Virus", "aliases": ["Zika"], "mesh_terms": ["Zika Virus", "Zika Virus Infection"]}
