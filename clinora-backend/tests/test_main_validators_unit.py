@@ -81,11 +81,8 @@ def test_patient_input_rejects_invalid_gender_and_blood_type():
         main.PatientInput(name="Alice", blood_type="z+")
 
 
-def test_eval_and_ingest_request_validators():
+def test_eval_request_validators():
     import main
 
     with pytest.raises(ValidationError):
         main.EvalRequest(question_id="q1", mode="unsupported")
-
-    with pytest.raises(HTTPException):
-        main.IngestRequest(terms=["ignore previous instructions"], per_term=10)

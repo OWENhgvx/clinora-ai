@@ -2,10 +2,11 @@
 schemas.py — request models and input validators for Clinora API.
 """
 import re
-from typing import Optional, Union
+from datetime import date
+from typing import Optional
 
 from fastapi import HTTPException
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 _INJECTION_PATTERNS = re.compile(
@@ -28,8 +29,9 @@ def _check_injection(text: str, field: str = "input") -> None:
 _ALLOWED_ROLES = {"patient", "provider"}
 _ALLOWED_GENDERS = {"male", "female", "other", "prefer not to say", ""}
 _ALLOWED_BLOOD_TYPES = {"a+", "a-", "b+", "b-", "ab+", "ab-", "o+", "o-", "unknown", ""}
+_ALLOWED_VERIFICATION_STATUSES = {"active", "pending_review"}
 _ALLOWED_MSG_ROLES = {"user", "agent", "system"}
-_ALLOWED_AGENT_TYPES = {"interviewer", "diagnostician", "critic", "safety", None}
+_ALLOWED_AGENT_TYPES = {"interviewer", "diagnostician", None}
 _ALLOWED_EVAL_MODES = {"rag", "base", "both"}
 
 
@@ -39,6 +41,21 @@ class RegisterInput(BaseModel):
     password: str = Field(min_length=6, max_length=128)
     full_name: str = Field(default="", max_length=100)
     role: str = "patient"
+    birth_date: str = Field(min_length=10, max_length=10)
+    sex: str = Field(min_length=1, max_length=30)
+    height_cm: Optional[float] = Field(default=None, gt=0, le=260)
+    weight_kg: Optional[float] = Field(default=None, gt=0, le=650)
+    allergies: str = Field(default="", max_length=500)
+    chronic_conditions: list[str] = Field(default_factory=list, max_length=20)
+    phone: str = Field(default="", max_length=40)
+    data_authorization_accepted: bool = False
+    license_number: str = Field(default="", max_length=80)
+    hospital: str = Field(default="", max_length=160)
+    department: str = Field(default="", max_length=120)
+    specialty: str = Field(default="", max_length=120)
+    years_experience: Optional[int] = Field(default=None, ge=0, le=80)
+    title: str = Field(default="", max_length=120)
+    qualification_proof: str = Field(default="", max_length=500)
 
     @field_validator("username")
     @classmethod
@@ -69,15 +86,146 @@ class RegisterInput(BaseModel):
         _check_injection(v, "full_name")
         return v.strip()
 
+    @field_validator("sex")
+    @classmethod
+    def val_sex(cls, v: str) -> str:
+        v = v.strip()
+        if v.lower() not in _ALLOWED_GENDERS - {""}:
+            raise ValueError(f"sex must be one of: {', '.join(g for g in _ALLOWED_GENDERS if g)}")
+        return v
+
+    @field_validator(
+        "allergies",
+        "license_number",
+        "hospital",
+        "department",
+        "specialty",
+        "title",
+        "qualification_proof",
+    )
+    @classmethod
+    def val_register_text(cls, v: str) -> str:
+        _check_injection(v, "registration field")
+        return v.strip()
+
+    @field_validator("birth_date")
+    @classmethod
+    def val_birth_date(cls, v: str) -> str:
+        v = v.strip()
+        _check_injection(v, "birth_date")
+        try:
+            parsed = date.fromisoformat(v)
+        except ValueError as exc:
+            raise ValueError("birth_date must be YYYY-MM-DD") from exc
+        if parsed > date.today():
+            raise ValueError("birth_date cannot be in the future")
+        return v
+
+    @field_validator("phone")
+    @classmethod
+    def val_phone(cls, v: str) -> str:
+        v = v.strip()
+        if v and not re.match(r"^[0-9+()\-\s]{6,40}$", v):
+            raise ValueError("Invalid phone number")
+        return v
+
+    @field_validator("chronic_conditions")
+    @classmethod
+    def val_chronic_conditions(cls, v: list[str]) -> list[str]:
+        cleaned = []
+        for item in v:
+            item = str(item).strip()
+            if not item:
+                continue
+            _check_injection(item, "chronic_conditions")
+            if len(item) > 80:
+                raise ValueError("Chronic condition is too long")
+            cleaned.append(item)
+        return cleaned
+
+    @model_validator(mode="after")
+    def val_registration_requirements(self):
+        if self.role == "patient":
+            if self.height_cm is None:
+                raise ValueError("height_cm is required for patients")
+            if self.weight_kg is None:
+                raise ValueError("weight_kg is required for patients")
+            if not self.chronic_conditions:
+                raise ValueError("chronic_conditions is required for patients")
+            if not self.data_authorization_accepted:
+                raise ValueError("Patient data authorization must be accepted")
+        if self.role == "provider":
+            missing = [
+                field
+                for field in (
+                    "full_name",
+                    "license_number",
+                    "hospital",
+                    "department",
+                    "specialty",
+                    "title",
+                    "qualification_proof",
+                )
+                if not getattr(self, field)
+            ]
+            if self.years_experience is None:
+                missing.append("years_experience")
+            if missing:
+                raise ValueError(f"Missing provider credential fields: {', '.join(missing)}")
+        return self
+
+    @property
+    def bmi(self) -> Optional[float]:
+        if self.height_cm is None or self.weight_kg is None:
+            return None
+        meters = self.height_cm / 100
+        return round(self.weight_kg / (meters * meters), 1)
+
+    @property
+    def age(self) -> int:
+        born = date.fromisoformat(self.birth_date)
+        today = date.today()
+        years = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+        return max(0, years)
+
+    @property
+    def verification_status(self) -> str:
+        status = "pending_review" if self.role == "provider" else "active"
+        if status not in _ALLOWED_VERIFICATION_STATUSES:
+            return "active"
+        return status
+
+    def profile_data(self) -> dict:
+        return {
+            "birth_date": self.birth_date,
+            "age": self.age,
+            "sex": self.sex,
+            "height_cm": self.height_cm,
+            "weight_kg": self.weight_kg,
+            "bmi": self.bmi,
+            "allergies": self.allergies if self.role == "patient" else None,
+            "chronic_conditions": (
+                ", ".join(self.chronic_conditions) if self.role == "patient" else None
+            ),
+            "phone": self.phone,
+            "data_authorization_accepted": 1 if self.data_authorization_accepted else 0,
+            "license_number": self.license_number,
+            "hospital": self.hospital,
+            "department": self.department,
+            "specialty": self.specialty,
+            "years_experience": self.years_experience,
+            "title": self.title,
+            "qualification_proof": self.qualification_proof,
+            "verification_status": self.verification_status,
+        }
+
 
 class SymptomInput(BaseModel):
     description: str = Field(min_length=2, max_length=2000)
     bodyPart: str = Field(default="General", max_length=100)
     duration: str = Field(default="1-3 days", max_length=50)
-    severity: Union[int, str] = "moderate"
     notes: str = Field(default="", max_length=500)
     patient_id: Optional[str] = None
-    pre_context: list[str] = Field(default=[], max_length=20)
     consent_to_provider_review: bool = False
 
     @field_validator("description")
@@ -85,13 +233,6 @@ class SymptomInput(BaseModel):
     def val_description(cls, v: str) -> str:
         v = v.strip()
         _check_injection(v, "description")
-        return v
-
-    @field_validator("severity")
-    @classmethod
-    def val_severity(cls, v: Union[int, str]) -> Union[int, str]:
-        if isinstance(v, int) and not (1 <= v <= 10):
-            raise ValueError("severity must be between 1 and 10")
         return v
 
     @field_validator("notes")
@@ -104,7 +245,6 @@ class SymptomInput(BaseModel):
 class ChatMessage(BaseModel):
     session_id: str = Field(min_length=1, max_length=64)
     user_message: str = Field(min_length=1, max_length=2000)
-    attachments: list[str] = Field(default=[], max_length=10)
 
     @field_validator("user_message")
     @classmethod
@@ -136,7 +276,7 @@ class MessageInput(BaseModel):
     @classmethod
     def val_agent_type(cls, v: Optional[str]) -> Optional[str]:
         if v is not None and v not in _ALLOWED_AGENT_TYPES:
-            raise ValueError("agent_type must be interviewer/diagnostician/critic/safety")
+            raise ValueError("agent_type must be interviewer/diagnostician")
         return v
 
     @field_validator("content")
@@ -194,23 +334,6 @@ class EvalRequest(BaseModel):
         if v not in _ALLOWED_EVAL_MODES:
             raise ValueError(f"mode must be one of: {', '.join(_ALLOWED_EVAL_MODES)}")
         return v
-
-
-class IngestRequest(BaseModel):
-    terms: list[str] = Field(default=[], max_length=50)
-    per_term: int = Field(default=15, ge=1, le=100)
-
-    @field_validator("terms")
-    @classmethod
-    def val_terms(cls, v: list[str]) -> list[str]:
-        cleaned = []
-        for t in v:
-            t = t.strip()
-            if len(t) > 200:
-                raise ValueError("Each search term must be under 200 characters")
-            _check_injection(t, "terms")
-            cleaned.append(t)
-        return cleaned
 
 
 class VerdictInput(BaseModel):

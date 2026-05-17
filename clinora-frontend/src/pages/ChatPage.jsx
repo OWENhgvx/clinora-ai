@@ -5,19 +5,15 @@ import {
   IllustFlower,
   ParticleField,
 } from "../components/illustrations";
-import { SevBadge, TypingDots } from "../components/ui";
+import { TypingDots } from "../components/ui";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { fmtT } from "../core/utils";
-import CameraCapture from "../components/CameraCapture";
 import {
-  AC,
   AgentConvBubble,
   AgentPhaseSep,
   AgentTypingBubble,
-  SOCRATES_DIMS,
-  detectSocrates,
 } from "./chat/chatAgentUi";
 
 export default function ChatPage({
@@ -36,19 +32,9 @@ export default function ChatPage({
   const [phase, setPhase] = useState("interviewing");
   const [sid, setSid] = useState(resumeSession?.id || null);
   const [panel, setPanel] = useState(true);
-  const [uploading, setUploading] = useState(false);
-  const [uploadError, setUploadError] = useState("");
   const [composerErr, setComposerErr] = useState("");
-  const [uploadMeta, setUploadMeta] = useState(null);
-  const [uploadPreview, setUploadPreview] = useState("");
-  const [uploadImageUrl, setUploadImageUrl] = useState(null);
-  const [uploadedFiles, setUploadedFiles] = useState([]);
-  const [pendingAttachments, setPendingAttachments] = useState([]);
   const [llmQuickReplies, setLlmQuickReplies] = useState(null); // from backend
-  const [safetyAlert, setSafetyAlert] = useState(null);
-  const [_cameraOpen, setCameraOpen] = useState(false);
   const [streamingMsg, setStreamingMsg] = useState(null); // { displayed, full, time }
-  const fileInputRef = useRef(null);
   const streamRef = useRef(null);
   // Single ref object — avoids stale-closure issues across restarts
   const msgEnd = useRef(null);
@@ -124,49 +110,22 @@ export default function ChatPage({
         "interviewer",
         `Resumed session ${resumeSession.id.slice(0, 8).toUpperCase()}. Continue the consultation below.`,
       );
-      try {
-        const files = await api.sessionUploads(resumeSession.id);
-        setUploadedFiles(Array.isArray(files) ? files : []);
-      } catch {
-        setUploadedFiles([]);
-      }
       return;
     }
     setLoading(true);
     try {
       const d = await api.start(symptoms);
       setSid(d.session_id);
-      const safety = d?.safety || null;
-      if ((safety?.final_risk || safety?.risk_level) === "high") {
-        setSafetyAlert({
-          final_risk: "high",
-        });
-      } else {
-        setSafetyAlert(null);
-      }
-      try {
-        const files = await api.sessionUploads(d.session_id);
-        setUploadedFiles(Array.isArray(files) ? files : []);
-      } catch {
-        setUploadedFiles([]);
-      }
       setMsgs([]);
       pushAiMsg(d.reply);
       if (Array.isArray(d.quick_replies) && d.quick_replies.length) {
         setLlmQuickReplies(d.quick_replies);
       }
-      addLog(
-        "safety",
-        "Triage complete. No immediate escalation required. Passing to Interviewer — prioritise onset, character, and associated symptoms.",
-        new Date(),
-        "interviewer",
-      );
       addSep("CLINICAL INTAKE");
       addLog(
         "interviewer",
-        "Session opened. SOCRATES intake protocol active.",
+        "Session opened. Clinical intake active.",
         new Date(),
-        "safety",
       );
     } catch (e) {
       addLog("interviewer", `Connection error: ${e.message}`);
@@ -211,17 +170,10 @@ export default function ChatPage({
       setComposerErr(t("chat.err_too_long"));
       return;
     }
-    const attachments = [...pendingAttachments];
     setInput("");
-    setPendingAttachments([]);
     setLlmQuickReplies(null);
     setMsgs((p) => [
       ...p,
-      ...attachments.map((a) => ({
-        role: "user",
-        text: `📎 ${a}`,
-        time: new Date(),
-      })),
       { role: "user", text: txt, time: new Date() },
     ]);
     setLoading(true);
@@ -231,26 +183,10 @@ export default function ChatPage({
 
     try {
       await api.chatStream(
-        { session_id: sid, user_message: txt, attachments },
+        { session_id: sid, user_message: txt },
         (evt) => {
           switch (evt.type) {
-            case "safety_result":
-              if (evt.final_risk === "high") {
-                setSafetyAlert({
-                  final_risk: "high",
-                });
-              }
-              break;
-
             case "interviewer_reply":
-              // Clear one-shot upload chip
-              setUploadMeta(null);
-              setUploadPreview("");
-              setUploadError("");
-              if (uploadImageUrl) {
-                URL.revokeObjectURL(uploadImageUrl);
-                setUploadImageUrl(null);
-              }
               pushAiMsg(evt.text);
               // Use LLM-provided quick replies if available
               setLlmQuickReplies(
@@ -262,7 +198,7 @@ export default function ChatPage({
               if (triggered) {
                 addLog(
                   "interviewer",
-                  "SOCRATES intake complete. Case summary ready — handing over for full diagnostic analysis.",
+                  "Intake complete. Case summary ready — handing over for full diagnostic analysis.",
                   new Date(),
                   "diagnostician",
                 );
@@ -316,10 +252,8 @@ export default function ChatPage({
             sessionId: sid,
             transcript,
             diagnosis: diagnoseResult.diagnosis || "",
-            review: diagnoseResult.review || "",
             refs: safeRefs,
             cot: diagnoseResult.cot || null,
-            mediaItems: symptoms.pre_items || [],
           }),
         1500,
       );
@@ -368,10 +302,8 @@ export default function ChatPage({
             sessionId: sid,
             transcript,
             diagnosis: diagnoseResult.diagnosis || "",
-            review: diagnoseResult.review || "",
             refs: safeRefs,
             cot: diagnoseResult.cot || null,
-            mediaItems: symptoms.pre_items || [],
           }),
         1500,
       );
@@ -528,110 +460,6 @@ export default function ChatPage({
     return null;
   }
 
-  function onCameraCapture({ transcript, frameAnalyses }) {
-    // Build combined context message
-    const parts = [];
-    if (transcript)
-      parts.push(`**Patient description (transcribed):**\n${transcript}`);
-    if (frameAnalyses.length > 0) {
-      parts.push(
-        `**Video frame analysis (${frameAnalyses.length} frames captured):**`,
-      );
-      frameAnalyses.forEach((f) =>
-        parts.push(`Frame ${f.frame}: ${f.analysis}`),
-      );
-    }
-    const combined = parts.join("\n\n");
-    if (combined) {
-      setPendingAttachments((prev) => [...prev, combined]);
-      setInput(
-        (prev) =>
-          prev || transcript || "Please review my video description above.",
-      );
-    }
-  }
-
-  const IMAGE_EXTS = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"];
-  const AUDIO_EXTS = [".mp3", ".wav", ".m4a", ".ogg", ".flac"];
-  const VIDEO_EXTS = [".mp4", ".mov", ".avi", ".mkv", ".webm"];
-
-  async function onUploadFile(e) {
-    const f = e.target.files?.[0];
-    if (!f || !sid || uploading) return;
-
-    const lowerName = f.name.toLowerCase();
-    const isImage = IMAGE_EXTS.some((ext) => lowerName.endsWith(ext));
-    const isAudio = AUDIO_EXTS.some((ext) => lowerName.endsWith(ext));
-    const isVideo = VIDEO_EXTS.some((ext) => lowerName.endsWith(ext));
-    const isPdf = lowerName.endsWith(".pdf");
-    const isTxt = lowerName.endsWith(".txt");
-
-    if (!isImage && !isAudio && !isVideo && !isPdf && !isTxt) {
-      setUploadError(
-        "Supported: PDF, TXT, images (JPG/PNG…), audio (MP3/WAV…), video (MP4/MOV…).",
-      );
-      e.target.value = "";
-      return;
-    }
-
-    // Show local image/video preview immediately before upload completes
-    if (isImage || isVideo) {
-      const objectUrl = URL.createObjectURL(f);
-      setUploadImageUrl(objectUrl);
-    } else {
-      setUploadImageUrl(null);
-    }
-
-    setUploadError("");
-    setUploading(true);
-    try {
-      const res = await api.uploadSessionFile(sid, f);
-      const up = res?.upload || null;
-      setUploadMeta(up);
-      setUploadPreview(up?.extracted_text_preview || "");
-      const typeLabel = isImage
-        ? "IMAGE"
-        : isAudio
-          ? "AUDIO"
-          : isVideo
-            ? "VIDEO"
-            : (up?.file_type || (isPdf ? "pdf" : "txt")).toUpperCase();
-      const attachmentSummary = `Uploaded file: ${up?.file_name || f.name} (${typeLabel})`;
-      setPendingAttachments((p) => [...p, attachmentSummary]);
-      try {
-        const files = await api.sessionUploads(sid);
-        setUploadedFiles(Array.isArray(files) ? files : []);
-      } catch {}
-      const logSuffix = isImage
-        ? `medical image analysed (${up?.extracted_text_length || 0} chars of AI analysis).`
-        : isAudio
-          ? `audio transcribed (${up?.extracted_text_length || 0} chars).`
-          : isVideo
-            ? `video frames analysed (${up?.extracted_text_length || 0} chars).`
-            : `extracted ${up?.extracted_text_length || 0} characters.`;
-      addLog(
-        "interviewer",
-        `Uploaded ${up?.file_name || f.name}; ${logSuffix}`,
-      );
-    } catch (err) {
-      setUploadError(err.message || "Upload failed");
-      setUploadImageUrl(null);
-      addLog("interviewer", `Upload failed: ${err.message || "unknown error"}`);
-    }
-    setUploading(false);
-    e.target.value = "";
-  }
-
-  function clearUploadedFileView() {
-    setUploadMeta(null);
-    setUploadPreview("");
-    setUploadError("");
-    if (uploadImageUrl) {
-      URL.revokeObjectURL(uploadImageUrl);
-      setUploadImageUrl(null);
-    }
-  }
-
   const phaseConf = {
     safety: {
       label: "Safety triage…",
@@ -647,11 +475,6 @@ export default function ChatPage({
       label: t("chat.analysing"),
       c: "var(--amber)",
       bg: "var(--amberPale)",
-    },
-    reviewing: {
-      label: "Peer review…",
-      c: "var(--navy)",
-      bg: "var(--navyPale)",
     },
     done: {
       label: t("chat.complete"),
@@ -832,70 +655,6 @@ export default function ChatPage({
           </Button>
         </div>
       </div>
-      {safetyAlert?.final_risk === "high" && (
-        <div
-          role="alert"
-          style={{
-            position: "absolute",
-            top: 52,
-            left: "50%",
-            transform: "translateX(-50%)",
-            zIndex: 8,
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            width: "max-content",
-            maxWidth: "calc(100% - 32px)",
-            minHeight: 34,
-            padding: "7px 12px",
-            borderRadius: 12,
-            border: "1.5px solid rgba(190,18,60,0.45)",
-            background: "rgba(255,241,242,0.96)",
-            boxShadow: "0 10px 28px rgba(127,29,29,0.16)",
-            color: "#991b1b",
-            fontFamily: "var(--body)",
-            fontSize: 13,
-            backdropFilter: "blur(8px)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              minWidth: 0,
-            }}
-          >
-            <strong style={{ flexShrink: 0 }}>{t("chat.safety_warning")}</strong>
-            <span
-              style={{
-                whiteSpace: "normal",
-                minWidth: 0,
-              }}
-            >
-              {t("chat.safety_seek")}
-            </span>
-          </div>
-          <button
-            type="button"
-            onClick={() => setSafetyAlert(null)}
-            aria-label="Dismiss safety warning"
-            title="Dismiss"
-            style={{
-              border: "none",
-              background: "transparent",
-              color: "#dc2626",
-              cursor: "pointer",
-              fontSize: 18,
-              lineHeight: 1,
-              padding: 0,
-              flexShrink: 0,
-            }}
-          >
-            ×
-          </button>
-        </div>
-      )}
       <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
         <div
           style={{
@@ -936,94 +695,7 @@ export default function ChatPage({
             >
               {symptoms.description}
             </span>
-            <SevBadge
-              n={symptoms.severity_level || symptoms.severity || "moderate"}
-            />
           </div>
-          {phase === "interviewing" &&
-            (() => {
-              const covered = detectSocrates(msgs);
-              const coveredCount = covered.size;
-              return (
-                <div
-                  style={{
-                    padding: "7px 18px",
-                    borderBottom: "1px solid rgba(22,15,6,0.06)",
-                    background: "var(--paper2)",
-                    flexShrink: 0,
-                  }}
-                >
-                  <div
-                    style={{ display: "flex", alignItems: "center", gap: 10 }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "var(--mono)",
-                        fontSize: 9,
-                        color: "var(--ink5)",
-                        letterSpacing: "0.12em",
-                        flexShrink: 0,
-                      }}
-                    >
-                      SOCRATES
-                    </span>
-                    <div style={{ display: "flex", gap: 5, flex: 1 }}>
-                      {SOCRATES_DIMS.map((dim) => {
-                        const done = covered.has(dim.key);
-                        return (
-                          <div
-                            key={dim.key}
-                            title={dim.label}
-                            style={{
-                              flex: 1,
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "center",
-                              gap: 2,
-                            }}
-                          >
-                            <div
-                              style={{
-                                width: "100%",
-                                height: 4,
-                                borderRadius: 2,
-                                background: done
-                                  ? "var(--sage)"
-                                  : "rgba(22,15,6,0.1)",
-                                transition: "background 0.4s ease",
-                              }}
-                            />
-                            <span
-                              style={{
-                                fontFamily: "var(--mono)",
-                                fontSize: 7,
-                                color: done ? "var(--sage)" : "var(--ink5)",
-                                letterSpacing: "0.05em",
-                                transition: "color 0.4s ease",
-                              }}
-                            >
-                              {dim.key === "S2" ? "Sev" : dim.key}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <span
-                      style={{
-                        fontFamily: "var(--mono)",
-                        fontSize: 9,
-                        color:
-                          coveredCount >= 6 ? "var(--sage)" : "var(--ink5)",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {coveredCount}/8
-                    </span>
-                  </div>
-                </div>
-              );
-            })()}
-
           <div style={{ flex: 1, overflowY: "auto", padding: "22px 22px" }}>
             {msgs.map((m, i) => {
               const isUser = m.role === "user";
@@ -1283,236 +955,6 @@ export default function ChatPage({
                   {composerErr}
                 </p>
               )}
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".pdf,.txt,.jpg,.jpeg,.png,.gif,.bmp,.webp,.mp3,.wav,.m4a,.ogg,.flac,.mp4,.mov,.avi,.mkv,.webm,application/pdf,text/plain,image/*,audio/*,video/*"
-                style={{ display: "none" }}
-                onChange={onUploadFile}
-              />
-
-              {(uploadedFiles.length > 0 || uploadMeta || uploadError) && (
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 6,
-                    marginBottom: 9,
-                  }}
-                >
-                  {uploadedFiles.length > 0 && (
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 8,
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontFamily: "var(--mono)",
-                          fontSize: 10,
-                          color: "var(--ink5)",
-                          letterSpacing: "0.08em",
-                        }}
-                      >
-                        {t("chat.context_files", {
-                          count: uploadedFiles.length,
-                        })}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: "var(--body)",
-                          fontSize: 12,
-                          color: "var(--ink4)",
-                        }}
-                      >
-                        {uploadedFiles
-                          .slice(0, 3)
-                          .map((f) => f.file_name)
-                          .join(" · ")}
-                        {uploadedFiles.length > 3
-                          ? ` · +${uploadedFiles.length - 3} more`
-                          : ""}
-                      </span>
-                    </div>
-                  )}
-
-                  {!!uploadMeta && (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 6,
-                      }}
-                    >
-                      <div
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: 8,
-                          width: "fit-content",
-                          maxWidth: "100%",
-                          background: "var(--paper)",
-                          border: "1px solid rgba(22,15,6,0.14)",
-                          borderRadius: 999,
-                          padding: "6px 10px",
-                        }}
-                      >
-                        <span style={{ fontSize: 12, lineHeight: 1 }}>
-                          {uploadMeta.file_type === "image"
-                            ? "🩻"
-                            : uploadMeta.file_type === "audio"
-                              ? "🎵"
-                              : uploadMeta.file_type === "video"
-                                ? "🎬"
-                                : "📄"}
-                        </span>
-                        <span
-                          style={{
-                            fontFamily: "var(--body)",
-                            fontSize: 12,
-                            color: "var(--ink3)",
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            maxWidth: 380,
-                          }}
-                        >
-                          {uploadMeta.file_name} ·{" "}
-                          {uploadMeta.file_type.toUpperCase()} ·{" "}
-                          {uploadMeta.extracted_text_length} chars
-                        </span>
-                        <button
-                          type="button"
-                          onClick={clearUploadedFileView}
-                          style={{
-                            border: "none",
-                            background: "transparent",
-                            color: "var(--ink5)",
-                            cursor: "pointer",
-                            fontSize: 13,
-                            lineHeight: 1,
-                            padding: 0,
-                          }}
-                          title="Dismiss"
-                        >
-                          ×
-                        </button>
-                      </div>
-                      {(uploadMeta.file_type === "image" ||
-                        uploadMeta.file_type === "video") &&
-                        uploadImageUrl && (
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "flex-start",
-                              gap: 10,
-                            }}
-                          >
-                            {uploadMeta.file_type === "video" ? (
-                              <video
-                                src={uploadImageUrl}
-                                controls
-                                style={{
-                                  maxHeight: 120,
-                                  maxWidth: 220,
-                                  borderRadius: 6,
-                                  border: "1px solid rgba(22,15,6,0.14)",
-                                  background: "#000",
-                                }}
-                              />
-                            ) : (
-                              <img
-                                src={uploadImageUrl}
-                                alt="Uploaded medical image"
-                                style={{
-                                  maxHeight: 120,
-                                  maxWidth: 180,
-                                  borderRadius: 6,
-                                  border: "1px solid rgba(22,15,6,0.14)",
-                                  objectFit: "contain",
-                                  background: "#f8f8f8",
-                                }}
-                              />
-                            )}
-                            {!!uploadPreview && (
-                              <p
-                                style={{
-                                  fontFamily: "var(--body)",
-                                  fontSize: 12,
-                                  color: "var(--ink5)",
-                                  lineHeight: 1.6,
-                                  maxWidth: 560,
-                                  margin: 0,
-                                }}
-                              >
-                                <span
-                                  style={{
-                                    fontFamily: "var(--mono)",
-                                    fontSize: 10,
-                                    color: "var(--ink4)",
-                                    display: "block",
-                                    marginBottom: 2,
-                                  }}
-                                >
-                                  {t("chat.analysis_preview")}
-                                </span>
-                                {uploadPreview.slice(0, 200)}
-                                {uploadPreview.length > 200 ? "…" : ""}
-                              </p>
-                            )}
-                          </div>
-                        )}
-                    </div>
-                  )}
-
-                  {pendingAttachments.length > 0 && (
-                    <p
-                      style={{
-                        fontFamily: "var(--body)",
-                        fontSize: 12,
-                        color: "var(--ink5)",
-                        lineHeight: 1.5,
-                        maxWidth: 760,
-                      }}
-                    >
-                      {t("chat.queued", { count: pendingAttachments.length })}
-                    </p>
-                  )}
-
-                  {!!uploadError && (
-                    <p
-                      style={{
-                        fontFamily: "var(--body)",
-                        fontSize: 12,
-                        color: "#991b1b",
-                      }}
-                    >
-                      Upload error: {uploadError}
-                    </p>
-                  )}
-
-                  {!!uploadMeta &&
-                    !["image", "video"].includes(uploadMeta.file_type) &&
-                    !!uploadPreview && (
-                      <p
-                        style={{
-                          fontFamily: "var(--body)",
-                          fontSize: 12,
-                          color: "var(--ink5)",
-                          lineHeight: 1.5,
-                          maxWidth: 760,
-                        }}
-                      >
-                        {uploadPreview.slice(0, 160)}
-                        {uploadPreview.length > 160 ? "…" : ""}
-                      </p>
-                    )}
-                </div>
-              )}
-
               {/* Quick reply chips — prefer LLM-generated, fallback to regex */}
               {(() => {
                 const lastAi = [...msgs].reverse().find((m) => m.role === "ai");
@@ -1582,38 +1024,11 @@ export default function ChatPage({
                   <div
                     style={{
                       display: "flex",
-                      justifyContent: "space-between",
+                      justifyContent: "flex-end",
                       alignItems: "center",
                       marginBottom: 6,
                     }}
                   >
-                    {(() => {
-                      const covered = detectSocrates(msgs);
-                      const count = covered.size;
-                      return count >= 6 ? (
-                        <span
-                          style={{
-                            fontFamily: "var(--mono)",
-                            fontSize: 10,
-                            color: "var(--sage)",
-                            letterSpacing: "0.08em",
-                          }}
-                        >
-                          ✓ Good coverage ({count}/8) · ready to diagnose
-                        </span>
-                      ) : (
-                        <span
-                          style={{
-                            fontFamily: "var(--mono)",
-                            fontSize: 10,
-                            color: "var(--ink5)",
-                            letterSpacing: "0.08em",
-                          }}
-                        >
-                          {count}/8 SOCRATES covered
-                        </span>
-                      );
-                    })()}
                     <button
                       type="button"
                       onClick={forceDiagnose}
@@ -1644,23 +1059,6 @@ export default function ChatPage({
                 )}
 
               <div style={{ display: "flex", gap: 10 }}>
-                <Button
-                  onClick={() => fileInputRef.current?.click()}
-                  variant="outline"
-                  size="icon"
-                  disabled={!sid || uploading}
-                  title={t("chat.attach_file")}
-                  className="shrink-0"
-                  style={{ borderRadius: 999 }}
-                >
-                  {uploading ? "…" : "📎"}
-                </Button>
-                <CameraCapture
-                  api={api}
-                  onCapture={onCameraCapture}
-                  onClose={() => setCameraOpen(false)}
-                  disabled={!sid || loading || phase !== "interviewing"}
-                />
                 <Input
                   value={input}
                   onChange={(e) => {
@@ -1702,109 +1100,6 @@ export default function ChatPage({
               overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                padding: "11px 20px 10px",
-                borderBottom: "1px solid rgba(22,15,6,0.09)",
-                flexShrink: 0,
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginBottom: 8,
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <p
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 15,
-                      fontStyle: "italic",
-                      color: "var(--ink2)",
-                    }}
-                  >
-                    Agent Collaboration
-                  </p>
-                  {phase === "analyzing" && (
-                    <span
-                      style={{
-                        width: 7,
-                        height: 7,
-                        borderRadius: "50%",
-                        background: "var(--amber)",
-                        boxShadow: "0 0 6px var(--amber)",
-                        display: "inline-block",
-                        animation: "pulse 1.5s infinite",
-                      }}
-                    />
-                  )}
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 9,
-                    color: "var(--ink5)",
-                    letterSpacing: "0.08em",
-                  }}
-                >
-                  {logs.filter((l) => !l._sep).length} messages
-                </span>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 4,
-                  flexWrap: "nowrap",
-                }}
-              >
-                {Object.entries(AC).map(([key, cfg], i, arr) => (
-                  <div
-                    key={key}
-                    style={{ display: "flex", alignItems: "center", gap: 3 }}
-                  >
-                    <div
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 3,
-                        background: cfg.pale,
-                        borderRadius: 20,
-                        padding: "2px 7px 2px 4px",
-                        border: `1px solid ${cfg.c}28`,
-                      }}
-                    >
-                      <span style={{ fontSize: 10 }}>{cfg.icon}</span>
-                      <span
-                        style={{
-                          fontFamily: "var(--mono)",
-                          fontSize: 7,
-                          color: cfg.c,
-                          letterSpacing: "0.08em",
-                        }}
-                      >
-                        {cfg.short.toUpperCase()}
-                      </span>
-                    </div>
-                    {i < arr.length - 1 && (
-                      <span
-                        style={{
-                          fontFamily: "var(--mono)",
-                          fontSize: 9,
-                          color: "var(--ink5)",
-                          opacity: 0.5,
-                        }}
-                      >
-                        →
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
             <div
               style={{
                 flex: 1,

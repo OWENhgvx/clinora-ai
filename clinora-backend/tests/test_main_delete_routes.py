@@ -1,17 +1,13 @@
 from io import BytesIO
 from pathlib import Path
 
+from conftest import registration_payload
+
 
 def _register_and_token(client, username, email, role="patient"):
     resp = client.post(
         "/api/auth/register",
-        json={
-            "username": username,
-            "email": email,
-            "password": "securepass123",
-            "full_name": username,
-            "role": role,
-        },
+        json=registration_payload(username, email, role),
     )
     assert resp.status_code == 200
     return resp.json()["token"]

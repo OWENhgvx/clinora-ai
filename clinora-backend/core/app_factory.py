@@ -1,15 +1,14 @@
 """
 app_factory.py — FastAPI application setup for Clinora.
 """
-import os
 
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from db import init_db
-from rag import get_collection_size
+from app.db import init_db
+from app.rag import get_collection_size
 
 
 async def validation_exception_handler(_request: Request, exc: RequestValidationError):
@@ -30,22 +29,7 @@ def _print_rag_status() -> None:
         print("  Status: ✅ Ready")
     else:
         print("  Status: ⚠️  Empty")
-    print("  ─────────────────────────────────────")
-    print("  Quick commands:")
-    print("    python ingest.py              # full ingest (78 terms, ~1000+ articles)")
-    print("    python ingest.py --status     # check DB size")
-    print("    AUTO_INGEST=1 uvicorn main:app  # auto-ingest on startup")
     print(f"{'='*50}\n")
-
-
-def _maybe_auto_ingest() -> None:
-    # set AUTO_INGEST=1 to pull PubMed articles automatically on startup
-    if os.getenv("AUTO_INGEST", "").strip() in ("1", "true", "yes"):
-        from ingest import run_ingestion, DEFAULT_TERMS as _INGEST_TERMS
-
-        print("🔄 AUTO_INGEST enabled — starting PubMed ingestion...")
-        run_ingestion(_INGEST_TERMS, per_term=15)
-        print()
 
 
 def create_app() -> FastAPI:
@@ -61,5 +45,4 @@ def create_app() -> FastAPI:
 
     init_db()
     _print_rag_status()
-    _maybe_auto_ingest()
     return app

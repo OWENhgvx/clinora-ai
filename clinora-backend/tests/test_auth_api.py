@@ -1,27 +1,20 @@
+from conftest import registration_payload
+
+
 def test_register_success(client):
-    payload = {
-        "username": "alice01",
-        "email": "alice@example.com",
-        "password": "securepass123",
-        "full_name": "Alice",
-        "role": "patient",
-    }
+    payload = registration_payload("alice01", "alice@example.com", full_name="Alice")
     resp = client.post("/api/auth/register", json=payload)
     assert resp.status_code == 200
     body = resp.json()
     assert body["token"]
     assert body["user"]["username"] == "alice01"
+    assert body["user"]["bmi"] == 22.5
+    assert body["user"]["verification_status"] == "active"
     assert "password" not in body["user"]
 
 
 def test_register_duplicate_username_fails(client):
-    payload = {
-        "username": "dup_user",
-        "email": "dup1@example.com",
-        "password": "securepass123",
-        "full_name": "Dup",
-        "role": "patient",
-    }
+    payload = registration_payload("dup_user", "dup1@example.com", full_name="Dup")
     first = client.post("/api/auth/register", json=payload)
     assert first.status_code == 200
 
@@ -32,13 +25,7 @@ def test_register_duplicate_username_fails(client):
 
 
 def test_login_json_success_and_wrong_password(client):
-    register_payload = {
-        "username": "bob01",
-        "email": "bob@example.com",
-        "password": "securepass123",
-        "full_name": "Bob",
-        "role": "patient",
-    }
+    register_payload = registration_payload("bob01", "bob@example.com", full_name="Bob")
     reg = client.post("/api/auth/register", json=register_payload)
     assert reg.status_code == 200
 
@@ -58,13 +45,9 @@ def test_login_json_success_and_wrong_password(client):
 
 
 def test_login_oauth_form_success_and_wrong_password(client):
-    register_payload = {
-        "username": "formuser01",
-        "email": "formuser@example.com",
-        "password": "securepass123",
-        "full_name": "Form User",
-        "role": "patient",
-    }
+    register_payload = registration_payload(
+        "formuser01", "formuser@example.com", full_name="Form User"
+    )
     reg = client.post("/api/auth/register", json=register_payload)
     assert reg.status_code == 200
 
@@ -89,28 +72,21 @@ def test_auth_me_requires_valid_token(client):
     no_token = client.get("/api/auth/me")
     assert no_token.status_code == 401
 
-    register_payload = {
-        "username": "charlie01",
-        "email": "charlie@example.com",
-        "password": "securepass123",
-        "full_name": "Charlie",
-        "role": "provider",
-    }
+    register_payload = registration_payload(
+        "charlie01", "charlie@example.com", "provider", full_name="Dr. Charlie"
+    )
     reg = client.post("/api/auth/register", json=register_payload)
     token = reg.json()["token"]
 
     with_token = client.get("/api/auth/me", headers={"Authorization": f"Bearer {token}"})
     assert with_token.status_code == 200
     assert with_token.json()["username"] == "charlie01"
+    assert with_token.json()["verification_status"] == "pending_review"
 
 
 def test_register_missing_required_field_fails(client):
-    payload = {
-        "username": "missing_email_user",
-        "password": "securepass123",
-        "full_name": "No Email",
-        "role": "patient",
-    }
+    payload = registration_payload("missing_email_user", "missing@example.com")
+    payload.pop("email")
     resp = client.post("/api/auth/register", json=payload)
     assert resp.status_code == 422
     assert "email" in resp.json()["detail"].lower()
@@ -123,3 +99,42 @@ def test_login_json_nonexistent_user_fails(client):
     )
     assert resp.status_code == 401
     assert "incorrect" in resp.json()["detail"].lower()
+
+
+def test_patient_registration_requires_data_authorization(client):
+    payload = registration_payload(
+        "no_consent_user",
+        "no_consent@example.com",
+        data_authorization_accepted=False,
+    )
+    resp = client.post("/api/auth/register", json=payload)
+    assert resp.status_code == 422
+    assert "authorization" in resp.text.lower()
+
+
+def test_provider_registration_requires_credentials(client):
+    payload = registration_payload(
+        "provider_missing",
+        "provider_missing@example.com",
+        "provider",
+        license_number="",
+    )
+    resp = client.post("/api/auth/register", json=payload)
+    assert resp.status_code == 422
+    assert "license_number" in resp.text
+
+
+def test_provider_registration_does_not_require_patient_health_fields(client):
+    payload = registration_payload(
+        "provider_no_health",
+        "provider_no_health@example.com",
+        "provider",
+    )
+    resp = client.post("/api/auth/register", json=payload)
+    assert resp.status_code == 200
+    user = resp.json()["user"]
+    assert user["role"] == "provider"
+    assert user["height_cm"] is None
+    assert user["weight_kg"] is None
+    assert user["allergies"] is None
+    assert user["chronic_conditions"] is None

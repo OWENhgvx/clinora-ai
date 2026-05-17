@@ -18,7 +18,7 @@ class FakeAsyncMessages:
 
 
 def test_call_interviewer_async_returns_text(monkeypatch):
-    import agents_async
+    import app.agents_async as agents_async
 
     messages = FakeAsyncMessages(["interviewer reply"])
     monkeypatch.setattr(agents_async, "_ac", types.SimpleNamespace(messages=messages))
@@ -29,7 +29,7 @@ def test_call_interviewer_async_returns_text(monkeypatch):
 
 
 def test_rewrite_query_async_falls_back_on_error(monkeypatch):
-    import agents_async
+    import app.agents_async as agents_async
 
     messages = FakeAsyncMessages([RuntimeError("provider down")])
     monkeypatch.setattr(agents_async, "_ac", types.SimpleNamespace(messages=messages))
@@ -38,7 +38,7 @@ def test_rewrite_query_async_falls_back_on_error(monkeypatch):
 
 
 def test_build_rag_queries_deduplicates(monkeypatch):
-    import agents_async
+    import app.agents_async as agents_async
 
     async def fake_rewrite(case_text):
         return case_text
@@ -54,7 +54,7 @@ def test_build_rag_queries_deduplicates(monkeypatch):
 
 
 def test_call_diagnostician_async_returns_text_and_refs(monkeypatch):
-    import agents_async
+    import app.agents_async as agents_async
 
     refs = [{"title": "ref"}]
     messages = FakeAsyncMessages(["optimized query", "diagnosis text"])
@@ -72,7 +72,7 @@ def test_call_diagnostician_async_returns_text_and_refs(monkeypatch):
 
 
 def test_call_diagnostician_cot_async_extracts_thinking_and_text(monkeypatch):
-    import agents_async
+    import app.agents_async as agents_async
 
     blocks = [
         types.SimpleNamespace(type="thinking", thinking="private reasoning"),
@@ -92,33 +92,8 @@ def test_call_diagnostician_cot_async_extracts_thinking_and_text(monkeypatch):
     assert refs == []
 
 
-def test_call_critic_async_returns_text(monkeypatch):
-    import agents_async
-
-    messages = FakeAsyncMessages(["critic review"])
-    monkeypatch.setattr(agents_async, "_ac", types.SimpleNamespace(messages=messages))
-
-    assert asyncio.run(agents_async.call_critic_async("case", "diagnosis")) == "critic review"
-    assert messages.calls[0]["system"] == agents_async.CRITIC_PROMPT
-
-
-def test_call_critic_cot_async_extracts_blocks(monkeypatch):
-    import agents_async
-
-    blocks = [
-        types.SimpleNamespace(type="thinking", thinking="critic thinking"),
-        types.SimpleNamespace(type="text", text="critic final review"),
-    ]
-    messages = FakeAsyncMessages([blocks])
-    monkeypatch.setattr(agents_async, "_ac", types.SimpleNamespace(messages=messages))
-
-    review, thinking = asyncio.run(agents_async.call_critic_cot_async("case", "diagnosis"))
-    assert review == "critic final review"
-    assert thinking == "critic thinking"
-
-
 def test_call_agent_commentary_async_parses_fenced_json(monkeypatch):
-    import agents_async
+    import app.agents_async as agents_async
 
     payload = '```json\n{"safety_to_interviewer":"ask SOCRATES","interviewer_to_safety":"will probe"}\n```'
     messages = FakeAsyncMessages([payload])
@@ -132,36 +107,10 @@ def test_call_agent_commentary_async_parses_fenced_json(monkeypatch):
 
 
 def test_call_agent_commentary_async_returns_empty_on_bad_json(monkeypatch):
-    import agents_async
+    import app.agents_async as agents_async
 
     messages = FakeAsyncMessages(["not-json"])
     monkeypatch.setattr(agents_async, "_ac", types.SimpleNamespace(messages=messages))
 
     assert asyncio.run(agents_async.call_agent_commentary_async("pain", "reply")) == {}
 
-
-def test_call_diagnostic_roundtable_async_normalizes_messages(monkeypatch):
-    import agents_async
-
-    payload = (
-        '[{"from":"diagnostician","to":"critic","text":"defense"},'
-        '{"from_agent":"critic","to_agent":"diagnostician","text":"accepted"},'
-        '"ignored"]'
-    )
-    messages = FakeAsyncMessages([payload])
-    monkeypatch.setattr(agents_async, "_ac", types.SimpleNamespace(messages=messages))
-
-    result = asyncio.run(agents_async.call_diagnostic_roundtable_async("case", "dx", "review"))
-    assert result == [
-        {"from_agent": "diagnostician", "to_agent": "critic", "text": "defense"},
-        {"from_agent": "critic", "to_agent": "diagnostician", "text": "accepted"},
-    ]
-
-
-def test_call_diagnostic_roundtable_async_returns_empty_on_error(monkeypatch):
-    import agents_async
-
-    messages = FakeAsyncMessages([RuntimeError("bad response")])
-    monkeypatch.setattr(agents_async, "_ac", types.SimpleNamespace(messages=messages))
-
-    assert asyncio.run(agents_async.call_diagnostic_roundtable_async("case", "dx", "review")) == []

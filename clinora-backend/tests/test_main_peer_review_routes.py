@@ -38,7 +38,7 @@ def test_peer_review_returns_cached_result(client, monkeypatch):
             "user_id": None,
             "symptoms": {"description": "headache"},
             "diagnosis": "diagnosis text",
-            "review": "critic text",
+            "review": "diagnosis context for peer check",
             "mistral_peer_review": cached,
         },
     )

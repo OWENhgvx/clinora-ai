@@ -1,14 +1,51 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { gsap } from "gsap";
-import { nextHue, playClick } from "./auth/authAudioHue";
+import { Button } from "../components/ui/button";
 import { useAuthStarfield } from "./auth/useAuthStarfield";
-import { useAuthGsapIdle } from "./auth/useAuthGsapIdle";
+
+function positiveNumber(value) {
+  return Number(value) > 0;
+}
+
+function calculateBmi(heightCm, weightKg) {
+  const h = Number(heightCm);
+  const w = Number(weightKg);
+  if (!h || !w) return "";
+  return (w / (h / 100) ** 2).toFixed(1);
+}
+
+function numericOrNull(value) {
+  return value === "" || value === null || value === undefined
+    ? null
+    : Number(value);
+}
+
+function toRegisterPayload(form, selectedRole) {
+  const payload = { ...form };
+  delete payload.chronic_condition_draft;
+  const role = selectedRole || form.role;
+  if (role === "provider") {
+    delete payload.height_cm;
+    delete payload.weight_kg;
+    delete payload.allergies;
+    delete payload.chronic_conditions;
+  }
+  return {
+    ...payload,
+    role,
+    ...(role === "patient"
+      ? {
+          height_cm: Number(form.height_cm),
+          weight_kg: Number(form.weight_kg),
+        }
+      : {}),
+    years_experience: numericOrNull(form.years_experience),
+  };
+}
 
 export default function AuthPage({ api, onLogin, onSkip }) {
   const { t } = useTranslation();
 
-  // Auth state
   const [step, setStep] = useState("role");
   const [selectedRole, setSelectedRole] = useState(null);
   const [mode, setMode] = useState("login");
@@ -19,39 +56,38 @@ export default function AuthPage({ api, onLogin, onSkip }) {
     confirm: "",
     full_name: "",
     role: "patient",
+    birth_date: "",
+    sex: "",
+    height_cm: "",
+    weight_kg: "",
+    allergies: "",
+    chronic_conditions: [],
+    chronic_condition_draft: "",
+    phone: "",
+    data_authorization_accepted: false,
+    license_number: "",
+    hospital: "",
+    department: "",
+    specialty: "",
+    years_experience: "",
+    title: "",
+    qualification_proof: "",
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  /** Bottom snackbar: errors + success (avoids banner layout shift in the card). */
   const [toast, setToast] = useState(null);
   const toastTimerRef = useRef(null);
   const toastIdRef = useRef(0);
-  /** True after successful auth until redirect — disables submit without inline banner. */
   const [authSuccessPending, setAuthSuccessPending] = useState(false);
 
-  // Lamp state
-  const [lampOn, setLampOn] = useState(false);
-  const [hue, setHue] = useState(35);
-
-  // Refs
-  const containerRef = useRef(null);
   const canvasRef = useRef(null);
-  const cardRef = useRef(null);
   const rafRef = useRef(null);
-  const blinkRef = useRef(null);
-  const lookRef = useRef(null);
-  const nodRef = useRef(null);
-  const dragRef = useRef({
-    dragging: false,
-    startY: 0,
-    currentDy: 0,
-    triggered: false,
-  });
-  const lampOnRef = useRef(false);
-  const hueRef = useRef(35);
+
+  const accent = "var(--navy)";
+  const accentPale = "var(--navyPale)";
+  const accentBorder = "rgba(15, 61, 115, 0.35)";
 
   useAuthStarfield(canvasRef, rafRef);
-  useAuthGsapIdle(containerRef, blinkRef, lookRef, nodRef);
 
   const dismissToast = useCallback(() => {
     if (toastTimerRef.current) {
@@ -92,6 +128,7 @@ export default function AuthPage({ api, onLogin, onSkip }) {
   );
 
   const f = (k) => (v) => setForm((p) => ({ ...p, [k]: v }));
+  const bmi = calculateBmi(form.height_cm, form.weight_kg);
 
   function chooseRole(role) {
     setSelectedRole(role);
@@ -108,10 +145,34 @@ export default function AuthPage({ api, onLogin, onSkip }) {
     if (!form.password) e.password = t("auth.err_required");
     else if (form.password.length < 6) e.password = t("auth.err_min6");
     if (mode === "register") {
+      if (!form.full_name.trim()) e.full_name = t("auth.err_required");
       if (!form.email.trim()) e.email = t("auth.err_required");
       else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = t("auth.err_email");
       if (form.confirm !== form.password)
         e.confirm = t("auth.err_password_match");
+      if (!form.birth_date) e.birth_date = t("auth.err_required");
+      if (!form.sex) e.sex = t("auth.err_required");
+      if (selectedRole === "patient") {
+        if (!positiveNumber(form.height_cm)) e.height_cm = t("auth.err_required");
+        if (!positiveNumber(form.weight_kg)) e.weight_kg = t("auth.err_required");
+        if (!form.chronic_conditions.length)
+          e.chronic_conditions = t("auth.err_required");
+      }
+      if (selectedRole === "patient" && !form.data_authorization_accepted)
+        e.data_authorization_accepted = "Data authorization is required";
+      if (selectedRole === "provider") {
+        [
+          "license_number",
+          "hospital",
+          "department",
+          "specialty",
+          "years_experience",
+          "title",
+          "qualification_proof",
+        ].forEach((key) => {
+          if (!String(form[key] || "").trim()) e[key] = t("auth.err_required");
+        });
+      }
     }
     setErrors(e);
     return Object.keys(e).length === 0;
@@ -129,7 +190,7 @@ export default function AuthPage({ api, onLogin, onSkip }) {
               username: form.username,
               password: form.password,
             })
-          : await api.register(form);
+          : await api.register(toRegisterPayload(form, selectedRole));
 
       if (mode === "login") {
         const actualRole = data?.user?.role;
@@ -160,231 +221,10 @@ export default function AuthPage({ api, onLogin, onSkip }) {
     setLoading(false);
   }
 
-  // ── Toggle lamp ───────────────────────────────────────────
-  function toggleLamp() {
-    const newOn = !lampOnRef.current;
-    lampOnRef.current = newOn;
-    setLampOn(newOn);
-    playClick(newOn);
-
-    const el = containerRef.current;
-    if (!el) return;
-
-    let newHue = hueRef.current;
-    if (newOn) {
-      newHue = nextHue();
-      hueRef.current = newHue;
-      setHue(newHue);
-      el.querySelector("#ag-shadeG0")?.setAttribute(
-        "stop-color",
-        `hsl(${newHue},22%,26%)`,
-      );
-      el.querySelector("#ag-shadeG1")?.setAttribute(
-        "stop-color",
-        `hsl(${newHue},14%,20%)`,
-      );
-    }
-
-    // Eyes rotate
-    const eyesGroup = el.querySelector("#ag-eyes-group");
-    if (eyesGroup) {
-      gsap.to(eyesGroup, {
-        rotation: newOn ? 0 : 180,
-        transformOrigin: "-9px 14px",
-        duration: 0.6,
-        ease: "back.out(2.4)",
-      });
-    }
-
-    // Iris glow
-    const irisL = el.querySelector("#ag-iris-l");
-    const irisR = el.querySelector("#ag-iris-r");
-    if (irisL && irisR)
-      gsap.to([irisL, irisR], { opacity: newOn ? 0.65 : 0, duration: 0.45 });
-
-    // Mouth
-    const mouth = el.querySelector("#ag-mouth");
-    if (mouth) {
-      gsap.to(mouth, {
-        attr: { d: newOn ? "M -20 28 Q -9 36 2 28" : "M -20 28 Q -9 24 2 28" },
-        duration: 0.45,
-        ease: "power2.out",
-      });
-    }
-
-    // Eyebrows
-    const browL = el.querySelector("#ag-brow-l");
-    const browR = el.querySelector("#ag-brow-r");
-    if (browL)
-      gsap.to(browL, {
-        attr: { d: newOn ? "M -28 3 Q -21 -2 -14 3" : "M -28 6 Q -21 2 -14 6" },
-        duration: 0.4,
-      });
-    if (browR)
-      gsap.to(browR, {
-        attr: { d: newOn ? "M -4 3 Q 3 -2 10 3" : "M -4 6 Q 3 2 10 6" },
-        duration: 0.4,
-      });
-
-    // Light cone
-    const lightGroup = el.querySelector("#ag-light-group");
-    const rimGlow = el.querySelector("#ag-rim-glow");
-    if (lightGroup)
-      gsap.to(lightGroup, {
-        opacity: newOn ? 1 : 0,
-        duration: 0.7,
-        ease: newOn ? "power2.out" : "power2.in",
-      });
-    if (rimGlow) gsap.to(rimGlow, { opacity: newOn ? 0.8 : 0, duration: 0.5 });
-
-    // Shade flash + sway
-    const shadeBody = el.querySelector("#ag-shade-body");
-    const shadeGroup = el.querySelector("#ag-shade-group");
-    if (shadeBody)
-      gsap.fromTo(
-        shadeBody,
-        { opacity: newOn ? 0.5 : 1 },
-        { opacity: 1, duration: 0.3 },
-      );
-    if (shadeGroup) {
-      gsap.to(shadeGroup, {
-        rotation: newOn ? 4 : -4,
-        transformOrigin: "-10px -22px",
-        duration: 0.22,
-        ease: "power2.out",
-        yoyo: true,
-        repeat: 3,
-        onComplete: () => gsap.set(shadeGroup, { rotation: 0 }),
-      });
-    }
-
-    // Login card spring
-    const card = cardRef.current;
-    if (card) {
-      if (newOn) {
-        card.style.borderColor = `hsla(${newHue},55%,48%,0.4)`;
-        card.style.boxShadow = `0 0 52px hsla(${newHue},75%,52%,0.16), 0 0 96px hsla(${newHue},75%,40%,0.09)`;
-        gsap.to(card, {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.78,
-          ease: "back.out(1.85)",
-          pointerEvents: "auto",
-        });
-      } else {
-        gsap.to(card, {
-          opacity: 0,
-          x: 40,
-          scale: 0.92,
-          duration: 0.42,
-          ease: "power2.in",
-          pointerEvents: "none",
-        });
-        card.style.borderColor = "";
-        card.style.boxShadow = "";
-      }
-    }
-  }
-
-  // ── Cord drag ─────────────────────────────────────────────
-  function updateCord(svgDy, el) {
-    const cordPath = el.querySelector("#ag-cord-path");
-    const cordEnd = el.querySelector("#ag-cord-end");
-    const CORD_START = { x: 120, y: 148 };
-    const CORD_REST = { x: 113, y: 228 };
-    const ey = CORD_REST.y + svgDy;
-    const midY = CORD_START.y + (ey - CORD_START.y) * 0.45;
-    const cx = CORD_START.x - svgDy * 0.05;
-    if (cordPath)
-      cordPath.setAttribute(
-        "d",
-        `M ${CORD_START.x} ${CORD_START.y} Q ${cx} ${midY} ${CORD_REST.x} ${ey}`,
-      );
-    if (cordEnd)
-      gsap.set(cordEnd, {
-        attr: { transform: `translate(${CORD_REST.x}, ${ey})` },
-      });
-  }
-
-  function onCordPointerDown(e) {
-    dragRef.current = {
-      dragging: true,
-      startY: e.clientY,
-      currentDy: 0,
-      triggered: false,
-    };
-    e.currentTarget.setPointerCapture(e.pointerId);
-    e.preventDefault();
-  }
-
-  function onSvgPointerMove(e) {
-    if (!dragRef.current.dragging) return;
-    const el = containerRef.current;
-    if (!el) return;
-    const svg = el.querySelector("#ag-lamp-svg");
-    if (!svg) return;
-    const rect = svg.getBoundingClientRect();
-    const scale = 420 / rect.height;
-    const svgDy = Math.max(0, (e.clientY - dragRef.current.startY) * scale);
-    dragRef.current.currentDy = svgDy;
-    updateCord(Math.min(svgDy, 115), el);
-    const cordPath = el.querySelector("#ag-cord-path");
-    if (cordPath) {
-      const t2 = Math.min(svgDy / 115, 1);
-      cordPath.setAttribute("stroke-width", String(2.5 - t2 * 0.9));
-      cordPath.setAttribute(
-        "stroke",
-        `hsl(30, ${18 + t2 * 20}%, ${22 + t2 * 18}%)`,
-      );
-    }
-  }
-
-  function onSvgPointerUp(e) {
-    if (!dragRef.current.dragging) return;
-    const el = containerRef.current;
-    if (!el) return;
-    const svg = el.querySelector("#ag-lamp-svg");
-    const rect = svg?.getBoundingClientRect();
-    const scale = rect ? 420 / rect.height : 1;
-    dragRef.current.dragging = false;
-
-    if (
-      (e.clientY - dragRef.current.startY) * scale > 52 &&
-      !dragRef.current.triggered
-    ) {
-      dragRef.current.triggered = true;
-      toggleLamp();
-    }
-
-    const fromDy = Math.min(dragRef.current.currentDy, 115);
-    const proxy = { val: fromDy };
-    gsap.to(proxy, {
-      val: 0,
-      duration: 0.95,
-      ease: "elastic.out(1.1, 0.38)",
-      onUpdate() {
-        updateCord(proxy.val, el);
-      },
-      onComplete() {
-        const cordPath = el?.querySelector("#ag-cord-path");
-        if (cordPath) {
-          cordPath.setAttribute("stroke-width", "2.5");
-          cordPath.setAttribute("stroke", "#4a3c28");
-        }
-      },
-    });
-    dragRef.current.currentDy = 0;
-  }
-
-  const lampColor = `hsl(${hue}, 78%, 46%)`;
-  const lampGlow = `hsla(${hue}, 78%, 48%, 0.16)`;
-  const lampPale = `hsla(${hue}, 78%, 48%, 0.1)`;
   const isProvider = selectedRole === "provider";
 
   return (
     <div
-      ref={containerRef}
       style={{
         position: "fixed",
         inset: 0,
@@ -396,7 +236,6 @@ export default function AuthPage({ api, onLogin, onSkip }) {
         zIndex: 0,
       }}
     >
-      {/* Stars */}
       <canvas
         ref={canvasRef}
         style={{
@@ -407,34 +246,6 @@ export default function AuthPage({ api, onLogin, onSkip }) {
         }}
       />
 
-      {/* Ambient glow */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          zIndex: 0,
-          background: `radial-gradient(ellipse 50% 55% at 50% 48%, ${lampGlow}, transparent 70%)`,
-          opacity: lampOn ? 1 : 0,
-          transition: "opacity 1.1s ease",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 220,
-          pointerEvents: "none",
-          zIndex: 0,
-          background: `radial-gradient(ellipse 38% 100% at 50% 100%, ${lampGlow}, transparent 80%)`,
-          opacity: lampOn ? 0.7 : 0,
-          transition: "opacity 1.1s ease",
-        }}
-      />
-
-      {/* Logo */}
       <div
         style={{
           position: "fixed",
@@ -452,7 +263,7 @@ export default function AuthPage({ api, onLogin, onSkip }) {
             height: 32,
             borderRadius: 9,
             background: "#fff",
-            boxShadow: "0 3px 12px rgba(15,76,129,0.28)",
+            boxShadow: "var(--shadow-sm)",
             overflow: "hidden",
           }}
         >
@@ -494,7 +305,6 @@ export default function AuthPage({ api, onLogin, onSkip }) {
         </div>
       </div>
 
-      {/* Scene */}
       <div
         style={{
           position: "relative",
@@ -504,441 +314,20 @@ export default function AuthPage({ api, onLogin, onSkip }) {
           justifyContent: "center",
         }}
       >
-        {/* Lamp */}
         <div
           style={{
             position: "relative",
-            width: 260,
-            height: 420,
-            flexShrink: 0,
-            transition: "transform 0.75s cubic-bezier(0.22,1,0.36,1)",
-            transform: lampOn ? "translateX(-220px)" : "translateX(0)",
-            zIndex: 2,
-          }}
-        >
-          <svg
-            id="ag-lamp-svg"
-            width="260"
-            height="420"
-            viewBox="0 0 260 420"
-            style={{ overflow: "visible" }}
-            onPointerMove={onSvgPointerMove}
-            onPointerUp={onSvgPointerUp}
-          >
-            <defs>
-              <linearGradient
-                id="ag-shadeG"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop
-                  id="ag-shadeG0"
-                  offset="0%"
-                  stopColor={`hsl(${hue},18%,26%)`}
-                />
-                <stop
-                  id="ag-shadeG1"
-                  offset="100%"
-                  stopColor={`hsl(${hue},12%,20%)`}
-                />
-              </linearGradient>
-              <linearGradient id="ag-armG" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#271f16" />
-                <stop offset="45%" stopColor="#3a2e20" />
-                <stop offset="100%" stopColor="#271f16" />
-              </linearGradient>
-              <radialGradient id="ag-coneG" cx="50%" cy="0%" r="90%">
-                <stop offset="0%" stopColor={lampColor} stopOpacity="0.28" />
-                <stop offset="100%" stopColor={lampColor} stopOpacity="0" />
-              </radialGradient>
-              <filter
-                id="ag-softblur"
-                x="-80%"
-                y="-80%"
-                width="260%"
-                height="260%"
-              >
-                <feGaussianBlur stdDeviation="18" />
-              </filter>
-              <filter
-                id="ag-glow4"
-                x="-30%"
-                y="-30%"
-                width="160%"
-                height="160%"
-              >
-                <feGaussianBlur stdDeviation="4" result="b" />
-                <feMerge>
-                  <feMergeNode in="b" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            {/* Light cone */}
-            <g id="ag-light-group" opacity="0">
-              <path d="M 98 180 L 22 372 L 238 372 Z" fill="url(#ag-coneG)" />
-              <path
-                d="M 106 180 L 44 348 L 216 348 Z"
-                fill={lampColor}
-                opacity="0.04"
-              />
-              <ellipse
-                cx="130"
-                cy="374"
-                rx="96"
-                ry="13"
-                fill={lampColor}
-                opacity="0.13"
-                filter="url(#ag-softblur)"
-              />
-            </g>
-
-            {/* Base */}
-            <ellipse cx="130" cy="386" rx="64" ry="13" fill="#1a1410" />
-            <rect
-              x="106"
-              y="354"
-              width="48"
-              height="34"
-              rx="9"
-              fill="url(#ag-armG)"
-            />
-            <rect
-              x="106"
-              y="354"
-              width="48"
-              height="7"
-              rx="5"
-              fill="rgba(255,220,140,0.06)"
-            />
-            {/* Pole */}
-            <rect
-              x="122"
-              y="200"
-              width="16"
-              height="160"
-              rx="8"
-              fill="url(#ag-armG)"
-            />
-            {/* Arm joints */}
-            <circle
-              cx="130"
-              cy="200"
-              r="11"
-              fill="#3a2e20"
-              stroke="#4a3c28"
-              strokeWidth="1"
-            />
-            <rect
-              x="122"
-              y="152"
-              width="13"
-              height="62"
-              rx="6.5"
-              fill="url(#ag-armG)"
-              transform="rotate(-20 130 200)"
-            />
-            <circle
-              cx="112"
-              cy="144"
-              r="10"
-              fill="#3a2e20"
-              stroke="#4a3c28"
-              strokeWidth="1"
-            />
-            <rect
-              x="106"
-              y="100"
-              width="13"
-              height="56"
-              rx="6.5"
-              fill="url(#ag-armG)"
-              transform="rotate(12 112 144)"
-            />
-            <circle
-              cx="117"
-              cy="96"
-              r="9"
-              fill="#3a2e20"
-              stroke="#4a3c28"
-              strokeWidth="1"
-            />
-
-            {/* Shade group */}
-            <g id="ag-shade-group" transform="translate(130,118)">
-              <ellipse
-                cx="-10"
-                cy="-22"
-                rx="52"
-                ry="16"
-                fill="#1e1810"
-                opacity="0.9"
-              />
-              <path
-                id="ag-shade-body"
-                d="M -50 -18 C -58 2 -55 22 -48 38 L 30 38 C 37 22 40 2 32 -18 Z"
-                fill="url(#ag-shadeG)"
-              />
-              <ellipse
-                cx="-9"
-                cy="38"
-                rx="40"
-                ry="8"
-                fill="#18140e"
-                opacity="0.95"
-              />
-              <ellipse
-                id="ag-rim-glow"
-                cx="-9"
-                cy="38"
-                rx="32"
-                ry="5"
-                fill={lampColor}
-                opacity="0"
-                filter="url(#ag-glow4)"
-              />
-              <ellipse cx="-9" cy="-18" rx="42" ry="13" fill="#2a2218" />
-              <ellipse cx="-9" cy="-18" rx="40" ry="11" fill="#332a1c" />
-              <path
-                d="M -44 -12 C -47 2 -45 16 -40 28 L -36 28 C -41 16 -43 2 -40 -12 Z"
-                fill="rgba(255,220,140,0.05)"
-              />
-              <line
-                x1="-22"
-                y1="2"
-                x2="-22"
-                y2="20"
-                stroke="rgba(0,0,0,0.35)"
-                strokeWidth="1.5"
-              />
-              <line
-                x1="-9"
-                y1="2"
-                x2="-9"
-                y2="24"
-                stroke="rgba(0,0,0,0.35)"
-                strokeWidth="1.5"
-              />
-              <line
-                x1="4"
-                y1="2"
-                x2="4"
-                y2="20"
-                stroke="rgba(0,0,0,0.35)"
-                strokeWidth="1.5"
-              />
-              <rect
-                x="-14"
-                y="-34"
-                width="10"
-                height="18"
-                rx="4"
-                fill="#18140e"
-              />
-
-              {/* Eyes (rotate 180° when off) */}
-              <g id="ag-eyes-group" transform="rotate(180, -9, 14)">
-                {/* Left eye */}
-                <g id="ag-eye-l" transform="translate(-21,16)">
-                  <ellipse cx="0" cy="0" rx="8.5" ry="10" fill="#16120c" />
-                  <rect
-                    id="ag-blink-l"
-                    x="-9"
-                    y="-10"
-                    width="18"
-                    height="0"
-                    fill="#332a1c"
-                    rx="2"
-                  />
-                  <ellipse cx="0" cy="0" rx="6" ry="7.5" fill="#0e0c08" />
-                  <ellipse
-                    id="ag-iris-l"
-                    cx="0"
-                    cy="0"
-                    rx="4"
-                    ry="5"
-                    fill={lampColor}
-                    opacity="0"
-                  />
-                  <circle
-                    id="ag-pupil-l"
-                    cx="0"
-                    cy="0"
-                    r="2.5"
-                    fill="#060504"
-                  />
-                  <circle cx="2.5" cy="-3" r="2" fill="rgba(255,240,200,0.6)" />
-                  <circle cx="-2" cy="2.5" r="1" fill="rgba(255,240,200,0.2)" />
-                </g>
-                {/* Right eye */}
-                <g id="ag-eye-r" transform="translate(3,16)">
-                  <ellipse cx="0" cy="0" rx="8.5" ry="10" fill="#16120c" />
-                  <rect
-                    id="ag-blink-r"
-                    x="-9"
-                    y="-10"
-                    width="18"
-                    height="0"
-                    fill="#332a1c"
-                    rx="2"
-                  />
-                  <ellipse cx="0" cy="0" rx="6" ry="7.5" fill="#0e0c08" />
-                  <ellipse
-                    id="ag-iris-r"
-                    cx="0"
-                    cy="0"
-                    rx="4"
-                    ry="5"
-                    fill={lampColor}
-                    opacity="0"
-                  />
-                  <circle
-                    id="ag-pupil-r"
-                    cx="0"
-                    cy="0"
-                    r="2.5"
-                    fill="#060504"
-                  />
-                  <circle cx="2.5" cy="-3" r="2" fill="rgba(255,240,200,0.6)" />
-                  <circle cx="-2" cy="2.5" r="1" fill="rgba(255,240,200,0.2)" />
-                </g>
-                {/* Brows */}
-                <path
-                  id="ag-brow-l"
-                  d="M -28 6 Q -21 2 -14 6"
-                  stroke="rgba(255,220,140,0.18)"
-                  strokeWidth="1.5"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  id="ag-brow-r"
-                  d="M -4 6 Q 3 2 10 6"
-                  stroke="rgba(255,220,140,0.18)"
-                  strokeWidth="1.5"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                {/* Mouth */}
-                <path
-                  id="ag-mouth"
-                  d="M -20 28 Q -9 24 2 28"
-                  stroke="rgba(255,220,140,0.16)"
-                  strokeWidth="1.8"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </g>
-            </g>
-
-            {/* Cord */}
-            <path
-              id="ag-cord-path"
-              d="M 120 148 Q 116 186 113 222"
-              stroke="#4a3c28"
-              strokeWidth="2.5"
-              fill="none"
-              strokeLinecap="round"
-            />
-
-            {/* Cord tassel (draggable) */}
-            <g
-              id="ag-cord-end"
-              transform="translate(113, 228)"
-              style={{ cursor: "grab" }}
-              onPointerDown={onCordPointerDown}
-              onClick={() => {
-                if (Math.abs(dragRef.current.currentDy) < 6) toggleLamp();
-              }}
-            >
-              <circle
-                cx="0"
-                cy="0"
-                r="11"
-                fill="#3a2e20"
-                stroke="#5a4830"
-                strokeWidth="1.5"
-              />
-              <circle cx="0" cy="0" r="6.5" fill="#2a2018" />
-              <circle cx="-2.5" cy="-3" r="2.5" fill="rgba(255,220,140,0.28)" />
-              <ellipse
-                cx="0"
-                cy="-10.5"
-                rx="4.5"
-                ry="2"
-                fill="none"
-                stroke="#5a4830"
-                strokeWidth="1.5"
-              />
-              <line
-                x1="-3.5"
-                y1="9"
-                x2="-5.5"
-                y2="20"
-                stroke="#5a4830"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              />
-              <line
-                x1="0"
-                y1="10"
-                x2="0"
-                y2="21"
-                stroke="#5a4830"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              />
-              <line
-                x1="3.5"
-                y1="9"
-                x2="5.5"
-                y2="20"
-                stroke="#5a4830"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              />
-            </g>
-          </svg>
-
-          {/* Hint */}
-          {!lampOn && (
-            <div
-              style={{
-                position: "absolute",
-                bottom: -8,
-                left: "50%",
-                transform: "translateX(-50%)",
-                fontFamily: "var(--mono)",
-                fontSize: 9,
-                letterSpacing: "0.18em",
-                color: "var(--ink5)",
-                whiteSpace: "nowrap",
-                animation: "hintFloat 2.8s ease-in-out infinite",
-              }}
-            >
-              ↓ PULL THE CORD
-            </div>
-          )}
-        </div>
-
-        {/* Login card */}
-        <div
-          ref={cardRef}
-          style={{
-            position: "absolute",
-            left: "50%",
-            width: 360,
-            marginLeft: 60,
+            left: 0,
+            width: mode === "register" ? 720 : 360,
+            maxWidth: "calc(100vw - 32px)",
+            maxHeight: "calc(100vh - 48px)",
+            overflowY: "auto",
+            marginLeft: 0,
             background: "rgba(255,255,255,0.92)",
             border: "1.5px solid var(--input-border)",
             borderRadius: 20,
             padding: "36px 36px 32px",
-            opacity: 0,
-            transform: "translateX(40px) scale(0.92)",
-            pointerEvents: "none",
+            boxShadow: "var(--shadow-lg)",
             transition: "border-color 0.6s, box-shadow 0.6s",
           }}
         >
@@ -954,7 +343,6 @@ export default function AuthPage({ api, onLogin, onSkip }) {
             }}
           />
 
-          {/* Eyebrow */}
           <div
             style={{
               fontFamily: "var(--mono)",
@@ -973,7 +361,7 @@ export default function AuthPage({ api, onLogin, onSkip }) {
               style={{
                 flex: "0 0 28px",
                 height: 1.5,
-                background: `linear-gradient(90deg,${lampColor},transparent)`,
+                background: `linear-gradient(90deg,${accent},transparent)`,
                 borderRadius: 1,
                 opacity: 0.7,
                 display: "inline-block",
@@ -981,7 +369,6 @@ export default function AuthPage({ api, onLogin, onSkip }) {
             />
           </div>
 
-          {/* Title */}
           <h1
             style={{
               fontFamily: "var(--serif)",
@@ -996,19 +383,16 @@ export default function AuthPage({ api, onLogin, onSkip }) {
             {mode === "login" ? (
               <>
                 Welcome{" "}
-                <em style={{ fontStyle: "italic", color: lampColor }}>Back</em>
+                <em style={{ fontStyle: "italic", color: accent }}>Back</em>
               </>
             ) : (
               <>
                 Create{" "}
-                <em style={{ fontStyle: "italic", color: lampColor }}>
-                  Account
-                </em>
+                <em style={{ fontStyle: "italic", color: accent }}>Account</em>
               </>
             )}
           </h1>
 
-          {/* Role selector */}
           {step === "role" && (
             <div style={{ marginBottom: 18 }}>
               <div
@@ -1030,6 +414,7 @@ export default function AuthPage({ api, onLogin, onSkip }) {
                 ].map(({ r, icon, label }) => (
                   <button
                     key={r}
+                    type="button"
                     onClick={() => {
                       chooseRole(r);
                       setStep("auth");
@@ -1037,19 +422,16 @@ export default function AuthPage({ api, onLogin, onSkip }) {
                     style={{
                       flex: 1,
                       background:
-                        selectedRole === r
-                          ? `hsla(${hue},55%,48%,0.18)`
-                          : "var(--paper)",
-                      border: `1.5px solid ${selectedRole === r ? lampColor : "var(--input-border)"}`,
+                        selectedRole === r ? accentPale : "var(--paper)",
+                      border: `1.5px solid ${selectedRole === r ? accent : "var(--input-border)"}`,
                       borderRadius: 10,
                       padding: "12px 8px",
                       cursor: "pointer",
                       color:
-                        selectedRole === r
-                          ? lampColor
-                          : "var(--ink4)",
+                        selectedRole === r ? accent : "var(--ink4)",
                       fontFamily: "var(--body)",
                       fontSize: 14,
+                      fontWeight: selectedRole === r ? 600 : 500,
                       transition: "all 0.18s",
                     }}
                   >
@@ -1063,7 +445,6 @@ export default function AuthPage({ api, onLogin, onSkip }) {
 
           {step === "auth" && (
             <>
-              {/* Row 1: role badge + change */}
               <div
                 style={{
                   display: "flex",
@@ -1076,10 +457,10 @@ export default function AuthPage({ api, onLogin, onSkip }) {
                   style={{
                     fontFamily: "var(--mono)",
                     fontSize: 9,
-                    color: lampColor,
+                    color: accent,
                     letterSpacing: "0.12em",
-                    background: `hsla(${hue},55%,48%,0.12)`,
-                    border: `1px solid ${lampColor}30`,
+                    background: accentPale,
+                    border: `1px solid ${accentBorder}`,
                     borderRadius: 20,
                     padding: "3px 10px",
                     whiteSpace: "nowrap",
@@ -1088,6 +469,7 @@ export default function AuthPage({ api, onLogin, onSkip }) {
                   {isProvider ? "👨‍⚕️ PROVIDER" : "😷 PATIENT"}
                 </span>
                 <button
+                  type="button"
                   onClick={() => {
                     setStep("role");
                     dismissToast();
@@ -1109,133 +491,248 @@ export default function AuthPage({ api, onLogin, onSkip }) {
                   change
                 </button>
               </div>
-              {/* Row 2: mode toggle */}
-              <div style={{ display: "flex", gap: 4, marginBottom: 16 }}>
+
+              <div
+                style={{
+                  display: "flex",
+                  gap: 8,
+                  marginBottom: 16,
+                }}
+              >
                 {[
                   { id: "login", l: "Sign In" },
                   { id: "register", l: "Register" },
                 ].map((m) => (
-                  <button
+                  <Button
                     key={m.id}
+                    type="button"
+                    variant={mode === m.id ? "default" : "outline"}
+                    size="sm"
+                    className="flex-1 text-[10px] uppercase tracking-[0.1em]"
+                    style={{ fontFamily: "var(--mono)" }}
                     onClick={() => {
                       setMode(m.id);
                       setErrors({});
                       dismissToast();
                       setAuthSuccessPending(false);
                     }}
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 9,
-                      letterSpacing: "0.1em",
-                      background:
-                        mode === m.id
-                          ? `hsla(${hue},55%,48%,0.18)`
-                          : "transparent",
-                      color:
-                        mode === m.id ? lampColor : "var(--ink5)",
-                      border: `1px solid ${mode === m.id ? lampColor + "50" : "var(--input-border)"}`,
-                      borderRadius: 6,
-                      padding: "4px 14px",
-                      cursor: "pointer",
-                    }}
                   >
                     {m.l}
-                  </button>
+                  </Button>
                 ))}
               </div>
 
-              {/* Fields */}
               {mode === "register" && (
-                <LampField
+                <AuthField
                   label="Full Name"
                   type="text"
                   value={form.full_name}
                   onChange={f("full_name")}
                   placeholder={isProvider ? "Dr. Jane Smith" : "Your name"}
-                  hue={hue}
-                  lampColor={lampColor}
-                  lampPale={lampPale}
+                  error={errors.full_name}
                 />
               )}
-              <LampField
+              <AuthField
                 label="Username"
                 type="text"
                 value={form.username}
                 onChange={f("username")}
                 placeholder="username"
                 error={errors.username}
-                hue={hue}
-                lampColor={lampColor}
-                lampPale={lampPale}
               />
               {mode === "register" && (
-                <LampField
+                <AuthField
                   label="Email"
                   type="email"
                   value={form.email}
                   onChange={f("email")}
                   placeholder="you@example.com"
                   error={errors.email}
-                  hue={hue}
-                  lampColor={lampColor}
-                  lampPale={lampPale}
                 />
               )}
-              <LampField
+              <AuthField
                 label="Password"
                 type="password"
                 value={form.password}
                 onChange={f("password")}
                 placeholder="••••••••"
                 error={errors.password}
-                hue={hue}
-                lampColor={lampColor}
-                lampPale={lampPale}
               />
               {mode === "register" && (
-                <LampField
+                <AuthField
                   label="Confirm Password"
                   type="password"
                   value={form.confirm}
                   onChange={f("confirm")}
                   placeholder="••••••••"
                   error={errors.confirm}
-                  hue={hue}
-                  lampColor={lampColor}
-                  lampPale={lampPale}
                 />
               )}
 
-              <button
+              {mode === "register" && (
+                <>
+                  <FormSection title="Basic health profile">
+                    <div className="auth-grid">
+                      <AuthField
+                        label="Birth Date"
+                        type="date"
+                        value={form.birth_date}
+                        onChange={f("birth_date")}
+                        error={errors.birth_date}
+                      />
+                      <AuthSelect
+                        label="Sex"
+                        value={form.sex}
+                        onChange={f("sex")}
+                        error={errors.sex}
+                        options={["male", "female", "other", "prefer not to say"]}
+                      />
+                      {!isProvider && (
+                        <>
+                          <AuthField
+                            label="Height cm"
+                            type="number"
+                            value={form.height_cm}
+                            onChange={f("height_cm")}
+                            placeholder="170"
+                            error={errors.height_cm}
+                          />
+                          <AuthField
+                            label="Weight kg"
+                            type="number"
+                            value={form.weight_kg}
+                            onChange={f("weight_kg")}
+                            placeholder="65"
+                            error={errors.weight_kg}
+                          />
+                        </>
+                      )}
+                    </div>
+                    {!isProvider && (
+                      <div className="auth-bmi">BMI: {bmi || "Auto calculated"}</div>
+                    )}
+                    <AuthField
+                      label="Phone"
+                      type="tel"
+                      value={form.phone}
+                      onChange={f("phone")}
+                      placeholder="+61 400 000 000"
+                    />
+                    {!isProvider && (
+                      <>
+                        <AuthTextarea
+                          label="Allergies"
+                          value={form.allergies}
+                          onChange={f("allergies")}
+                          placeholder="Optional, but strongly recommended"
+                        />
+                        <AuthTagInput
+                          label="Chronic Conditions"
+                          values={form.chronic_conditions}
+                          onChange={f("chronic_conditions")}
+                          draft={form.chronic_condition_draft}
+                          onDraftChange={f("chronic_condition_draft")}
+                          error={errors.chronic_conditions}
+                          placeholder="e.g. hypertension"
+                        />
+                      </>
+                    )}
+                  </FormSection>
+
+                  {!isProvider && (
+                    <FormSection title="Patient profile">
+                      <button
+                        type="button"
+                        className="auth-import-btn"
+                        onClick={() =>
+                          setForm((p) => ({
+                            ...p,
+                            allergies: p.allergies || "No known drug allergies",
+                          }))
+                        }
+                      >
+                        Import from EMR
+                      </button>
+                      <AuthCheckbox
+                        label="I agree to the Data Authorization Agreement: my data is used only for diagnosis, and doctors may view it only with my authorization."
+                        checked={form.data_authorization_accepted}
+                        onChange={f("data_authorization_accepted")}
+                        error={errors.data_authorization_accepted}
+                      />
+                    </FormSection>
+                  )}
+
+                  {isProvider && (
+                    <FormSection title="Provider credential review">
+                      <div className="auth-grid">
+                        <AuthField
+                          label="License Number"
+                          type="text"
+                          value={form.license_number}
+                          onChange={f("license_number")}
+                          error={errors.license_number}
+                        />
+                        <AuthField
+                          label="Hospital"
+                          type="text"
+                          value={form.hospital}
+                          onChange={f("hospital")}
+                          error={errors.hospital}
+                        />
+                        <AuthField
+                          label="Department"
+                          type="text"
+                          value={form.department}
+                          onChange={f("department")}
+                          error={errors.department}
+                        />
+                        <AuthField
+                          label="Specialty"
+                          type="text"
+                          value={form.specialty}
+                          onChange={f("specialty")}
+                          placeholder="Internal medicine, surgery..."
+                          error={errors.specialty}
+                        />
+                        <AuthField
+                          label="Years"
+                          type="number"
+                          value={form.years_experience}
+                          onChange={f("years_experience")}
+                          error={errors.years_experience}
+                        />
+                        <AuthField
+                          label="Title"
+                          type="text"
+                          value={form.title}
+                          onChange={f("title")}
+                          placeholder="Attending physician"
+                          error={errors.title}
+                        />
+                      </div>
+                      <AuthField
+                        label="Credential Proof"
+                        type="text"
+                        value={form.qualification_proof}
+                        onChange={f("qualification_proof")}
+                        placeholder="File name or verification URL"
+                        error={errors.qualification_proof}
+                      />
+                      <div className="auth-note">
+                        Provider accounts are activated after manual or automated credential review.
+                      </div>
+                    </FormSection>
+                  )}
+                </>
+              )}
+
+              <Button
+                type="button"
                 onClick={submit}
                 disabled={loading || authSuccessPending}
-                style={{
-                  width: "100%",
-                  marginTop: 8,
-                  padding: 14,
-                  background: lampColor,
-                  border: "none",
-                  borderRadius: 12,
-                  color: "#1a1208",
-                  fontFamily: "var(--body)",
-                  fontSize: 17,
-                  fontWeight: 600,
-                  cursor:
-                    loading || authSuccessPending ? "not-allowed" : "pointer",
-                  opacity: loading || authSuccessPending ? 0.6 : 1,
-                  boxShadow: `0 4px 24px ${lampGlow}`,
-                  transition: "transform 0.15s, filter 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  if (!loading && !authSuccessPending) {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.filter = "brightness(1.1)";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "none";
-                  e.currentTarget.style.filter = "none";
-                }}
+                size="xl"
+                className="mt-2 w-full text-[17px] font-semibold"
+                style={{ fontFamily: "var(--body)" }}
               >
                 {loading
                   ? t("auth.signing_in", { defaultValue: "Signing in…" })
@@ -1244,11 +741,10 @@ export default function AuthPage({ api, onLogin, onSkip }) {
                     : mode === "login"
                       ? "Sign In →"
                       : "Create Account →"}
-              </button>
+              </Button>
             </>
           )}
 
-          {/* Footer */}
           <div
             style={{
               display: "flex",
@@ -1257,20 +753,16 @@ export default function AuthPage({ api, onLogin, onSkip }) {
               marginTop: 18,
             }}
           >
-            <button
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="text-[9px] uppercase tracking-[0.1em] text-[var(--ink5)]"
+              style={{ fontFamily: "var(--mono)" }}
               onClick={onSkip}
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                fontFamily: "var(--mono)",
-                fontSize: 9,
-                letterSpacing: "0.1em",
-                color: "var(--ink5)",
-              }}
             >
               GUEST MODE
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -1313,12 +805,7 @@ export default function AuthPage({ api, onLogin, onSkip }) {
           );
         })()}
 
-      {/* Inline keyframe for hint float */}
       <style>{`
-        @keyframes hintFloat {
-          0%,100%{opacity:.32;transform:translateX(-50%) translateY(0)}
-          50%{opacity:.65;transform:translateX(-50%) translateY(-5px)}
-        }
         @keyframes authToastIn {
           from { opacity: 0; transform: translateX(-50%) translateY(14px); }
           to { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -1327,25 +814,82 @@ export default function AuthPage({ api, onLogin, onSkip }) {
           transform: translateX(-50%);
           animation: authToastIn 0.32s ease-out forwards;
         }
+        .auth-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0 10px;
+        }
+        .auth-bmi,
+        .auth-note {
+          margin: -4px 0 12px;
+          color: var(--ink4);
+          font-family: var(--body);
+          font-size: 12px;
+        }
+        .auth-import-btn {
+          width: 100%;
+          margin: 0 0 12px;
+          padding: 9px 12px;
+          border: 1px solid var(--input-border);
+          border-radius: 8px;
+          background: var(--paper3);
+          color: var(--navy);
+          cursor: pointer;
+          font-family: var(--body);
+          font-weight: 600;
+        }
+        @media (max-width: 640px) {
+          .auth-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
     </div>
   );
 }
 
-function LampField({
+function FormSection({ title, children }) {
+  return (
+    <section
+      style={{
+        borderTop: "1px solid var(--input-border)",
+        paddingTop: 16,
+        marginTop: 16,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "var(--mono)",
+          fontSize: 9,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "var(--ink5)",
+          marginBottom: 12,
+        }}
+      >
+        {title}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function AuthField({
   label,
   type,
   value,
   onChange,
   placeholder,
   error,
-  lampColor,
-  lampPale,
 }) {
   const [focused, setFocused] = useState(false);
+  const id = useId();
+  const accent = "var(--navy)";
+  const accentRing = "var(--navyDim)";
   return (
     <div style={{ marginBottom: 14 }}>
       <label
+        htmlFor={id}
         style={{
           display: "block",
           fontFamily: "var(--mono)",
@@ -1359,6 +903,7 @@ function LampField({
         {label}
       </label>
       <input
+        id={id}
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -1368,7 +913,7 @@ function LampField({
         style={{
           width: "100%",
           background: "var(--paper2)",
-          border: `1.5px solid ${focused ? lampColor : error ? "#dc2626" : "var(--input-border)"}`,
+          border: `1.5px solid ${focused ? accent : error ? "#dc2626" : "var(--input-border)"}`,
           borderRadius: 10,
           padding: "11px 14px",
           color: "var(--ink)",
@@ -1376,7 +921,7 @@ function LampField({
           fontSize: 15,
           outline: "none",
           boxShadow: focused
-            ? `0 0 0 3px ${lampPale}, 0 0 18px ${lampPale}`
+            ? `0 0 0 3px ${accentRing}`
             : error
               ? "0 0 0 2px rgba(220,38,38,0.12)"
               : "none",
@@ -1395,6 +940,239 @@ function LampField({
           {error}
         </p>
       )}
+    </div>
+  );
+}
+
+function AuthSelect({ label, value, onChange, options, error }) {
+  const id = useId();
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <label
+        htmlFor={id}
+        style={{
+          display: "block",
+          fontFamily: "var(--mono)",
+          fontSize: 9,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "var(--ink5)",
+          marginBottom: 6,
+        }}
+      >
+        {label}
+      </label>
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={{
+          width: "100%",
+          background: "var(--paper2)",
+          border: `1.5px solid ${error ? "#dc2626" : "var(--input-border)"}`,
+          borderRadius: 10,
+          padding: "11px 14px",
+          color: value ? "var(--ink)" : "var(--ink5)",
+          fontFamily: "var(--body)",
+          fontSize: 14,
+          outline: "none",
+        }}
+      >
+        <option value="">Select</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      {error && <FieldError>{error}</FieldError>}
+    </div>
+  );
+}
+
+function AuthTextarea({ label, value, onChange, placeholder, error }) {
+  const id = useId();
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <label
+        htmlFor={id}
+        style={{
+          display: "block",
+          fontFamily: "var(--mono)",
+          fontSize: 9,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "var(--ink5)",
+          marginBottom: 6,
+        }}
+      >
+        {label}
+      </label>
+      <textarea
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        rows={3}
+        style={{
+          width: "100%",
+          resize: "vertical",
+          background: "var(--paper2)",
+          border: `1.5px solid ${error ? "#dc2626" : "var(--input-border)"}`,
+          borderRadius: 10,
+          padding: "11px 14px",
+          color: "var(--ink)",
+          fontFamily: "var(--body)",
+          fontSize: 14,
+          outline: "none",
+        }}
+      />
+      {error && <FieldError>{error}</FieldError>}
+    </div>
+  );
+}
+
+function AuthTagInput({
+  label,
+  values,
+  onChange,
+  draft,
+  onDraftChange,
+  placeholder,
+  error,
+}) {
+  const id = useId();
+  const addValue = () => {
+    const next = draft.trim();
+    if (!next) return;
+    if (values.some((item) => item.toLowerCase() === next.toLowerCase())) {
+      onDraftChange("");
+      return;
+    }
+    onChange([...values, next]);
+    onDraftChange("");
+  };
+
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <label
+        htmlFor={id}
+        style={{
+          display: "block",
+          fontFamily: "var(--mono)",
+          fontSize: 9,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "var(--ink5)",
+          marginBottom: 6,
+        }}
+      >
+        {label}
+      </label>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 92px", gap: 8 }}>
+        <input
+          id={id}
+          type="text"
+          value={draft}
+          onChange={(e) => onDraftChange(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              addValue();
+            }
+          }}
+          placeholder={placeholder}
+          style={{
+            width: "100%",
+            background: "var(--paper2)",
+            border: `1.5px solid ${error ? "#dc2626" : "var(--input-border)"}`,
+            borderRadius: 10,
+            padding: "11px 14px",
+            color: "var(--ink)",
+            fontFamily: "var(--body)",
+            fontSize: 14,
+            outline: "none",
+          }}
+        />
+        <button
+          type="button"
+          onClick={addValue}
+          style={{
+            border: "1px solid var(--input-border)",
+            borderRadius: 10,
+            background: "var(--paper3)",
+            color: "var(--navy)",
+            cursor: "pointer",
+            fontFamily: "var(--body)",
+            fontSize: 14,
+            fontWeight: 700,
+          }}
+        >
+          Add
+        </button>
+      </div>
+      {values.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
+          {values.map((value) => (
+            <button
+              key={value}
+              type="button"
+              onClick={() => onChange(values.filter((item) => item !== value))}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "8px 10px",
+                border: "1px solid var(--navy)",
+                borderRadius: 8,
+                background: "var(--navyPale)",
+                color: "var(--navy)",
+                fontSize: 13,
+                cursor: "pointer",
+              }}
+            >
+              {value}
+              <span aria-hidden="true">x</span>
+            </button>
+          ))}
+        </div>
+      )}
+      {error && <FieldError>{error}</FieldError>}
+    </div>
+  );
+}
+
+function AuthCheckbox({ label, checked, onChange, error }) {
+  return (
+    <label
+      style={{
+        display: "flex",
+        alignItems: "flex-start",
+        gap: 10,
+        color: "var(--ink4)",
+        fontSize: 13,
+        lineHeight: 1.45,
+        cursor: "pointer",
+      }}
+    >
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        style={{ marginTop: 3 }}
+      />
+      <span>
+        {label}
+        {error && <FieldError>{error}</FieldError>}
+      </span>
+    </label>
+  );
+}
+
+function FieldError({ children }) {
+  return (
+    <div style={{ color: "#dc2626", fontSize: 12, marginTop: 4 }}>
+      {children}
     </div>
   );
 }

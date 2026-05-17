@@ -11,7 +11,6 @@ export default function FlowPage({ result, onBack }) {
   const [active, setActive] = useState(null);
   const refs = Array.isArray(result.refs) ? result.refs : [];
   const diagnosis = result.diagnosis || "";
-  const review = result.review || "";
   const transcript = Array.isArray(result.transcript) ? result.transcript : [];
   const nodes = [
     {
@@ -59,20 +58,9 @@ export default function FlowPage({ result, onBack }) {
       info: diagnosis.slice(0, 200) + "…",
     },
     {
-      id: "critic",
-      x: 172,
-      y: 466,
-      w: 196,
-      h: 100,
-      icon: "⚖️",
-      title: "Critic Agent",
-      c: "var(--amber)",
-      info: review.slice(0, 200) + "…",
-    },
-    {
       id: "report",
       x: 172,
-      y: 624,
+      y: 450,
       w: 196,
       h: 54,
       icon: "✅",
@@ -182,8 +170,7 @@ export default function FlowPage({ result, onBack }) {
                   ["152", "74", "152", "138"],
                   ["152", "246", "275", "306"],
                   ["380", "246", "275", "306"],
-                  ["275", "406", "275", "464"],
-                  ["275", "564", "275", "622"],
+                  ["275", "406", "275", "448"],
                 ].map(([x1, y1, x2, y2], i) => (
                   <line
                     key={i}
@@ -319,13 +306,11 @@ export default function FlowPage({ result, onBack }) {
                   c: "var(--sage)",
                 },
                 { l: "Literature retrieved", v: refs.length, c: "var(--navy)" },
-                { l: "Active agents", v: "3 / 3", c: "var(--ink2)" },
+                { l: "Active agents", v: "2 / 2", c: "var(--ink2)" },
                 {
-                  l: "Safety status",
-                  v: review.includes("CRITICAL") ? "⚠ Critical" : "✓ Clear",
-                  c: review.includes("CRITICAL")
-                    ? "var(--rose)"
-                    : "var(--sage)",
+                  l: "RAG citations",
+                  v: refs.length ? `✓ ${refs.length} sources` : "—",
+                  c: refs.length ? "var(--sage)" : "var(--ink5)",
                 },
               ].map(({ l, v, c }) => (
                 <div key={l} className="data-row">

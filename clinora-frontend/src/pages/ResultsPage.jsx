@@ -7,10 +7,9 @@ import {
   IllustBranch,
   IllustLeaf,
 } from "../components/illustrations";
-import { AgentBadge, Banner, InkDivider, SevBadge } from "../components/ui";
+import { AgentBadge, Banner, InkDivider } from "../components/ui";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
-import { SEV } from "../core/constants";
 
 import {
   AnnotatedMediaCard,
@@ -39,20 +38,16 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
       .finally(() => setPeerLoading(false));
   }, [result.sessionId, api]);
   const symptoms = result.symptoms || {};
-  const severityValue =
-    symptoms.severity_level || symptoms.severity || "moderate";
   const refs = Array.isArray(result.refs) ? result.refs : [];
   const diagnosis = result.diagnosis || "";
-  const review = result.review || "";
   const transcript = Array.isArray(result.transcript) ? result.transcript : [];
   const cot = result.cot || null;
-  const hasCot = cot && (cot.diagnostician || cot.critic);
+  const hasCot = cot && cot.diagnostician;
   const mediaItems = (result.mediaItems || []).filter(
     (it) => !it.analysing && it.analysis,
   );
   const tabs = [
     { id: "diagnosis", l: t("results.tab_diagnosis") },
-    { id: "review", l: t("results.tab_review") },
     ...(hasCot ? [{ id: "cot", l: t("results.tab_cot") }] : []),
     { id: "refs", l: t("results.tab_refs", { count: refs.length }) },
     ...(mediaItems.length > 0
@@ -144,7 +139,6 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 <Badge>{symptoms.bodyPart || "General"}</Badge>
                 <Badge>{symptoms.duration || "—"}</Badge>
-                <SevBadge n={severityValue} />
               </div>
             </div>
             <div
@@ -208,7 +202,7 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
           className="card fade-up s1"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4,1fr)",
+            gridTemplateColumns: "repeat(3,1fr)",
             marginBottom: 22,
             overflow: "hidden",
           }}
@@ -220,17 +214,12 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
             },
             { l: t("results.location"), v: symptoms.bodyPart || "—" },
             { l: t("results.duration"), v: symptoms.duration || "—" },
-            {
-              l: t("results.severity"),
-              v: `${symptoms.severity || 0}/10`,
-              c: SEV(symptoms.severity || 5).c,
-            },
           ].map(({ l, v, c }, i) => (
             <div
               key={l}
               style={{
                 padding: "14px 20px",
-                borderRight: i < 3 ? "1px solid rgba(22,15,6,0.09)" : undefined,
+                borderRight: i < 2 ? "1px solid rgba(22,15,6,0.09)" : undefined,
               }}
             >
               <p className="ink-label" style={{ marginBottom: 4 }}>
@@ -273,7 +262,7 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
           >
             <div className="shine" />
             <div style={{ padding: "30px 34px" }}>
-              {(tab === "diagnosis" || tab === "review") && (
+              {tab === "diagnosis" && (
                 <>
                   <div
                     style={{
@@ -285,9 +274,7 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
                       borderBottom: "1px dashed rgba(22,15,6,0.09)",
                     }}
                   >
-                    <AgentBadge
-                      k={tab === "diagnosis" ? "diagnostician" : "critic"}
-                    />
+                    <AgentBadge k="diagnostician" />
                     <span
                       style={{
                         fontFamily: "var(--body)",
@@ -296,13 +283,10 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
                         color: "var(--ink4)",
                       }}
                     >
-                      {tab === "diagnosis"
-                        ? t("results.diagnosis_sub")
-                        : t("results.review_sub")}
+                      {t("results.diagnosis_sub")}
                     </span>
                   </div>
-                  {tab === "diagnosis" &&
-                    (() => {
+                  {(() => {
                       const items = parseDifferential(diagnosis);
                       const top = items[0];
                       if (!top) return null;
@@ -399,11 +383,8 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
                         </div>
                       );
                     })()}
-                  {tab === "diagnosis" && (
-                    <DifferentialChart diagnosis={diagnosis} />
-                  )}
-                  {tab === "diagnosis" &&
-                    (() => {
+                  <DifferentialChart diagnosis={diagnosis} />
+                  {(() => {
                       const investigations = parseInvestigations(diagnosis);
                       if (!investigations.length) return null;
                       return (
@@ -480,9 +461,7 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
                       );
                     })()}
                   <div className="md-body">
-                    <ReactMarkdown>
-                      {tab === "diagnosis" ? diagnosis : review}
-                    </ReactMarkdown>
+                    <ReactMarkdown>{diagnosis}</ReactMarkdown>
                   </div>
                 </>
               )}
@@ -526,11 +505,6 @@ export default function ResultsPage({ api, result, onNew, onHistory, onFlow }) {
                     title={t("results.cot_diag")}
                     agentKey="diagnostician"
                     thinking={cot?.diagnostician}
-                  />
-                  <CotPanel
-                    title={t("results.cot_critic")}
-                    agentKey="critic"
-                    thinking={cot?.critic}
                   />
                   {!hasCot && (
                     <p

@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 def test_severity_to_level_boundaries():
-    import db
+    import app.db as db
 
     assert db.severity_to_level(None) == "moderate"
     assert db.severity_to_level("mild") == "mild"
@@ -17,7 +17,7 @@ def test_severity_to_level_boundaries():
 
 
 def test_severity_to_score_mapping():
-    import db
+    import app.db as db
 
     assert db.severity_to_score("mild") == 2
     assert db.severity_to_score("moderate") == 5
@@ -26,7 +26,7 @@ def test_severity_to_score_mapping():
 
 
 def test_init_db_creates_core_tables(tmp_path, monkeypatch):
-    import db
+    import app.db as db
 
     test_db = tmp_path / "db_unit_test.sqlite3"
     monkeypatch.setattr(db, "DB_FILE", Path(test_db))

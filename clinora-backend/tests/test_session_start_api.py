@@ -84,5 +84,5 @@ def test_session_start_reuses_recent_untouched_session(client, monkeypatch):
     second = client.post("/api/session/start", json=payload)
     assert second.status_code == 200
     assert second.json()["session_id"] == first.json()["session_id"]
-    assert second.json()["reply"] == "Initial interviewer reply."
+    assert second.json()["reply"] == first.json()["reply"]
     assert second.json()["safety"]["final_risk"] == "low"

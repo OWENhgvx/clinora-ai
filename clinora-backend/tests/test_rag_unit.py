@@ -1,5 +1,5 @@
 def test_tokenize_and_sparse_empty_vocab():
-    import rag
+    import app.rag as rag
 
     rag._bm25_vocab = {}
     assert rag._tokenize("Chest Pain 101!") == ["chest", "pain", "101"]
@@ -9,7 +9,7 @@ def test_tokenize_and_sparse_empty_vocab():
 
 
 def test_fit_bm25_builds_vocab(monkeypatch):
-    import rag
+    import app.rag as rag
 
     monkeypatch.setattr(rag, "_save_bm25_vocab", lambda: None)
     rag.fit_bm25(["chest pain", "pain with dyspnea"])
@@ -18,7 +18,7 @@ def test_fit_bm25_builds_vocab(monkeypatch):
 
 
 def test_shutdown_closes_client_and_ignores_close_errors():
-    import rag
+    import app.rag as rag
 
     class FakeClient:
         def __init__(self, should_fail=False):
@@ -42,7 +42,7 @@ def test_shutdown_closes_client_and_ignores_close_errors():
 
 
 def test_get_dense_model_and_reranker_are_cached(monkeypatch):
-    import rag
+    import app.rag as rag
 
     created_dense = []
     created_reranker = []
@@ -67,7 +67,7 @@ def test_get_dense_model_and_reranker_are_cached(monkeypatch):
 
 
 def test_load_and_save_bm25_vocab(monkeypatch, tmp_path):
-    import rag
+    import app.rag as rag
 
     db_dir = tmp_path / "qdrant_db"
     params_path = db_dir / "bm25_params.json"
@@ -89,7 +89,7 @@ def test_load_and_save_bm25_vocab(monkeypatch, tmp_path):
 
 
 def test_get_client_uses_remote_qdrant_and_creates_collection(monkeypatch):
-    import rag
+    import app.rag as rag
 
     created = []
 
@@ -120,7 +120,7 @@ def test_get_client_uses_remote_qdrant_and_creates_collection(monkeypatch):
 
 
 def test_search_returns_empty_when_collection_empty(monkeypatch):
-    import rag
+    import app.rag as rag
 
     monkeypatch.setattr(rag, "_get_client", lambda: object())
     monkeypatch.setattr(rag, "get_collection_size", lambda: 0)
@@ -129,7 +129,7 @@ def test_search_returns_empty_when_collection_empty(monkeypatch):
 
 
 def test_search_happy_path_with_rerank(monkeypatch):
-    import rag
+    import app.rag as rag
 
     class FakeEncoded:
         def tolist(self):
@@ -183,7 +183,7 @@ def test_search_happy_path_with_rerank(monkeypatch):
 
 
 def test_multi_search_deduplicates_and_sorts(monkeypatch):
-    import rag
+    import app.rag as rag
 
     def fake_search(query, n_results=10):
         if query == "q1":
@@ -203,7 +203,7 @@ def test_multi_search_deduplicates_and_sorts(monkeypatch):
 
 
 def test_format_references_for_prompt():
-    import rag
+    import app.rag as rag
 
     refs = [
         {
@@ -224,7 +224,7 @@ def test_format_references_for_prompt():
 
 
 def test_get_collection_size_returns_zero_on_exception(monkeypatch):
-    import rag
+    import app.rag as rag
 
     def fail_client():
         raise RuntimeError("qdrant unavailable")
@@ -234,7 +234,7 @@ def test_get_collection_size_returns_zero_on_exception(monkeypatch):
 
 
 def test_text_to_sparse_with_vocab():
-    import rag
+    import app.rag as rag
 
     rag._bm25_vocab = {"chest": 1.2, "pain": 0.8}
     indices, values = rag._text_to_sparse("chest chest pain unknown")
@@ -244,13 +244,13 @@ def test_text_to_sparse_with_vocab():
 
 
 def test_format_references_for_prompt_empty():
-    import rag
+    import app.rag as rag
 
     assert rag.format_references_for_prompt([]) == "No relevant medical literature found in local database."
 
 
 def test_rerank_orders_by_model_score(monkeypatch):
-    import rag
+    import app.rag as rag
 
     class FakeScores:
         def tolist(self):
@@ -272,7 +272,7 @@ def test_rerank_orders_by_model_score(monkeypatch):
 
 
 def test_search_filters_low_scores_and_handles_empty_points(monkeypatch):
-    import rag
+    import app.rag as rag
 
     class FakeEncoded:
         def tolist(self):
@@ -298,7 +298,7 @@ def test_search_filters_low_scores_and_handles_empty_points(monkeypatch):
 
 
 def test_add_documents_returns_zero_for_existing_documents(monkeypatch):
-    import rag
+    import app.rag as rag
 
     class FakeClient:
         def retrieve(self, **kwargs):
@@ -316,7 +316,7 @@ def test_add_documents_returns_zero_for_existing_documents(monkeypatch):
 
 
 def test_add_documents_upserts_new_documents(monkeypatch):
-    import rag
+    import app.rag as rag
 
     upserted_batches = []
 

@@ -34,11 +34,4 @@ export const AGENTS = {
     bg: "var(--navyPale)",
     b: "var(--navy)",
   },
-  critic: {
-    icon: "⚖️",
-    label: "Critic Agent",
-    c: "var(--amber)",
-    bg: "var(--amberPale)",
-    b: "var(--amber)",
-  },
 };

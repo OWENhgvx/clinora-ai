@@ -8,7 +8,7 @@ from typing import Optional
 
 from fastapi import HTTPException
 
-from db import get_db, now_iso, severity_to_level, VALID_AGENT_TYPES
+from app.db import get_db, now_iso, severity_to_level, VALID_AGENT_TYPES
 
 
 def _now():
@@ -121,7 +121,7 @@ def session_message_create(session_id, role, content, agent_type=None, user_id=N
 
     if role == "agent":
         if not agent_type or agent_type not in VALID_AGENT_TYPES:
-            raise HTTPException(400, "agent_type must be interviewer/diagnostician/critic/safety")
+            raise HTTPException(400, "agent_type must be interviewer/diagnostician/safety")
     else:
         agent_type = None
 
@@ -171,19 +171,6 @@ def normalize_history_for_interviewer(history):
         # Wrap in XML tag so the model treats this as data, not instructions.
         normalized.append({"role": "user", "content": f"<uploaded_document>\n{content}\n</uploaded_document>"})
     return normalized
-
-
-def session_uploads_list(session_id):
-    with get_db() as c:
-        rows = c.execute(
-            """SELECT id, session_id, file_name, file_type, file_path, uploaded_at,
-                      LENGTH(extracted_text) AS extracted_text_length
-               FROM uploads
-               WHERE session_id=?
-               ORDER BY uploaded_at DESC""",
-            (session_id,),
-        ).fetchall()
-    return [dict(r) for r in rows]
 
 
 def session_update(sid, **kwargs):

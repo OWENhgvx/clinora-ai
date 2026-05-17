@@ -1,5 +1,5 @@
 def test_severity_label_and_color():
-    import export
+    import app.export as export
 
     assert export._severity_label("mild") == "Mild"
     assert export._severity_label("moderate") == "Moderate"
@@ -13,7 +13,7 @@ def test_severity_label_and_color():
 
 
 def test_generate_pdf_with_minimal_session():
-    import export
+    import app.export as export
 
     session = {
         "id": "session-minimal-1234",
@@ -37,7 +37,7 @@ def test_generate_pdf_with_minimal_session():
 
 
 def test_generate_pdf_with_full_sections():
-    import export
+    import app.export as export
 
     session = {
         "id": "session-full-5678",

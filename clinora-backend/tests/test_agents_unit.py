@@ -6,7 +6,7 @@ def _fake_resp_text(text: str):
 
 
 def test_call_interviewer_returns_text(monkeypatch):
-    import agents
+    import app.agents as agents
 
     fake_client = types.SimpleNamespace(
         messages=types.SimpleNamespace(
@@ -20,7 +20,7 @@ def test_call_interviewer_returns_text(monkeypatch):
 
 
 def test_call_diagnostician_handles_weak_evidence_path(monkeypatch):
-    import agents
+    import app.agents as agents
 
     monkeypatch.setattr(agents, "_build_rag_queries", lambda q: [q])
     monkeypatch.setattr(agents, "multi_search", lambda queries, n_results=6: [])
@@ -44,24 +44,8 @@ def test_call_diagnostician_handles_weak_evidence_path(monkeypatch):
     assert refs == []
 
 
-def test_call_critic_returns_safety_alert_text(monkeypatch):
-    import agents
-
-    fake_client = types.SimpleNamespace(
-        messages=types.SimpleNamespace(
-            create=lambda **kwargs: _fake_resp_text(
-                "## Safety Flags\n⚠️ Possible neurological red flag. Urgent review advised."
-            )
-        )
-    )
-    monkeypatch.setattr(agents, "client", fake_client)
-
-    review = agents.call_critic("case text", "diagnosis text")
-    assert "⚠" in review or "urgent" in review.lower()
-
-
 def test_call_agent_commentary_parses_json(monkeypatch):
-    import agents
+    import app.agents as agents
 
     fake_json = (
         '{"safety_to_interviewer":"Probe for red flags.",'
@@ -78,7 +62,7 @@ def test_call_agent_commentary_parses_json(monkeypatch):
 
 
 def test_call_agent_commentary_returns_empty_on_bad_json(monkeypatch):
-    import agents
+    import app.agents as agents
 
     fake_client = types.SimpleNamespace(
         messages=types.SimpleNamespace(create=lambda **kwargs: _fake_resp_text("not-json"))
@@ -89,7 +73,7 @@ def test_call_agent_commentary_returns_empty_on_bad_json(monkeypatch):
 
 
 def test_rewrite_query_for_rag_fallback_on_exception(monkeypatch):
-    import agents
+    import app.agents as agents
 
     fake_client = types.SimpleNamespace(
         messages=types.SimpleNamespace(create=lambda **kwargs: (_ for _ in ()).throw(RuntimeError("llm down")))
@@ -101,7 +85,7 @@ def test_rewrite_query_for_rag_fallback_on_exception(monkeypatch):
 
 
 def test_rewrite_query_for_rag_returns_optimized_terms(monkeypatch):
-    import agents
+    import app.agents as agents
 
     fake_client = types.SimpleNamespace(
         messages=types.SimpleNamespace(
@@ -115,7 +99,7 @@ def test_rewrite_query_for_rag_returns_optimized_terms(monkeypatch):
 
 
 def test_build_rag_queries_deduplicates_and_expands(monkeypatch):
-    import agents
+    import app.agents as agents
 
     monkeypatch.setattr(agents, "_rewrite_query_for_rag", lambda text: text)
 
@@ -128,13 +112,13 @@ def test_build_rag_queries_deduplicates_and_expands(monkeypatch):
 
 
 def test_rewrite_image_findings_for_rag_empty_input():
-    import agents
+    import app.agents as agents
 
     assert agents.rewrite_image_findings_for_rag([]) == ""
 
 
 def test_rewrite_image_findings_for_rag_returns_terms(monkeypatch):
-    import agents
+    import app.agents as agents
 
     fake_client = types.SimpleNamespace(
         messages=types.SimpleNamespace(
@@ -148,7 +132,7 @@ def test_rewrite_image_findings_for_rag_returns_terms(monkeypatch):
 
 
 def test_rewrite_image_findings_for_rag_fallback_on_exception(monkeypatch):
-    import agents
+    import app.agents as agents
 
     fake_client = types.SimpleNamespace(
         messages=types.SimpleNamespace(create=lambda **kwargs: (_ for _ in ()).throw(RuntimeError("llm down")))
@@ -162,7 +146,7 @@ def test_rewrite_image_findings_for_rag_fallback_on_exception(monkeypatch):
 
 
 def test_call_diagnostician_cot_extracts_thinking_and_text(monkeypatch):
-    import agents
+    import app.agents as agents
 
     monkeypatch.setattr(agents, "_build_rag_queries", lambda q: [q])
     monkeypatch.setattr(agents, "multi_search", lambda queries, n_results=6: [{"title": "ref"}])
@@ -181,46 +165,3 @@ def test_call_diagnostician_cot_extracts_thinking_and_text(monkeypatch):
     assert "clinical reasoning" in thinking
     assert refs == [{"title": "ref"}]
 
-
-def test_call_critic_cot_extracts_thinking_and_text(monkeypatch):
-    import agents
-
-    content = [
-        types.SimpleNamespace(type="thinking", thinking="critical review thought chain"),
-        types.SimpleNamespace(type="text", text="review outcome"),
-    ]
-    fake_resp = types.SimpleNamespace(content=content)
-    fake_client = types.SimpleNamespace(messages=types.SimpleNamespace(create=lambda **kwargs: fake_resp))
-    monkeypatch.setattr(agents, "client", fake_client)
-
-    review, thinking = agents.call_critic_cot("case", "diagnosis")
-    assert review == "review outcome"
-    assert "thought chain" in thinking
-
-
-def test_call_diagnostic_roundtable_parses_json_array(monkeypatch):
-    import agents
-
-    fake_json = (
-        '[{"from":"diagnostician","to":"critic","text":"Addressed key gap."},'
-        '{"from":"critic","to":"diagnostician","text":"Approved with caution."}]'
-    )
-    fake_client = types.SimpleNamespace(
-        messages=types.SimpleNamespace(create=lambda **kwargs: _fake_resp_text(fake_json))
-    )
-    monkeypatch.setattr(agents, "client", fake_client)
-
-    logs = agents.call_diagnostic_roundtable("case", "diagnosis", "review")
-    assert len(logs) == 2
-    assert logs[0]["from_agent"] == "diagnostician"
-    assert logs[1]["to_agent"] == "diagnostician"
-
-
-def test_call_diagnostic_roundtable_returns_empty_on_bad_json(monkeypatch):
-    import agents
-
-    fake_client = types.SimpleNamespace(
-        messages=types.SimpleNamespace(create=lambda **kwargs: _fake_resp_text("not-json"))
-    )
-    monkeypatch.setattr(agents, "client", fake_client)
-    assert agents.call_diagnostic_roundtable("case", "diagnosis", "review") == []

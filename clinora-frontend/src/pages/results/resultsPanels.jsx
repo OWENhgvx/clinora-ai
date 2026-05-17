@@ -10,11 +10,6 @@ export function CotPanel({ title, agentKey, thinking }) {
       bg: "rgba(124,58,237,0.06)",
       border: "rgba(124,58,237,0.18)",
     },
-    critic: {
-      accent: "var(--navy)",
-      bg: "rgba(15,61,115,0.06)",
-      border: "rgba(15,61,115,0.18)",
-    },
   };
   const c = agentColors[agentKey] || agentColors.diagnostician;
   return (
@@ -43,7 +38,7 @@ export function CotPanel({ title, agentKey, thinking }) {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <span style={{ fontSize: 16 }}>
-            {agentKey === "diagnostician" ? "🔬" : "⚖️"}
+            {agentKey === "diagnostician" ? "🔬" : "🧠"}
           </span>
           <span
             style={{

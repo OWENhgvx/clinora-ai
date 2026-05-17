@@ -3,7 +3,7 @@ diagnosis_service.py — helpers for building diagnosis prompts and RAG queries.
 """
 import re
 
-from db import severity_to_level
+from app.db import severity_to_level
 
 
 def build_diagnosis_context(session: dict) -> dict:
@@ -11,6 +11,20 @@ def build_diagnosis_context(session: dict) -> dict:
     symptoms = session["symptoms"]
     image_analyses = []
     lines = []
+
+    interview_result = symptoms.get("interview_result") or {}
+    if isinstance(interview_result, dict) and interview_result.get("completed"):
+        summary = interview_result.get("clinical_interview_summary", "")
+        case_text = (
+            f"PATIENT CASE\n{'='*40}\n"
+            f"{summary}\n"
+            "\nSource note: this case is built only from InterviewResult. "
+            "Retrieved clinical record chunks are not included as diagnosis evidence."
+        )
+        return {
+            "case_text": case_text,
+            "transcript_lines": [summary] if summary else [],
+        }
 
     for message in session["messages"]:
         role = message["role"]
@@ -52,6 +66,22 @@ def build_diagnosis_context(session: dict) -> dict:
 
 
 def build_rag_query(symptoms: dict, image_medical_terms: str = "") -> str:
+    interview_result = symptoms.get("interview_result") or {}
+    if isinstance(interview_result, dict) and interview_result.get("completed"):
+        return " ".join(
+            str(part)
+            for part in (
+                interview_result.get("chief_complaint"),
+                " ".join(interview_result.get("symptoms") or []),
+                interview_result.get("duration"),
+                " ".join(interview_result.get("negative_symptoms") or []),
+                " ".join(interview_result.get("past_medical_history") or []),
+                " ".join(interview_result.get("medications") or []),
+                " ".join(interview_result.get("allergies") or []),
+                " ".join(interview_result.get("red_flags") or []),
+            )
+            if part
+        ).strip()
     return (
         f"{symptoms['description']} "
         f"{symptoms['bodyPart']} "

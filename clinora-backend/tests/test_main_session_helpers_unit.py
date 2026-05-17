@@ -92,14 +92,14 @@ def test_session_messages_legacy_maps_roles(monkeypatch):
         "session_messages_raw",
         lambda sid: [
             {"role": "user", "content": "patient text"},
-            {"role": "agent", "agent_type": "critic", "content": "review"},
+            {"role": "agent", "agent_type": "diagnostician", "content": "dx"},
             {"role": "system", "content": "uploaded context"},
         ],
     )
 
     assert main.session_messages_legacy("s1") == [
         {"role": "user", "text": "patient text"},
-        {"role": "ai", "agent": "critic", "text": "review"},
+        {"role": "ai", "agent": "diagnostician", "text": "dx"},
         {"role": "system", "text": "uploaded context"},
     ]
 
@@ -115,11 +115,11 @@ def test_session_message_create_validates_and_inserts(monkeypatch):
 
     conn = FakeConn()
     monkeypatch.setattr(main, "get_db", lambda: conn)
-    mid = main.session_message_create("s1", "agent", "content", agent_type="critic", user_id="u1")
+    mid = main.session_message_create("s1", "agent", "content", agent_type="diagnostician", user_id="u1")
 
     assert mid
     assert conn.committed is True
-    assert conn.executed[0][1][1:6] == ("s1", "u1", "agent", "critic", "content")
+    assert conn.executed[0][1][1:6] == ("s1", "u1", "agent", "diagnostician", "content")
 
 
 def test_session_get_parses_json_fields_and_messages(monkeypatch):

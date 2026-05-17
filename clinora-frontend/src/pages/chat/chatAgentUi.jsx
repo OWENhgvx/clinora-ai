@@ -30,13 +30,6 @@ export const AC = {
     pale: "#DBEAFE",
     right: true,
   },
-  critic: {
-    short: "Critic",
-    icon: "⚖️",
-    c: "#0F3D73",
-    pale: "#E0F2FE",
-    right: true,
-  },
 };
 
 const BUBBLE_PREVIEW = 320;
@@ -349,9 +342,8 @@ export function AgentPipelineStrip({ phase }) {
     { key: "safety", label: "Safety", icon: "🛡", color: "#b91c1c" },
     { key: "interviewing", label: "Interviewer", icon: "🩺", color: "#14B8A6" },
     { key: "analyzing", label: "Diagnostician", icon: "🔬", color: "#2563EB" },
-    { key: "reviewing", label: "Critic", icon: "⚖️", color: "#0F3D73" },
   ];
-  const order = ["safety", "interviewing", "analyzing", "reviewing", "done"];
+  const order = ["safety", "interviewing", "analyzing", "done"];
   const phaseIdx = order.indexOf(phase === "done" ? "done" : phase);
   return (
     <div

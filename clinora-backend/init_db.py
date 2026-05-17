@@ -1,4 +1,4 @@
-from db import init_db
+from app.db import init_db
 
 
 if __name__ == "__main__":

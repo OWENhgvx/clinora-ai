@@ -1,5 +1,5 @@
 def test_classify_rule_based_high_risk():
-    from safety import classify_rule_based
+    from app.safety import classify_rule_based
 
     result = classify_rule_based("I have chest pain and shortness of breath")
     assert result["risk_level"] == "high"
@@ -7,21 +7,21 @@ def test_classify_rule_based_high_risk():
 
 
 def test_classify_rule_based_medium_risk():
-    from safety import classify_rule_based
+    from app.safety import classify_rule_based
 
     result = classify_rule_based("I have chest pain since yesterday")
     assert result["risk_level"] == "medium"
 
 
 def test_classify_rule_based_low_risk():
-    from safety import classify_rule_based
+    from app.safety import classify_rule_based
 
     result = classify_rule_based("I have mild sore throat")
     assert result["risk_level"] == "low"
 
 
 def test_classify_safety_uses_max_of_rule_and_llm(monkeypatch):
-    import safety
+    import app.safety as safety
 
     monkeypatch.setattr(
         safety,
@@ -35,7 +35,7 @@ def test_classify_safety_uses_max_of_rule_and_llm(monkeypatch):
 
 
 def test_classify_safety_medium_message_fallback(monkeypatch):
-    import safety
+    import app.safety as safety
 
     monkeypatch.setattr(
         safety,
@@ -53,7 +53,7 @@ def test_classify_safety_medium_message_fallback(monkeypatch):
 
 
 def test_classify_llm_based_returns_low_without_api_key(monkeypatch):
-    import safety
+    import app.safety as safety
 
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     result = safety.classify_llm_based("headache")
@@ -61,7 +61,7 @@ def test_classify_llm_based_returns_low_without_api_key(monkeypatch):
 
 
 def test_classify_llm_based_parses_json(monkeypatch):
-    import safety
+    import app.safety as safety
 
     class FakeResponse:
         content = [type("Block", (), {"text": '{"risk_level":"medium","message":"See a clinician."}'})()]
@@ -83,7 +83,7 @@ def test_classify_llm_based_parses_json(monkeypatch):
 
 
 def test_classify_llm_based_falls_back_from_non_json(monkeypatch):
-    import safety
+    import app.safety as safety
 
     class FakeResponse:
         content = [type("Block", (), {"text": "HIGH risk: emergency concern"})()]
@@ -105,7 +105,7 @@ def test_classify_llm_based_falls_back_from_non_json(monkeypatch):
 
 
 def test_classify_llm_based_returns_low_on_provider_error(monkeypatch):
-    import safety
+    import app.safety as safety
 
     class FakeMessages:
         def create(self, **kwargs):
